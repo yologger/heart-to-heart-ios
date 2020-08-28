@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Follow View Controller-->
+        <scene sceneID="EE5-QK-9tq">
+            <objects>
+                <viewController storyboardIdentifier="FollowViewController" id="ejd-WD-1WF" customClass="FollowViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pzG-SD-ddn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOH-Iy-Yt1">
+                                <rect key="frame" x="185" y="433" width="44" height="30"/>
+                                <state key="normal" title="Follow"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UOH-Iy-Yt1" firstAttribute="centerX" secondItem="pzG-SD-ddn" secondAttribute="centerX" id="94N-ap-Avk"/>
+                            <constraint firstItem="UOH-Iy-Yt1" firstAttribute="centerY" secondItem="pzG-SD-ddn" secondAttribute="centerY" id="lLr-4r-Y5b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1lH-d4-hv2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06e-6A-qWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="44"/>
+        </scene>
+    </scenes>
+</document>
