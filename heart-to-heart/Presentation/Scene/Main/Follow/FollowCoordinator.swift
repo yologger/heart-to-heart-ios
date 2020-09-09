@@ -4,7 +4,6 @@ class FollowCoordinator: BaseCoordinator {
     
     override func start() {
         let followViewController = FollowViewController.instantiate()
-        
-        self.viewController = followViewController
+        self.navigationController.viewControllers = [followViewController]
     }
 }

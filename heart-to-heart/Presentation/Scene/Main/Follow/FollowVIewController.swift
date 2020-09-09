@@ -1,5 +1,5 @@
 import UIKit
 
-class FollowViewController: UIViewController, Storyboarded {
+class FollowViewController: UIViewController, StoryboardInstantiable {
     static var storyboard = AppStoryboard.follow
 }

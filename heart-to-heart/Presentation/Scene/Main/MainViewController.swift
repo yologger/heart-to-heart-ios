@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: UITabBarController, Storyboarded {
+class MainViewController: UITabBarController, StoryboardInstantiable {
     
     static var storyboard = AppStoryboard.main
     

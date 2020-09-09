@@ -1,6 +1,6 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, Storyboarded {
+class HomeViewController: UIViewController, StoryboardInstantiable {
     static var storyboard = AppStoryboard.home
 }
