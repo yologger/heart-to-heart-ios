@@ -72,7 +72,7 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
         .disposed(by: disposeBag)
         
         self.logInButton.rx.tap
-        .bind { [weak self] in self?.viewModel?.logIn() }
+            .bind { [weak self] in self?.viewModel?.logIn() }
         .disposed(by: self.disposeBag)
         
         self.signInButton.rx.tap

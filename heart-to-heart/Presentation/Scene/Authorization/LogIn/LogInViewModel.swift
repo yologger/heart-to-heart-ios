@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 
 class LogInViewModel: BaseViewModel {
-    
+
     let email = BehaviorSubject<String>(value: "")
     let password = BehaviorSubject<String>(value: "")
     let isEmailValid = BehaviorSubject<Bool>(value: false)
@@ -13,9 +13,10 @@ class LogInViewModel: BaseViewModel {
     let didClickSignUpButton = BehaviorSubject(value: false)
     let didClickFindPasswordButton = BehaviorSubject(value: false)
     
-    let logInUseCase = LogInUseCase()
+    private let logInUseCase: LogInUseCase
     
-    override init() {
+    init(logInUseCase: LogInUseCase) {
+        self.logInUseCase = logInUseCase
         super.init()
         self.bindUI()
     }
@@ -42,18 +43,14 @@ class LogInViewModel: BaseViewModel {
     }
     
     func logIn() {
-        self.didClickLogInButton.onNext(true)
-//        self.logInUseCase.execute()
-//        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
-//        .observeOn(MainScheduler.instance)
-//            .subscribe(
-//            onNext: { [weak self] isSuccess in
-//                print("onNext!")
-//                self?.didClickLogInButton.onNext(true)
-//            }, onError: { (Error) in
-//            }, onCompleted: {
-//            }, onDisposed: {
-//            }).disposed(by: disposeBag)
+        Observable
+        .combineLatest(self.email, self.password)
+        .bind { [weak self] email, password in
+            self?.logInUseCase.email = email
+            self?.logInUseCase.password = password
+            self?.logInUseCase.test()
+        }
+        .disposed(by: disposeBag)
     }
     
     func signUp() {

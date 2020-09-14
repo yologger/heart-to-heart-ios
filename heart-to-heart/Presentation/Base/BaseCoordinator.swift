@@ -36,7 +36,5 @@ class BaseCoordinator: Coordinator {
         self.childCoordinators.forEach { $0.removeChildCoordinators() }
         self.childCoordinators.removeAll()
     }
-    
-    
 }
 

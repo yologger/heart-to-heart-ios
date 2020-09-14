@@ -1,20 +1,25 @@
 import UIKit
+import RxSwift
 
 class AppCoordinator: BaseCoordinator {
     
     private var window = UIWindow(frame: UIScreen.main.bounds)
-    private var isLoggedIn = false
+    private var isLoggedIn = true
+
+    private let disposeBag = DisposeBag()
+    private let sessionRepository: SessionRepository
+    
+    init(sessionRepository: SessionRepository) {
+        self.sessionRepository = sessionRepository
+    }
     
     override func start() {
         isLoggedIn ? showMain() : showAuthorization()
+        self.subscribeSessionChange()
     }
     
     func showAuthorization() {
         self.removeChildCoordinators()
-        
-        // DI 필요
-        
-        // DI 필요
         let authorizationCoordinator = AppDelegate.container.resolve(AuthorizationCoordinator.self)!
         // let authorizationCoordinator = AuthorizationCoordinator()
         self.start(coordinator: authorizationCoordinator)
@@ -24,7 +29,6 @@ class AppCoordinator: BaseCoordinator {
     
     func showMain() {
         self.removeChildCoordinators()
-        
         let mainCoordinator = MainCoordinator()
         self.start(coordinator: mainCoordinator)
         self.window.rootViewController = mainCoordinator.navigationController
@@ -32,6 +36,12 @@ class AppCoordinator: BaseCoordinator {
     }
     
     func subscribeSessionChange() {
+        self.sessionRepository.didLogIn
+            .subscribe { [weak self] in self?.showMain() }
+            .disposed(by: disposeBag)
         
+        self.sessionRepository.didLogOut
+            .subscribe { [weak self] in self?.showAuthorization() }
+            .disposed(by: disposeBag)
     }
 }

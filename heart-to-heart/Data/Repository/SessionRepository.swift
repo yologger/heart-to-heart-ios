@@ -2,9 +2,17 @@ import RxSwift
 
 class SessionRepository: BaseRepository {
 
-    var didLogIn = PublishSubject<Bool>()
-    var didLogOut = PublishSubject<Bool>()
+    private let logInSubject = PublishSubject<Void>()
+    private let logOutSubject = PublishSubject<Void>()
     
+    var didLogIn: Observable<Void> {
+        return self.logInSubject.asObservable()
+    }
+
+    var didLogOut: Observable<Void> {
+        return self.logOutSubject.asObservable()
+    }
+
     func signUp() {
         
     }
@@ -19,5 +27,9 @@ class SessionRepository: BaseRepository {
     
     func withDraw() {
         
+    }
+    
+    func test() {
+        print("test() from SessionRepository")
     }
 }
