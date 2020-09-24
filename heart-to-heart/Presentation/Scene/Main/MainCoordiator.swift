@@ -2,6 +2,17 @@ import UIKit
 
 class MainCoordinator: BaseCoordinator {
     
+    private let homeCoordinator: HomeCoordinator
+    private let followCoordinator: FollowCoordinator
+    private let profileCoordinator: ProfileCoordinator
+    
+    init(homeCoordinator: HomeCoordinator, followCoordinator: FollowCoordinator, profileCoordinator: ProfileCoordinator) {
+        self.homeCoordinator = homeCoordinator
+        self.followCoordinator = followCoordinator
+        self.profileCoordinator = profileCoordinator
+    }
+    
+    
     override func start() {
         self.navigationController.isNavigationBarHidden = true
         let mainViewController = MainViewController.instantiate()
@@ -16,9 +27,8 @@ class MainCoordinator: BaseCoordinator {
     }
     
     private func getHomeViewController() -> UINavigationController {
-        let homeCoordinator = HomeCoordinator()
-        self.start(coordinator: homeCoordinator)
-        let homeViewController: UINavigationController = homeCoordinator.navigationController
+        self.start(coordinator: self.homeCoordinator)
+        let homeViewController: UINavigationController = self.homeCoordinator.navigationController
         let title = "Home"
         let image = UIImage(named: "home_icon.png")
         let selectedImage = UIImage(named: "home_icon.png")
@@ -28,9 +38,8 @@ class MainCoordinator: BaseCoordinator {
     }
     
     private func getFollowViewController() -> UINavigationController {
-        let followCoordinator = FollowCoordinator()
-        self.start(coordinator: followCoordinator)
-        let followViewController: UINavigationController = followCoordinator.navigationController
+        self.start(coordinator: self.followCoordinator)
+        let followViewController: UINavigationController = self.followCoordinator.navigationController
         let title = "Follow"
         let image = UIImage(named: "follow_icon.png")
         let selectedImage = UIImage(named: "follow_icon.png")
@@ -40,9 +49,8 @@ class MainCoordinator: BaseCoordinator {
     }
     
     private func getProfileViewController() -> UINavigationController {
-        let profileCoordinator = ProfileCoordinator()
-        self.start(coordinator: profileCoordinator)
-        let profileViewController: UINavigationController = profileCoordinator.navigationController
+        self.start(coordinator: self.profileCoordinator)
+        let profileViewController: UINavigationController = self.profileCoordinator.navigationController
         let title = "Profile"
         let image = UIImage(named: "profile_icon.png")
         let selectedImage = UIImage(named: "profile_icon.png")

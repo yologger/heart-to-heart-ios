@@ -15,18 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOH-Iy-Yt1">
-                                <rect key="frame" x="185" y="433" width="44" height="30"/>
-                                <state key="normal" title="Follow"/>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lbp-sY-UjU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ejd-WD-1WF" id="M3n-Ab-Bep"/>
+                                    <outlet property="delegate" destination="ejd-WD-1WF" id="HtF-hM-ZTk"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="UOH-Iy-Yt1" firstAttribute="centerX" secondItem="pzG-SD-ddn" secondAttribute="centerX" id="94N-ap-Avk"/>
-                            <constraint firstItem="UOH-Iy-Yt1" firstAttribute="centerY" secondItem="pzG-SD-ddn" secondAttribute="centerY" id="lLr-4r-Y5b"/>
+                            <constraint firstItem="1lH-d4-hv2" firstAttribute="trailing" secondItem="lbp-sY-UjU" secondAttribute="trailing" id="2VX-Rt-6ko"/>
+                            <constraint firstItem="lbp-sY-UjU" firstAttribute="top" secondItem="1lH-d4-hv2" secondAttribute="top" id="GN0-up-WpU"/>
+                            <constraint firstItem="lbp-sY-UjU" firstAttribute="leading" secondItem="1lH-d4-hv2" secondAttribute="leading" id="XJh-Az-sGX"/>
+                            <constraint firstItem="1lH-d4-hv2" firstAttribute="bottom" secondItem="lbp-sY-UjU" secondAttribute="bottom" id="lfp-gF-j4Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1lH-d4-hv2"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="lbp-sY-UjU" id="FX6-tH-Wwq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06e-6A-qWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

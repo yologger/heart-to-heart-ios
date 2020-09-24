@@ -29,7 +29,7 @@ class AppCoordinator: BaseCoordinator {
     
     func showMain() {
         self.removeChildCoordinators()
-        let mainCoordinator = MainCoordinator()
+        let mainCoordinator = AppDelegate.container.resolve(MainCoordinator.self)!
         self.start(coordinator: mainCoordinator)
         self.window.rootViewController = mainCoordinator.navigationController
         self.window.makeKeyAndVisible()
