@@ -1,12 +1,23 @@
 import UIKit
 import RxSwift
 
+enum HomeCoordinatorOptions {
+    case showCreatePostVC
+    case closeCreatePostVC
+    case showSearchHistoryVC
+    case closeSearchHistoryVC
+}
+
 class HomeCoordinator: BaseCoordinator {
     
     private let disposeBag = DisposeBag()
     
-    private let createPostViewModel: CreatePostViewModel
+    private var homeViewController: HomeViewController?
+    private var searchHistoryViewController: SearchHistoryViewController?
+    private var createPostViewController: CreatePostViewController?
+    
     private let homeViewModel: HomeViewModel
+    private let createPostViewModel: CreatePostViewModel
     
     init(homeViewModel: HomeViewModel, createPostViewModel: CreatePostViewModel) {
         self.homeViewModel = homeViewModel
@@ -14,32 +25,58 @@ class HomeCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let homeViewController = HomeViewController.instantiate()
-        homeViewController.viewModel = self.homeViewModel
-        self.navigationController.viewControllers = [homeViewController]
+        self.homeViewController = HomeViewController.instantiate()
+        homeViewController!.viewModel = self.homeViewModel
+        self.navigationController.viewControllers = [self.homeViewController!]
         
         self.bindToHomeViewModel()
     }
     
     func bindToHomeViewModel() {
         self.homeViewModel.didCoordinatorChange
-        .subscribe{ value in
-            print("This is subscribe() from HomeCoordinator")
-            print(value)
-        }
+        .subscribe(
+            onNext: { value in
+                switch value {
+                case .showCreatePostVC: self.showCreatePost()
+                case .closeCreatePostVC: self.closeCreatePost()
+                case .showSearchHistoryVC: self.showSearchHistory()
+                case .closeSearchHistoryVC: self.closeSearchHistory()
+                }
+            },
+            onError: {error in print(error)},
+            onCompleted: {print("onCompleted")},
+            onDisposed: {print("onDisposed")}
+        )
         .disposed(by: disposeBag)
     }
     
-    func bindToCreatePostViewModel() {
-        
+    private func showCreatePost() {
+        print("showCreatePost()")
     }
     
-    func showCreatePost() {
+    private func closeCreatePost() {
+        print("closeCreatePost()")
+    }
+    
+    private func showSearchHistory() {
+        print("showSearchHistory()")
+        self.searchHistoryViewController = SearchHistoryViewController.instantiate()
         
+        guard let homeVC = self.homeViewController, let searchHistoryContainer = homeVC.searchHistoryContainer, let searchHistoryVC = self.searchHistoryViewController else {
+            return
+        }
+    
+        homeVC.add(child: searchHistoryVC, container: searchHistoryContainer)
+        homeVC.searchHistoryContainer.isHidden = false
+    }
+    
+    private func closeSearchHistory() {
+        self.searchHistoryViewController?.remove()
+        self.searchHistoryViewController = nil
+        guard let homeVC = self.homeViewController else {
+            return
+        }
+        homeVC.searchHistoryContainer.isHidden = true
     }
 }
 
-enum HomeCoordinatorOptions {
-    case startCreatePostVC
-    case finishCreatePostVC
-}

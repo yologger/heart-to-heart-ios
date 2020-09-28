@@ -8,37 +8,95 @@
     </dependencies>
     <scenes>
         <!--Home View Controller-->
-        <scene sceneID="pVd-oV-HJp">
+        <scene sceneID="3pN-Zn-YDr">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="xf6-EE-gJd" customClass="HomeViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FaX-I0-6FX">
+                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" id="1kW-zU-kIc" customClass="HomeViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CEY-dm-Zco">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vn7-OP-1Gb">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5y-nA-Vvu" userLabel="Post List Contaier">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <segue destination="0Ao-Fa-vG5" kind="embed" id="AZ2-pP-tOX"/>
+                                </connections>
+                            </containerView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPc-si-GNg" userLabel="Search History Container">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="xf6-EE-gJd" id="hum-M9-643"/>
-                                </connections>
-                            </tableView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hbc-zd-wgm" firstAttribute="bottom" secondItem="vn7-OP-1Gb" secondAttribute="bottom" id="7V1-c6-aLP"/>
-                            <constraint firstItem="vn7-OP-1Gb" firstAttribute="leading" secondItem="hbc-zd-wgm" secondAttribute="leading" id="8Vg-jg-fwf"/>
-                            <constraint firstItem="hbc-zd-wgm" firstAttribute="trailing" secondItem="vn7-OP-1Gb" secondAttribute="trailing" id="Afp-rK-Rkm"/>
-                            <constraint firstItem="vn7-OP-1Gb" firstAttribute="top" secondItem="hbc-zd-wgm" secondAttribute="top" id="NWf-MN-3Sj"/>
+                            <constraint firstItem="K33-0v-XMi" firstAttribute="trailing" secondItem="IPc-si-GNg" secondAttribute="trailing" id="0EU-tF-bZo"/>
+                            <constraint firstItem="K33-0v-XMi" firstAttribute="bottom" secondItem="IPc-si-GNg" secondAttribute="bottom" id="KAQ-kS-ngz"/>
+                            <constraint firstItem="IPc-si-GNg" firstAttribute="leading" secondItem="K33-0v-XMi" secondAttribute="leading" id="O6P-c7-ftI"/>
+                            <constraint firstItem="g5y-nA-Vvu" firstAttribute="leading" secondItem="K33-0v-XMi" secondAttribute="leading" id="UaJ-th-SDH"/>
+                            <constraint firstItem="K33-0v-XMi" firstAttribute="bottom" secondItem="g5y-nA-Vvu" secondAttribute="bottom" id="mtJ-gv-HSH"/>
+                            <constraint firstItem="K33-0v-XMi" firstAttribute="trailing" secondItem="g5y-nA-Vvu" secondAttribute="trailing" id="p63-pO-mmH"/>
+                            <constraint firstItem="g5y-nA-Vvu" firstAttribute="top" secondItem="K33-0v-XMi" secondAttribute="top" id="tq7-d9-mfB"/>
+                            <constraint firstItem="IPc-si-GNg" firstAttribute="top" secondItem="K33-0v-XMi" secondAttribute="top" id="vDg-d1-e6g"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hbc-zd-wgm"/>
+                        <viewLayoutGuide key="safeArea" id="K33-0v-XMi"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="vn7-OP-1Gb" id="lBi-XB-Z6n"/>
+                        <outlet property="postListContainer" destination="g5y-nA-Vvu" id="GhS-2d-7id"/>
+                        <outlet property="searchHistoryContainer" destination="IPc-si-GNg" id="BIC-72-wMh"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="osf-Sy-55R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4s-6X-OM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
+            <point key="canvasLocation" x="1114" y="-69"/>
+        </scene>
+        <!--Post List View Controller-->
+        <scene sceneID="AVe-tR-wAy">
+            <objects>
+                <tableViewController restorationIdentifier="PostListViewController" storyboardIdentifier="PostListViewController" id="0Ao-Fa-vG5" customClass="PostListViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HqH-RW-R6z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="ezj-1V-p0P">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pe3-Ks-R1h" customClass="PostTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pe3-Ks-R1h" id="Tes-U7-MrA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Szq-Fc-R32" customClass="PostTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Szq-Fc-R32" id="WAL-4R-yak">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fD9-ug-sPL" customClass="PostTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="115" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fD9-ug-sPL" id="gNu-BZ-sX4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="0Ao-Fa-vG5" id="Pe5-Re-Zz7"/>
+                            <outlet property="delegate" destination="0Ao-Fa-vG5" id="cCc-E8-GuW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5C-T5-SBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="-70"/>
         </scene>
     </scenes>
 </document>

@@ -12,6 +12,8 @@ enum AppStoryboard: String {
     case follow = "Follow"
     case profile = "Profile"
     case createPost = "CreatePost"
+    case searchHistory = "SearchHistory"
+    case postList = "PostList"
 }
 
 protocol StoryboardInstantiable {

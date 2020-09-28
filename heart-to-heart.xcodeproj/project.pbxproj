@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A04D4BB251DCAC90088CCAB /* SearchHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A04D4BA251DCAC90088CCAB /* SearchHistory.storyboard */; };
+		9A04D4BD251DCAE60088CCAB /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04D4BC251DCAE60088CCAB /* SearchHistoryViewController.swift */; };
+		9A04D4C0251DCFC90088CCAB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04D4BF251DCFC90088CCAB /* UIViewControllerExtension.swift */; };
+		9A06929125219A87008EB135 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06929025219A87008EB135 /* PostListViewController.swift */; };
 		9A08C9A3250F92D100C9BE01 /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08C9A2250F92D100C9BE01 /* FollowViewModel.swift */; };
 		9A08C9A5250F9AB000C9BE01 /* FollowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A08C9A4250F9AB000C9BE01 /* FollowTableViewCell.xib */; };
 		9A08C9A7250F9AC200C9BE01 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08C9A6250F9AC200C9BE01 /* FollowTableViewCell.swift */; };
@@ -88,6 +92,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A04D4BA251DCAC90088CCAB /* SearchHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHistory.storyboard; sourceTree = "<group>"; };
+		9A04D4BC251DCAE60088CCAB /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		9A04D4BF251DCFC90088CCAB /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		9A06929025219A87008EB135 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		9A08C9A2250F92D100C9BE01 /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
 		9A08C9A4250F9AB000C9BE01 /* FollowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowTableViewCell.xib; sourceTree = "<group>"; };
 		9A08C9A6250F9AC200C9BE01 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +196,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A04D4B9251DC6EF0088CCAB /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				9A04D4BA251DCAC90088CCAB /* SearchHistory.storyboard */,
+				9A04D4BC251DCAE60088CCAB /* SearchHistoryViewController.swift */,
+			);
+			path = SearchHistory;
+			sourceTree = "<group>";
+		};
+		9A04D4BE251DCF9C0088CCAB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9A04D4BF251DCFC90088CCAB /* UIViewControllerExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9A06928D25219A3F008EB135 /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				9A06929025219A87008EB135 /* PostListViewController.swift */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
 		9A4483B624F3FDC500919FA4 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +298,8 @@
 				9A6F258624F8F17200000BD8 /* Home.storyboard */,
 				9AFD5AF4251B4EFF000D0DEC /* PostTableViewCell.xib */,
 				9AFD5AF6251B4F0E000D0DEC /* PostTableViewCell.swift */,
+				9A06928D25219A3F008EB135 /* PostList */,
+				9A04D4B9251DC6EF0088CCAB /* SearchHistory */,
 				9AFD5AFE251C7289000D0DEC /* CreatePost */,
 			);
 			path = Home;
@@ -397,6 +432,7 @@
 		9A9281A424F4108000D61580 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9A04D4BE251DCF9C0088CCAB /* Extension */,
 				9A6F25ED24FE457300000BD8 /* Base */,
 				9A9281A724F410FD00D61580 /* Scene */,
 				9A9281A624F410F700D61580 /* Model */,
@@ -602,6 +638,7 @@
 				9A4483CF24F3FDC600919FA4 /* LaunchScreen.storyboard in Resources */,
 				9A08C9A925104B6200C9BE01 /* avatar1.png in Resources */,
 				9A08C9A5250F9AB000C9BE01 /* FollowTableViewCell.xib in Resources */,
+				9A04D4BB251DCAC90088CCAB /* SearchHistory.storyboard in Resources */,
 				9A6F25E824FE40C700000BD8 /* FindPassword.storyboard in Resources */,
 				9A6F25E224FE3FFC00000BD8 /* SignUp.storyboard in Resources */,
 				9A6F258724F8F17200000BD8 /* Home.storyboard in Resources */,
@@ -672,9 +709,11 @@
 				9A6F257E24F8EEF100000BD8 /* MainViewController.swift in Sources */,
 				9AFD5AF7251B4F0E000D0DEC /* PostTableViewCell.swift in Sources */,
 				9A4483C324F3FDC500919FA4 /* AppDelegate.swift in Sources */,
+				9A06929125219A87008EB135 /* PostListViewController.swift in Sources */,
 				9A6F258924F8F19100000BD8 /* ProfileViewController.swift in Sources */,
 				9A6F258524F8F16700000BD8 /* HomeCoordinator.swift in Sources */,
 				9A6F25FD250721E100000BD8 /* GetSessionStateUseCase.swift in Sources */,
+				9A04D4C0251DCFC90088CCAB /* UIViewControllerExtension.swift in Sources */,
 				9AFD5B00251C772E000D0DEC /* CreatePostViewModel.swift in Sources */,
 				9A6F25FA25071FD000000BD8 /* BaseUseCase.swift in Sources */,
 				9A9282AD24F7DBEE00D61580 /* AuthorizationCoordinator.swift in Sources */,
@@ -688,6 +727,7 @@
 				9A6F25A124F9251100000BD8 /* LogInViewModel.swift in Sources */,
 				9A9282AF24F7DC3600D61580 /* LogInViewController.swift in Sources */,
 				9A6F257C24F8EC3000000BD8 /* StoryboardInstantiable.swift in Sources */,
+				9A04D4BD251DCAE60088CCAB /* SearchHistoryViewController.swift in Sources */,
 				9A6F257A24F8EA7F00000BD8 /* MainCoordiator.swift in Sources */,
 				9A6F258324F8F15900000BD8 /* HomeViewController.swift in Sources */,
 				9A6F25EC24FE41A800000BD8 /* FindPasswordViewController.swift in Sources */,

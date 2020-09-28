@@ -4,9 +4,17 @@ import RxCocoa
 
 class HomeViewModel: BaseViewModel {
     
-    let didCoordinatorChange = BehaviorSubject<HomeCoordinatorOptions>(value: .finishCreatePostVC)
+    let didCoordinatorChange = BehaviorSubject<HomeCoordinatorOptions>(value: .showCreatePostVC)
     
     func createPost() {
-        self.didCoordinatorChange.onNext(.startCreatePostVC)
+        self.didCoordinatorChange.onNext(.showCreatePostVC)
+    }
+    
+    func showSearchHistory() {
+        self.didCoordinatorChange.onNext(.showSearchHistoryVC)
+    }
+    
+    func closeSearchHistory() {
+        self.didCoordinatorChange.onNext(.closeSearchHistoryVC)
     }
 }
