@@ -16,7 +16,6 @@ class AuthorizationCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        
         self.showLogIn()
         self.bindLogInViewModel()
         self.bindSignUpViewModel()

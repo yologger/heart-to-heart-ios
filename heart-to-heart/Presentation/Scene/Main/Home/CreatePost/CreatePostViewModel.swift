@@ -4,5 +4,21 @@ import RxCocoa
 
 class CreatePostViewModel: BaseViewModel {
     
-    let didCoordinatorChange = BehaviorSubject<HomeCoordinatorOptions>(value: .showCreatePostVC)
+    let didCoordinatorChange = PublishSubject<HomeCoordinatorOptions>()
+    
+    func closeCreatePost() {
+        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+    }
+    
+    func showCamera() {
+        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+    }
+    
+    func showAlbum() {
+        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+    }
+    
+    func createPost() {
+        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+    }
 }

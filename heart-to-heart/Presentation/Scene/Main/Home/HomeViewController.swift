@@ -14,21 +14,36 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
     
     private var searchController = UISearchController(searchResultsController: nil)
     
-    lazy var rightButton: UIBarButtonItem = {
+    lazy var createPostButton: UIBarButtonItem = {
+        
+        let orignalImage = UIImage(named: "create_icon")
+        let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
+
         let button = UIBarButtonItem(
-            title: "RightBtn",
+            image: tintedImage,
             style: .plain,
             target: self,
-            action: #selector(buttonPressed(_:)))
-        button.tag = 2
-        return button
+            action: #selector(buttonPressed(_:))
+        )
         
-    }()
+        button.tintColor = .black
+        
+        button.tag = 2
+        
+        
+//        let button = UIBarButtonItem(
+//            title: "Create",
+//            style: .plain,
+//            target: self,
+//            action: #selector(buttonPressed(_:)))
+//        button.tag = 2
 
-    let behaviorSubject = BehaviorSubject<Int>(value: 0)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad() from HomeViewController")
         // self.initTableView()
         self.initNavigation()
         self.initSearchBar()
@@ -36,6 +51,14 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear from HomeViewController")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear from HomeViewController")
     }
     
     @objc private func buttonPressed(_ sender: Any) {
@@ -61,7 +84,6 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
 // MARK: - Binding
 extension HomeViewController {
     func initBinding() {
-        behaviorSubject.subscribe{ value in print(value)}.disposed(by: disposeBag)
     }
 }
 
@@ -69,7 +91,7 @@ extension HomeViewController {
 // MARK: - Navigation
 extension HomeViewController {
     func initNavigation() {
-        self.navigationItem.rightBarButtonItem = self.rightButton
+        self.navigationItem.rightBarButtonItem = self.createPostButton
     }
 }
 

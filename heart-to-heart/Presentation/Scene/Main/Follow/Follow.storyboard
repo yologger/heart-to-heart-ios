@@ -10,31 +10,38 @@
         <!--Follow View Controller-->
         <scene sceneID="EE5-QK-9tq">
             <objects>
-                <viewController storyboardIdentifier="FollowViewController" id="ejd-WD-1WF" customClass="FollowViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FollowViewController" storyboardIdentifier="FollowViewController" id="ejd-WD-1WF" customClass="FollowViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pzG-SD-ddn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lbp-sY-UjU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ejd-WD-1WF" id="M3n-Ab-Bep"/>
-                                    <outlet property="delegate" destination="ejd-WD-1WF" id="HtF-hM-ZTk"/>
-                                </connections>
-                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lCM-cQ-UCq" userLabel="Segmented Control">
+                                <rect key="frame" x="0.0" y="44" width="414" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyQ-Jn-BTU">
+                                <rect key="frame" x="0.0" y="75" width="414" height="787"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="1lH-d4-hv2" firstAttribute="trailing" secondItem="lbp-sY-UjU" secondAttribute="trailing" id="2VX-Rt-6ko"/>
-                            <constraint firstItem="lbp-sY-UjU" firstAttribute="top" secondItem="1lH-d4-hv2" secondAttribute="top" id="GN0-up-WpU"/>
-                            <constraint firstItem="lbp-sY-UjU" firstAttribute="leading" secondItem="1lH-d4-hv2" secondAttribute="leading" id="XJh-Az-sGX"/>
-                            <constraint firstItem="1lH-d4-hv2" firstAttribute="bottom" secondItem="lbp-sY-UjU" secondAttribute="bottom" id="lfp-gF-j4Y"/>
+                            <constraint firstItem="AyQ-Jn-BTU" firstAttribute="leading" secondItem="1lH-d4-hv2" secondAttribute="leading" id="2z5-GA-Wca"/>
+                            <constraint firstItem="1lH-d4-hv2" firstAttribute="trailing" secondItem="lCM-cQ-UCq" secondAttribute="trailing" id="Lhx-Y9-VqX"/>
+                            <constraint firstItem="lCM-cQ-UCq" firstAttribute="leading" secondItem="1lH-d4-hv2" secondAttribute="leading" id="Lwc-Ar-1de"/>
+                            <constraint firstItem="1lH-d4-hv2" firstAttribute="trailing" secondItem="AyQ-Jn-BTU" secondAttribute="trailing" id="Na8-CZ-Ufr"/>
+                            <constraint firstItem="1lH-d4-hv2" firstAttribute="bottom" secondItem="AyQ-Jn-BTU" secondAttribute="bottom" id="OHw-Py-Sur"/>
+                            <constraint firstItem="lCM-cQ-UCq" firstAttribute="top" secondItem="1lH-d4-hv2" secondAttribute="top" id="Wxb-hl-ujS"/>
+                            <constraint firstItem="AyQ-Jn-BTU" firstAttribute="top" secondItem="lCM-cQ-UCq" secondAttribute="bottom" id="bQ3-Vs-DnJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1lH-d4-hv2"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="lbp-sY-UjU" id="FX6-tH-Wwq"/>
+                        <outlet property="containerView" destination="AyQ-Jn-BTU" id="GwT-7F-dhr"/>
+                        <outlet property="segmentedControl" destination="lCM-cQ-UCq" id="RCd-tT-wTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06e-6A-qWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

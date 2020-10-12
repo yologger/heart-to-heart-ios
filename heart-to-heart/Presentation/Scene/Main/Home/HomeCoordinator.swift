@@ -18,18 +18,22 @@ class HomeCoordinator: BaseCoordinator {
     
     private let homeViewModel: HomeViewModel
     private let createPostViewModel: CreatePostViewModel
+    private let searchHistoryViewModel: SearchHistoryViewModel
     
-    init(homeViewModel: HomeViewModel, createPostViewModel: CreatePostViewModel) {
+    init(homeViewModel: HomeViewModel, createPostViewModel: CreatePostViewModel, searchHistoryViewModel: SearchHistoryViewModel) {
         self.homeViewModel = homeViewModel
         self.createPostViewModel = createPostViewModel
+        self.searchHistoryViewModel = searchHistoryViewModel
     }
     
     override func start() {
+        print("start() from HomeCoordinator")
         self.homeViewController = HomeViewController.instantiate()
         homeViewController!.viewModel = self.homeViewModel
         self.navigationController.viewControllers = [self.homeViewController!]
         
         self.bindToHomeViewModel()
+        self.bindToCreatePostViewModel()
     }
     
     func bindToHomeViewModel() {
@@ -43,23 +47,46 @@ class HomeCoordinator: BaseCoordinator {
                 case .closeSearchHistoryVC: self.closeSearchHistory()
                 }
             },
-            onError: {error in print(error)},
-            onCompleted: {print("onCompleted")},
-            onDisposed: {print("onDisposed")}
+            onError: { error in print(error) },
+            onCompleted: { print("onCompleted") },
+            onDisposed: { print("onDisposed") }
+        )
+        .disposed(by: disposeBag)
+    }
+    
+    func bindToCreatePostViewModel() {
+        self.createPostViewModel.didCoordinatorChange
+        .subscribe(
+            onNext: { value in
+                switch value {
+                case .showCreatePostVC: self.showCreatePost()
+                case .closeCreatePostVC: self.closeCreatePost()
+                case .showSearchHistoryVC: self.showSearchHistory()
+                case .closeSearchHistoryVC: self.closeSearchHistory()
+                }
+            },
+            onError: { error in print(error) },
+            onCompleted: { print("onCompleted") },
+            onDisposed: { print("onDisposed") }
         )
         .disposed(by: disposeBag)
     }
     
     private func showCreatePost() {
-        print("showCreatePost()")
+        var createPostViewController = CreatePostViewController.instantiate()
+        
+        createPostViewController.viewModel = createPostViewModel
+        // createPostViewController.modalPresentationStyle = .fullScreen
+        self.navigationController.present(createPostViewController, animated: true, completion: nil)
+        // self.navigationController.pushViewController(createPostViewController, animated: true)
     }
     
     private func closeCreatePost() {
-        print("closeCreatePost()")
+        self.navigationController.dismiss(animated: true, completion: nil) 
+        // self.navigationController.popViewController(animated: true)
     }
     
     private func showSearchHistory() {
-        print("showSearchHistory()")
         self.searchHistoryViewController = SearchHistoryViewController.instantiate()
         
         guard let homeVC = self.homeViewController, let searchHistoryContainer = homeVC.searchHistoryContainer, let searchHistoryVC = self.searchHistoryViewController else {
@@ -73,9 +100,7 @@ class HomeCoordinator: BaseCoordinator {
     private func closeSearchHistory() {
         self.searchHistoryViewController?.remove()
         self.searchHistoryViewController = nil
-        guard let homeVC = self.homeViewController else {
-            return
-        }
+        guard let homeVC = self.homeViewController else { return }
         homeVC.searchHistoryContainer.isHidden = true
     }
 }

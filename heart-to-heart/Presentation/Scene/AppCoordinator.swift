@@ -21,7 +21,6 @@ class AppCoordinator: BaseCoordinator {
     func showAuthorization() {
         self.removeChildCoordinators()
         let authorizationCoordinator = AppDelegate.container.resolve(AuthorizationCoordinator.self)!
-        // let authorizationCoordinator = AuthorizationCoordinator()
         self.start(coordinator: authorizationCoordinator)
         self.window.rootViewController = authorizationCoordinator.navigationController
         self.window.makeKeyAndVisible()
