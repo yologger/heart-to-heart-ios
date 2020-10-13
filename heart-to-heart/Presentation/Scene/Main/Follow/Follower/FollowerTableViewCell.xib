@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="follower_table_view_cell" id="L5d-wz-yr3" customClass="FollowerTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="459" height="69"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L5d-wz-yr3" id="BW9-pL-GWW">
+                <rect key="frame" x="0.0" y="0.0" width="459" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar1.png" translatesAutoresizingMaskIntoConstraints="NO" id="PM0-DU-psb">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="R7Q-IL-8Do"/>
+                            <constraint firstAttribute="width" constant="50" id="Rjw-bV-RUE"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-Vx-RAs">
+                        <rect key="frame" x="405" y="18" width="46" height="30"/>
+                        <color key="backgroundColor" red="1" green="0.51940012690000004" blue="0.2547302535" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NdR-IQ-zNE">
+                        <rect key="frame" x="66" y="10" width="42" height="46"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZ1-CG-cJf">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                <color key="backgroundColor" red="0.70144252350000003" green="1" blue="0.35745129349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfJ-iu-j8y">
+                                <rect key="frame" x="0.0" y="25.5" width="42" height="20.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PM0-DU-psb" firstAttribute="leading" secondItem="BW9-pL-GWW" secondAttribute="leading" constant="8" id="50n-YG-OBy"/>
+                    <constraint firstItem="c5d-Vx-RAs" firstAttribute="centerY" secondItem="PM0-DU-psb" secondAttribute="centerY" id="LaE-rk-Mh1"/>
+                    <constraint firstAttribute="bottom" secondItem="PM0-DU-psb" secondAttribute="bottom" constant="8" id="fHC-We-oeG"/>
+                    <constraint firstItem="PM0-DU-psb" firstAttribute="top" secondItem="BW9-pL-GWW" secondAttribute="top" constant="8" id="l0i-gI-ZO4"/>
+                    <constraint firstItem="NdR-IQ-zNE" firstAttribute="leading" secondItem="PM0-DU-psb" secondAttribute="trailing" constant="8" id="o8d-cR-tLg"/>
+                    <constraint firstAttribute="trailing" secondItem="c5d-Vx-RAs" secondAttribute="trailing" constant="8" id="pdK-b4-iVO"/>
+                    <constraint firstItem="NdR-IQ-zNE" firstAttribute="centerY" secondItem="PM0-DU-psb" secondAttribute="centerY" id="wiE-bC-UtW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="173.18840579710147" y="-315.06696428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="avatar1.png" width="362" height="319"/>
+    </resources>
+</document>

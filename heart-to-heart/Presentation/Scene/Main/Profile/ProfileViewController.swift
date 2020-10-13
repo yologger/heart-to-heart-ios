@@ -18,72 +18,39 @@ class ProfileViewController: UITableViewController, StoryboardInstantiable {
     override func viewWillDisappear(_ animated: Bool) {
         print("viewWillDisappear from ProfileViewController")
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0: break
+        case 1: break
+        case 2: didRowClick(row: indexPath.row)
+        default:
+            print("ERROR")
+        }
+    }
+    
+    private func didRowClick(row: Int) {
+        switch row {
+        case 0: self.changeNickname()
+        case 1: self.changePassword()
+        case 2: self.logout()
+        default:
+            print("Error")
+        }
+    }
+    
+    private func changeNickname() {
+        print("changeNickname")
+    }
+    
+    private func changePassword() {
+        print("changePassword")
+    }
+    
+    private func logout() {
+        print("logout")
+    }
 }
 
 
-//class ProfileViewController: UITableViewController, StoryboardInstantiable {
-//
-//    static var storyboard = AppStoryboard.profile
-//    var viewModel: ProfileViewModel?
-//
-//    override func viewDidLoad() {
-//        print("viewDidLoad() from ProfileViewController")
-//
-//    }
-//    override func viewWillAppear(_ animated: Bool) {
-//        print("viewWillAppear from ProfileViewController")
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        print("viewWillDisappear from ProfileViewController")
-//    }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch indexPath.section {
-//        case 0:
-//            handleZerothSection(indexPath: indexPath)
-//        case 1:
-//            handleFirstSection(indexPath: indexPath)
-//        case 2:
-//            handleSecondSection(indexPath: indexPath)
-//        default:
-//            print("ERROR")
-//        }
-//    }
-//
-//    private func handleZerothSection(indexPath: IndexPath) {
-//
-//    }
-//
-//    private func handleFirstSection(indexPath: IndexPath) {
-//
-//    }
-//
-//    private func handleSecondSection(indexPath: IndexPath) {
-//        switch indexPath.item {
-//        case 0:
-//            self.changeNickname()
-//        case 1:
-//            self.changePassword()
-//        case 2:
-//            self.logOut()
-//        default:
-//            print("Error")
-//        }
-//    }
-//
-//    private func changePassword() {
-//
-//    }
-//
-//    private func changeNickname() {
-//        print("changeNickname")
-//    }
-//
-//    private func logOut() {
-//
-//        print("logOut")
-//        viewModel?.logOut()
-//    }
-//}
 

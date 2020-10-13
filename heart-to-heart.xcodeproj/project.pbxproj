@@ -12,9 +12,11 @@
 		9A04D4C0251DCFC90088CCAB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04D4BF251DCFC90088CCAB /* UIViewControllerExtension.swift */; };
 		9A06929125219A87008EB135 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06929025219A87008EB135 /* PostListViewController.swift */; };
 		9A08C9A3250F92D100C9BE01 /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08C9A2250F92D100C9BE01 /* FollowViewModel.swift */; };
-		9A08C9A5250F9AB000C9BE01 /* FollowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A08C9A4250F9AB000C9BE01 /* FollowTableViewCell.xib */; };
-		9A08C9A7250F9AC200C9BE01 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08C9A6250F9AC200C9BE01 /* FollowTableViewCell.swift */; };
+		9A08C9A5250F9AB000C9BE01 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A08C9A4250F9AB000C9BE01 /* FollowingTableViewCell.xib */; };
+		9A08C9A7250F9AC200C9BE01 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08C9A6250F9AC200C9BE01 /* FollowingTableViewCell.swift */; };
 		9A08C9A925104B6200C9BE01 /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08C9A825104B6200C9BE01 /* avatar1.png */; };
+		9A2B4C0F2535684500C66681 /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2B4C0E2535684500C66681 /* FollowerTableViewCell.xib */; };
+		9A2B4C112535686600C66681 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B4C102535686600C66681 /* FollowerTableViewCell.swift */; };
 		9A4483C324F3FDC500919FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4483C224F3FDC500919FA4 /* AppDelegate.swift */; };
 		9A4483C724F3FDC500919FA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4483C624F3FDC500919FA4 /* ViewController.swift */; };
 		9A4483CA24F3FDC500919FA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4483C824F3FDC500919FA4 /* Main.storyboard */; };
@@ -108,9 +110,11 @@
 		9A04D4BF251DCFC90088CCAB /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		9A06929025219A87008EB135 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		9A08C9A2250F92D100C9BE01 /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
-		9A08C9A4250F9AB000C9BE01 /* FollowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowTableViewCell.xib; sourceTree = "<group>"; };
-		9A08C9A6250F9AC200C9BE01 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
+		9A08C9A4250F9AB000C9BE01 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
+		9A08C9A6250F9AC200C9BE01 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		9A08C9A825104B6200C9BE01 /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar1.png; path = "../../../../../../test image/avatar1.png"; sourceTree = "<group>"; };
+		9A2B4C0E2535684500C66681 /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
+		9A2B4C102535686600C66681 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		9A4483BF24F3FDC500919FA4 /* heart-to-heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "heart-to-heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4483C224F3FDC500919FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4483C624F3FDC500919FA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -335,8 +339,6 @@
 				9A6F259224F8F26F00000BD8 /* Follow.storyboard */,
 				9A6F259024F8F26000000BD8 /* FollowVIewController.swift */,
 				9A08C9A2250F92D100C9BE01 /* FollowViewModel.swift */,
-				9A08C9A4250F9AB000C9BE01 /* FollowTableViewCell.xib */,
-				9A08C9A6250F9AC200C9BE01 /* FollowTableViewCell.swift */,
 				9A7013E62522F85C0002DC74 /* Following */,
 				9A7013E52522F8500002DC74 /* Follower */,
 			);
@@ -463,6 +465,8 @@
 				9A7013ED2522FA000002DC74 /* Follower.storyboard */,
 				9A7013EB2522F9D10002DC74 /* FollowerViewController.swift */,
 				9A7013F12522FBE40002DC74 /* FollowerViewModel.swift */,
+				9A2B4C0E2535684500C66681 /* FollowerTableViewCell.xib */,
+				9A2B4C102535686600C66681 /* FollowerTableViewCell.swift */,
 			);
 			path = Follower;
 			sourceTree = "<group>";
@@ -473,6 +477,8 @@
 				9A7ADFE425347CE400A99065 /* Following.storyboard */,
 				9A7013E92522F8F40002DC74 /* FollowingViewController.swift */,
 				9A7013EF2522FB830002DC74 /* FollowingViewModel.swift */,
+				9A08C9A4250F9AB000C9BE01 /* FollowingTableViewCell.xib */,
+				9A08C9A6250F9AC200C9BE01 /* FollowingTableViewCell.swift */,
 			);
 			path = Following;
 			sourceTree = "<group>";
@@ -696,8 +702,9 @@
 				9A4483CF24F3FDC600919FA4 /* LaunchScreen.storyboard in Resources */,
 				9A08C9A925104B6200C9BE01 /* avatar1.png in Resources */,
 				9A7013DC252239700002DC74 /* ChangePassword.storyboard in Resources */,
-				9A08C9A5250F9AB000C9BE01 /* FollowTableViewCell.xib in Resources */,
+				9A08C9A5250F9AB000C9BE01 /* FollowingTableViewCell.xib in Resources */,
 				9A04D4BB251DCAC90088CCAB /* SearchHistory.storyboard in Resources */,
+				9A2B4C0F2535684500C66681 /* FollowerTableViewCell.xib in Resources */,
 				9A6F25E824FE40C700000BD8 /* FindPassword.storyboard in Resources */,
 				9A7013D9252234630002DC74 /* CreatePost.storyboard in Resources */,
 				9A6F25E224FE3FFC00000BD8 /* SignUp.storyboard in Resources */,
@@ -761,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7013EA2522F8F40002DC74 /* FollowingViewController.swift in Sources */,
+				9A2B4C112535686600C66681 /* FollowerTableViewCell.swift in Sources */,
 				9A6F260F250741E900000BD8 /* Container+Coordinators.swift in Sources */,
 				9A6F25F32506214300000BD8 /* FindPasswordViewModel.swift in Sources */,
 				9A6F260B2507416500000BD8 /* Container+RegisterDependencies.swift in Sources */,
@@ -802,7 +810,7 @@
 				9A6F25EF2500D0C800000BD8 /* BaseViewModel.swift in Sources */,
 				9A6F260625072AA300000BD8 /* BaseRepository.swift in Sources */,
 				9A6F25FF250723B400000BD8 /* LogInUseCase.swift in Sources */,
-				9A08C9A7250F9AC200C9BE01 /* FollowTableViewCell.swift in Sources */,
+				9A08C9A7250F9AC200C9BE01 /* FollowingTableViewCell.swift in Sources */,
 				9A6F260D2507419900000BD8 /* Container+ViewModels.swift in Sources */,
 				9A6F258F24F8F1CD00000BD8 /* FollowCoordinator.swift in Sources */,
 				9A6F25EA24FE415800000BD8 /* SignUpViewController.swift in Sources */,

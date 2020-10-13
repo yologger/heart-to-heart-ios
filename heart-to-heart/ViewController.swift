@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  heart-to-heart
-//
-//  Created by Hyukjung Kwon on 24/08/2020.
-//  Copyright © 2020 yologger. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

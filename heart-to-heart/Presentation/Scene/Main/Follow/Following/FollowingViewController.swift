@@ -6,9 +6,16 @@ class FollowingViewController: UITableViewController, StoryboardInstantiable {
     
     static var storyboard: AppStoryboard = .following
     
-    var num = 4
-    
     override func viewDidLoad() {
-        print("viewDidLoad() from FollowingViewController")
+        self.tableView.register(UINib(nibName: "FollowingTableViewCell", bundle: nil), forCellReuseIdentifier: "following_table_view_cell")
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let followingTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "following_table_view_cell", for: indexPath)
+        return followingTableViewCell
     }
 }

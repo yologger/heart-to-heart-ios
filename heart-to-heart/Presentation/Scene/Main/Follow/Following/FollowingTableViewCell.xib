@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="following_table_view_cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="following_table_view_cell" id="G4g-Mn-uyB" customClass="FollowingTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G4g-Mn-uyB" id="Icx-a2-ss4">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPw-3c-Ylq" userLabel="Follow Button">
+                        <rect key="frame" x="291" y="18" width="61" height="30"/>
+                        <color key="backgroundColor" red="0.89601788319999998" green="0.78542500940000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="FOLLOW"/>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar1.png" translatesAutoresizingMaskIntoConstraints="NO" id="dn9-1u-2DX" userLabel="Avatar Image">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6XD-Id-WsL"/>
+                            <constraint firstAttribute="height" constant="50" id="EjY-J9-bos"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0go-GS-xNa">
+                        <rect key="frame" x="66" y="11.5" width="134.5" height="43"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CR7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n83-lf-WVp" userLabel="Nickname">
+                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="20.5"/>
+                                <color key="backgroundColor" red="1" green="0.51940012690000004" blue="0.2547302535" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cristiano Ronaldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlN-7y-aoW" userLabel="Email">
+                                <rect key="frame" x="0.0" y="22.5" width="134.5" height="20.5"/>
+                                <color key="backgroundColor" red="0.70144252350000003" green="1" blue="0.35745129349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dn9-1u-2DX" secondAttribute="bottom" constant="8" id="7Oy-AK-7Wf"/>
+                    <constraint firstItem="dn9-1u-2DX" firstAttribute="leading" secondItem="Icx-a2-ss4" secondAttribute="leading" constant="8" id="Ehu-If-IpW"/>
+                    <constraint firstItem="dn9-1u-2DX" firstAttribute="top" secondItem="Icx-a2-ss4" secondAttribute="top" constant="8" id="cRY-aE-oNQ"/>
+                    <constraint firstItem="dPw-3c-Ylq" firstAttribute="centerY" secondItem="dn9-1u-2DX" secondAttribute="centerY" id="s7M-Vg-UlK"/>
+                    <constraint firstItem="0go-GS-xNa" firstAttribute="centerY" secondItem="dn9-1u-2DX" secondAttribute="centerY" id="tSH-RH-lGT"/>
+                    <constraint firstItem="0go-GS-xNa" firstAttribute="leading" secondItem="dn9-1u-2DX" secondAttribute="trailing" constant="8" id="xkS-Ih-0b8"/>
+                    <constraint firstAttribute="trailing" secondItem="dPw-3c-Ylq" secondAttribute="trailing" constant="8" id="y28-0T-SvZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImage" destination="dn9-1u-2DX" id="LI3-g3-cGf"/>
+                <outlet property="emailLabel" destination="tlN-7y-aoW" id="NHn-Qy-weq"/>
+                <outlet property="followButton" destination="dPw-3c-Ylq" id="tEp-Gp-Qdl"/>
+                <outlet property="nicknameLabel" destination="n83-lf-WVp" id="hSB-d2-7zG"/>
+            </connections>
+            <point key="canvasLocation" x="108.69565217391305" y="-213.61607142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="avatar1.png" width="362" height="319"/>
+    </resources>
+</document>
