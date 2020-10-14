@@ -4,9 +4,17 @@ import RxCocoa
 
 class ProfileViewModel: BaseViewModel {
     
-    let didCoordinatorChange = BehaviorSubject<ProfileCoordinatorOptions>(value: .showChangePasswordVC)
+    let didCoordinatorChange = PublishSubject<ProfileCoordinatorOptions>()
     
-    func logOut() {
-        print("logOut() from ProfileViewModel")
+    func changeNickname() {
+        didCoordinatorChange.onNext(.showChangeNicknameVC)
+    }
+    
+    func changePassword() {
+        didCoordinatorChange.onNext(.showGetCurrentPasswordVC)
+    }
+    
+    func logout() {
+        print("logout() from ProfileViewModel")
     }
 }

@@ -69,7 +69,7 @@
                                                 <constraint firstItem="hpg-ui-qQV" firstAttribute="leading" secondItem="Gew-F5-wgj" secondAttribute="trailing" constant="8" id="Bxd-2F-xAl"/>
                                                 <constraint firstAttribute="trailing" secondItem="hpg-ui-qQV" secondAttribute="trailing" constant="8" id="bIj-lF-E0j"/>
                                                 <constraint firstItem="Gew-F5-wgj" firstAttribute="leading" secondItem="wYR-ll-195" secondAttribute="leading" constant="16" id="dS4-IT-4Wo"/>
-                                                <constraint firstAttribute="bottom" secondItem="Gew-F5-wgj" secondAttribute="bottom" constant="16" id="g2A-VZ-5Ww"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gew-F5-wgj" secondAttribute="bottom" constant="16" id="g2A-VZ-5Ww"/>
                                                 <constraint firstItem="Gew-F5-wgj" firstAttribute="top" secondItem="wYR-ll-195" secondAttribute="top" constant="16" id="pGp-cX-SnC"/>
                                             </constraints>
                                         </tableViewCellContentView>

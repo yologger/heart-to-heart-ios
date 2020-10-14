@@ -8,15 +8,6 @@ class ProfileViewController: UITableViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200
-        // self.tableView.separatorStyle = .none
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear from ProfileViewController")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear from ProfileViewController")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -40,15 +31,15 @@ class ProfileViewController: UITableViewController, StoryboardInstantiable {
     }
     
     private func changeNickname() {
-        print("changeNickname")
+        self.viewModel?.changeNickname()
     }
     
     private func changePassword() {
-        print("changePassword")
+        self.viewModel?.changePassword()
     }
     
     private func logout() {
-        print("logout")
+        self.viewModel?.logout()
     }
 }
 

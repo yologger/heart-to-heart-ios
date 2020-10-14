@@ -27,9 +27,8 @@ class HomeCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        print("start() from HomeCoordinator")
         self.homeViewController = HomeViewController.instantiate()
-        homeViewController!.viewModel = self.homeViewModel
+        self.homeViewController!.viewModel = self.homeViewModel
         self.navigationController.viewControllers = [self.homeViewController!]
         
         self.bindToHomeViewModel()

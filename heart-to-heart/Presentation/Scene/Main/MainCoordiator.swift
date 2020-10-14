@@ -12,7 +12,6 @@ class MainCoordinator: BaseCoordinator {
         self.profileCoordinator = profileCoordinator
     }
     
-    
     override func start() {
         self.navigationController.isNavigationBarHidden = true
         let mainViewController = MainViewController.instantiate()

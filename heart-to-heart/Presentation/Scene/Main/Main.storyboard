@@ -9,7 +9,7 @@
         <!--Main View Controller-->
         <scene sceneID="ZDq-Yh-LhJ">
             <objects>
-                <tabBarController storyboardIdentifier="MainViewController" id="iRP-u1-sSE" customClass="MainViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" hidesBottomBarWhenPushed="YES" id="iRP-u1-sSE" customClass="MainViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tb3-gF-5VF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
