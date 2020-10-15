@@ -6,6 +6,12 @@ class CreatePostViewModel: BaseViewModel {
     
     let didCoordinatorChange = PublishSubject<HomeCoordinatorOptions>()
     
+    private let createPostUseCase: CreatePostUseCase
+    
+    init(createPostUseCase: CreatePostUseCase) {
+        self.createPostUseCase = createPostUseCase
+    }
+    
     func closeCreatePost() {
         self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
@@ -19,6 +25,8 @@ class CreatePostViewModel: BaseViewModel {
     }
     
     func createPost() {
-        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+        print("createPost() from CreatePostViewModel")
+        self.createPostUseCase.execute()
+        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
 }

@@ -15,15 +15,27 @@ class CreatePostViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var createButton: UIButton!
     
     override func viewDidLoad() {
-        self.initButtons()
+        self.initUI()
+        self.bindUI()
     }
     
-    private func initButtons() {
+    private func initUI() {
         self.initCloseButton()
         self.initCameraButton()
         self.initPhotoButton()
         self.initCreateButton()
-        self.bindUI()
+    }
+    
+    private func bindUI() {
+        guard let viewModel = self.viewModel else { return }
+        
+        self.closeButton.rx.tap
+            .bind { [weak self] in self?.viewModel?.closeCreatePost() }
+            .disposed(by: self.disposeBag)
+        
+        self.createButton.rx.tap
+            .bind { [weak self] in self?.viewModel?.createPost() }
+            .disposed(by: self.disposeBag)
     }
     
     private func initCloseButton() {
@@ -56,13 +68,5 @@ class CreatePostViewController: UIViewController, StoryboardInstantiable {
         let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
         createButton.setImage(tintedImage, for: .normal)
         createButton.tintColor = .black
-    }
-    
-    private func bindUI() {
-        guard let viewModel = self.viewModel else { return }
-        
-        self.closeButton.rx.tap
-            .bind { [weak self] in self?.viewModel?.closeCreatePost() }
-            .disposed(by: self.disposeBag)
     }
 }

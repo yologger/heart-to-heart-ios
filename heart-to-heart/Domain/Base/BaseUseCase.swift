@@ -1,4 +1,6 @@
 import RxSwift
 
-class BaseUseCase {
+protocol BaseUseCase {
+    
+    func execute()
 }

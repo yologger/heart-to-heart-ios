@@ -27,6 +27,8 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
     
+    
+        
     override func viewDidLoad() {
         self.bindUI()
     }
@@ -54,39 +56,39 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
         self.passwordTextField.rx.text.orEmpty
             .bind(to: viewModel.password)
             .disposed(by: self.disposeBag)
-//        
-//        viewModel.isEmailValid.subscribe { [weak self] isEmailValid in
-//            if isEmailValid.element! {
-//                self?.emailErrorLabelHeight.isActive = true
-//            } else {
-//                self?.emailErrorLabelHeight.isActive = false
-//            }
-//        }.disposed(by: self.disposeBag)
-//        
-//        viewModel.isFullNameValid.subscribe { [weak self] isFullNameValid in
-//            if isFullNameValid.element! {
-//                self?.fullNameErrorLabelHeight.isActive = true
-//            } else {
-//                self?.fullNameErrorLabelHeight.isActive = false
-//            }
-//        }.disposed(by: self.disposeBag)
-//        
-//        viewModel.isNicknameValid.subscribe { [weak self] isNicknameValid in
-//            if isNicknameValid.element! {
-//                self?.nicknameErrorLabelHeight.isActive = true
-//            } else {
-//                self?.nicknameErrorLabelHeight.isActive = false
-//            }
-//        }.disposed(by: self.disposeBag)
-//        
-//        viewModel.isPasswordValid.subscribe { [weak self] isPasswordValid in
-//            if isPasswordValid.element! {
-//                self?.passwordErrorLabelHeight.isActive = true
-//            } else {
-//                self?.passwordErrorLabelHeight.isActive = false
-//            }
-//        }.disposed(by: self.disposeBag)
-//        
+        
+        viewModel.isEmailValid.subscribe { [weak self] isEmailValid in
+            if isEmailValid.element! {
+                self?.emailErrorLabelHeight.isActive = true
+            } else {
+                self?.emailErrorLabelHeight.isActive = false
+            }
+        }.disposed(by: self.disposeBag)
+        
+        viewModel.isFullNameValid.subscribe { [weak self] isFullNameValid in
+            if isFullNameValid.element! {
+                self?.fullNameErrorLabelHeight.isActive = true
+            } else {
+                self?.fullNameErrorLabelHeight.isActive = false
+            }
+        }.disposed(by: self.disposeBag)
+        
+        viewModel.isNicknameValid.subscribe { [weak self] isNicknameValid in
+            if isNicknameValid.element! {
+                self?.nicknameErrorLabelHeight.isActive = true
+            } else {
+                self?.nicknameErrorLabelHeight.isActive = false
+            }
+        }.disposed(by: self.disposeBag)
+        
+        viewModel.isPasswordValid.subscribe { [weak self] isPasswordValid in
+            if isPasswordValid.element! {
+                self?.passwordErrorLabelHeight.isActive = true
+            } else {
+                self?.passwordErrorLabelHeight.isActive = false
+            }
+        }.disposed(by: self.disposeBag)
+        
         self.logInButton.rx.tap
             .bind { [weak self] in self?.viewModel?.logIn() }
             .disposed(by: self.disposeBag)

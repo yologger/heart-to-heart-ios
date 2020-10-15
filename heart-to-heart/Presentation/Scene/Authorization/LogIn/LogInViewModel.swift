@@ -58,6 +58,7 @@ class LogInViewModel: BaseViewModel {
     }
     
     func findPassword() {
-        didClickFindPasswordButton.onNext(true)
+        self.logInUseCase.test()
+        // didClickFindPasswordButton.onNext(true)
     }
 }

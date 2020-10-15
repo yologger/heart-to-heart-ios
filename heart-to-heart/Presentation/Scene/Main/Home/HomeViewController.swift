@@ -51,6 +51,7 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
+        viewModel!.getAllPosts()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -34,6 +34,8 @@
 		9A5BF28125364D57002B633C /* GetCurrentPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BF28025364D57002B633C /* GetCurrentPasswordViewController.swift */; };
 		9A5BF28325364D82002B633C /* GetCurrentPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BF28225364D82002B633C /* GetCurrentPasswordViewModel.swift */; };
 		9A5BF28525364DC5002B633C /* ChangeNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BF28425364DC5002B633C /* ChangeNicknameViewModel.swift */; };
+		9A5BF28F2537049E002B633C /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BF28E2537049E002B633C /* SignUpUseCase.swift */; };
+		9A5BF29125370BBE002B633C /* PostRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BF29025370BBE002B633C /* PostRepositoryImpl.swift */; };
 		9A6F257824F8E96700000BD8 /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F257724F8E96700000BD8 /* ViewControllerUtils.swift */; };
 		9A6F257A24F8EA7F00000BD8 /* MainCoordiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F257924F8EA7F00000BD8 /* MainCoordiator.swift */; };
 		9A6F257C24F8EC3000000BD8 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F257B24F8EC3000000BD8 /* StoryboardInstantiable.swift */; };
@@ -64,7 +66,6 @@
 		9A6F25FD250721E100000BD8 /* GetSessionStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F25FC250721E100000BD8 /* GetSessionStateUseCase.swift */; };
 		9A6F25FF250723B400000BD8 /* LogInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F25FE250723B400000BD8 /* LogInUseCase.swift */; };
 		9A6F260325072A7B00000BD8 /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F260225072A7B00000BD8 /* SessionRepository.swift */; };
-		9A6F260625072AA300000BD8 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F260525072AA300000BD8 /* BaseRepository.swift */; };
 		9A6F260825073E0A00000BD8 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6F260725073E0A00000BD8 /* Swinject.framework */; };
 		9A6F260B2507416500000BD8 /* Container+RegisterDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F260A2507416500000BD8 /* Container+RegisterDependencies.swift */; };
 		9A6F260D2507419900000BD8 /* Container+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F260C2507419900000BD8 /* Container+ViewModels.swift */; };
@@ -89,6 +90,10 @@
 		9A9282AD24F7DBEE00D61580 /* AuthorizationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9282AC24F7DBEE00D61580 /* AuthorizationCoordinator.swift */; };
 		9A9282AF24F7DC3600D61580 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9282AE24F7DC3600D61580 /* LogInViewController.swift */; };
 		9A9282B124F7DC5200D61580 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9282B024F7DC5200D61580 /* LogIn.storyboard */; };
+		9A9B2BC72537E9F900D37FB8 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B2BC62537E9F900D37FB8 /* PostRepository.swift */; };
+		9A9B2BC92537EA7500D37FB8 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B2BC82537EA7500D37FB8 /* BaseRepository.swift */; };
+		9A9B2BCB2537ECC900D37FB8 /* GetAllPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B2BCA2537ECC900D37FB8 /* GetAllPostsUseCase.swift */; };
+		9A9B2BCD2537F1C000D37FB8 /* CreatePostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B2BCC2537F1C000D37FB8 /* CreatePostUseCase.swift */; };
 		9AFD5AF9251B58E1000D0DEC /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFD5AF8251B58E1000D0DEC /* test.png */; };
 		9AFD5AFB251C6FF8000D0DEC /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD5AFA251C6FF8000D0DEC /* CreatePostViewController.swift */; };
 		9AFD5B00251C772E000D0DEC /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD5AFF251C772E000D0DEC /* CreatePostViewModel.swift */; };
@@ -146,6 +151,8 @@
 		9A5BF28025364D57002B633C /* GetCurrentPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentPasswordViewController.swift; sourceTree = "<group>"; };
 		9A5BF28225364D82002B633C /* GetCurrentPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentPasswordViewModel.swift; sourceTree = "<group>"; };
 		9A5BF28425364DC5002B633C /* ChangeNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameViewModel.swift; sourceTree = "<group>"; };
+		9A5BF28E2537049E002B633C /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
+		9A5BF29025370BBE002B633C /* PostRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryImpl.swift; sourceTree = "<group>"; };
 		9A6F257724F8E96700000BD8 /* ViewControllerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtils.swift; sourceTree = "<group>"; };
 		9A6F257924F8EA7F00000BD8 /* MainCoordiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordiator.swift; sourceTree = "<group>"; };
 		9A6F257B24F8EC3000000BD8 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
@@ -176,7 +183,6 @@
 		9A6F25FC250721E100000BD8 /* GetSessionStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionStateUseCase.swift; sourceTree = "<group>"; };
 		9A6F25FE250723B400000BD8 /* LogInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUseCase.swift; sourceTree = "<group>"; };
 		9A6F260225072A7B00000BD8 /* SessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepository.swift; sourceTree = "<group>"; };
-		9A6F260525072AA300000BD8 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		9A6F260725073E0A00000BD8 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		9A6F260A2507416500000BD8 /* Container+RegisterDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+RegisterDependencies.swift"; sourceTree = "<group>"; };
 		9A6F260C2507419900000BD8 /* Container+ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+ViewModels.swift"; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 		9A9282AC24F7DBEE00D61580 /* AuthorizationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCoordinator.swift; sourceTree = "<group>"; };
 		9A9282AE24F7DC3600D61580 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		9A9282B024F7DC5200D61580 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LogIn.storyboard; path = ../SignUp/LogIn.storyboard; sourceTree = "<group>"; };
+		9A9B2BC62537E9F900D37FB8 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
+		9A9B2BC82537EA7500D37FB8 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		9A9B2BCA2537ECC900D37FB8 /* GetAllPostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsUseCase.swift; sourceTree = "<group>"; };
+		9A9B2BCC2537F1C000D37FB8 /* CreatePostUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostUseCase.swift; sourceTree = "<group>"; };
 		9AFD5AF8251B58E1000D0DEC /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		9AFD5AFA251C6FF8000D0DEC /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		9AFD5AFF251C772E000D0DEC /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
@@ -292,7 +302,6 @@
 		9A4483C124F3FDC500919FA4 /* heart-to-heart */ = {
 			isa = PBXGroup;
 			children = (
-				9A9282A924F7DA3200D61580 /* Base */,
 				9A92824D24F6907000D61580 /* Application */,
 				9A92824E24F690C800D61580 /* DI */,
 				9A9281A324F4107600D61580 /* Data */,
@@ -442,6 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6F25F925071FD000000BD8 /* BaseUseCase.swift */,
+				9A9B2BC82537EA7500D37FB8 /* BaseRepository.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -458,6 +468,9 @@
 			children = (
 				9A6F25FC250721E100000BD8 /* GetSessionStateUseCase.swift */,
 				9A6F25FE250723B400000BD8 /* LogInUseCase.swift */,
+				9A5BF28E2537049E002B633C /* SignUpUseCase.swift */,
+				9A9B2BCA2537ECC900D37FB8 /* GetAllPostsUseCase.swift */,
+				9A9B2BCC2537F1C000D37FB8 /* CreatePostUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -466,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6F260225072A7B00000BD8 /* SessionRepository.swift */,
+				9A5BF29025370BBE002B633C /* PostRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -473,7 +487,6 @@
 		9A6F260425072A8200000BD8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				9A6F260525072AA300000BD8 /* BaseRepository.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -542,6 +555,7 @@
 				9A6F25F625071F8800000BD8 /* Base */,
 				9A6F25F725071F8E00000BD8 /* Model */,
 				9A6F25F825071F9700000BD8 /* UseCase */,
+				9A9B2BC52537E9DE00D37FB8 /* Repository */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -607,11 +621,12 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		9A9282A924F7DA3200D61580 /* Base */ = {
+		9A9B2BC52537E9DE00D37FB8 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				9A9B2BC62537E9F900D37FB8 /* PostRepository.swift */,
 			);
-			path = Base;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		9AFD5AFE251C7289000D0DEC /* CreatePost */ = {
@@ -803,6 +818,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7013EA2522F8F40002DC74 /* FollowingViewController.swift in Sources */,
+				9A9B2BCD2537F1C000D37FB8 /* CreatePostUseCase.swift in Sources */,
 				9A2B4C112535686600C66681 /* FollowerTableViewCell.swift in Sources */,
 				9A6F260F250741E900000BD8 /* Container+Coordinators.swift in Sources */,
 				9A6F25F32506214300000BD8 /* FindPasswordViewModel.swift in Sources */,
@@ -813,6 +829,7 @@
 				9A6F257E24F8EEF100000BD8 /* MainViewController.swift in Sources */,
 				9A7013EC2522F9D10002DC74 /* FollowerViewController.swift in Sources */,
 				9A4483C324F3FDC500919FA4 /* AppDelegate.swift in Sources */,
+				9A9B2BC72537E9F900D37FB8 /* PostRepository.swift in Sources */,
 				9A7013E225223CB00002DC74 /* ChangePasswordViewModel.swift in Sources */,
 				9A06929125219A87008EB135 /* PostListViewController.swift in Sources */,
 				9A6F258924F8F19100000BD8 /* ProfileViewController.swift in Sources */,
@@ -833,11 +850,13 @@
 				9A08C9A3250F92D100C9BE01 /* FollowViewModel.swift in Sources */,
 				9A9282AB24F7DA4F00D61580 /* BaseCoordinator.swift in Sources */,
 				9A6F25A124F9251100000BD8 /* LogInViewModel.swift in Sources */,
+				9A9B2BC92537EA7500D37FB8 /* BaseRepository.swift in Sources */,
 				9A9282AF24F7DC3600D61580 /* LogInViewController.swift in Sources */,
 				9A6F257C24F8EC3000000BD8 /* StoryboardInstantiable.swift in Sources */,
 				9A7013DE252239800002DC74 /* ChangePasswordViewController.swift in Sources */,
 				9A7013E42522EE880002DC74 /* SearchHistoryViewModel.swift in Sources */,
 				9A7013F02522FB830002DC74 /* FollowingViewModel.swift in Sources */,
+				9A9B2BCB2537ECC900D37FB8 /* GetAllPostsUseCase.swift in Sources */,
 				9A7013E025223B730002DC74 /* ProfileViewModel.swift in Sources */,
 				9A04D4BD251DCAE60088CCAB /* SearchHistoryViewController.swift in Sources */,
 				9A6F257A24F8EA7F00000BD8 /* MainCoordiator.swift in Sources */,
@@ -846,7 +865,7 @@
 				9A6F25EC24FE41A800000BD8 /* FindPasswordViewController.swift in Sources */,
 				9A5BF27D25364CB0002B633C /* ChangeNicknameViewController.swift in Sources */,
 				9A6F25EF2500D0C800000BD8 /* BaseViewModel.swift in Sources */,
-				9A6F260625072AA300000BD8 /* BaseRepository.swift in Sources */,
+				9A5BF28F2537049E002B633C /* SignUpUseCase.swift in Sources */,
 				9A6F25FF250723B400000BD8 /* LogInUseCase.swift in Sources */,
 				9A08C9A7250F9AC200C9BE01 /* FollowingTableViewCell.swift in Sources */,
 				9A6F260D2507419900000BD8 /* Container+ViewModels.swift in Sources */,
@@ -856,6 +875,7 @@
 				9A5BF27825359E65002B633C /* SearchHistoryTableViewCell.swift in Sources */,
 				9A6F25F12500D20300000BD8 /* SignUpViewModel.swift in Sources */,
 				9AFD5AFB251C6FF8000D0DEC /* CreatePostViewController.swift in Sources */,
+				9A5BF29125370BBE002B633C /* PostRepositoryImpl.swift in Sources */,
 				9A6F257824F8E96700000BD8 /* ViewControllerUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,16 @@ class HomeViewModel: BaseViewModel {
     
     let didCoordinatorChange = BehaviorSubject<HomeCoordinatorOptions>(value: .showCreatePostVC)
     
+    private let getAllPostsUseCase: GetAllPostsUseCase
+    
+    init(getAllPostsUseCase: GetAllPostsUseCase) {
+        self.getAllPostsUseCase = getAllPostsUseCase
+    }
+    
+    func getAllPosts() {
+        getAllPostsUseCase.execute()
+    }
+    
     func createPost() {
         self.didCoordinatorChange.onNext(.showCreatePostVC)
     }

@@ -22,7 +22,10 @@ class SignUpViewModel: BaseViewModel {
     let didClickSignUpButton = BehaviorSubject(value: false)
     let didClickLogInButton = BehaviorSubject(value: false)
     
-    override init() {
+    private var signUpUseCase: SignUpUseCase
+    
+    init(signUpUseCase: SignUpUseCase) {
+        self.signUpUseCase = signUpUseCase
         super.init()
         self.bindUI()
     }
@@ -63,10 +66,13 @@ class SignUpViewModel: BaseViewModel {
     }
     
     func signUp() {
-        didClickSignUpButton.onNext(true)
+        self.signUpUseCase.execute()
+        print("signUp() from SignUpViewModel")
+        // didClickSignUpButton.onNext(true)
     }
     
     func logIn() {
-        didClickLogInButton.onNext(true)
+        
+        // didClickLogInButton.onNext(true)
     }
 }
