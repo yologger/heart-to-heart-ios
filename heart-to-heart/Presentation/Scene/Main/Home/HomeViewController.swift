@@ -43,7 +43,6 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad() from HomeViewController")
         // self.initTableView()
         self.initNavigation()
         self.initSearchBar()

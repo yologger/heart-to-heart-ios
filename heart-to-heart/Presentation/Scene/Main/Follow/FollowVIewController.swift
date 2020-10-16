@@ -20,7 +20,6 @@ class FollowViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad() from FollowViewController")
         
         self.segmentedControl.addTarget(self, action: #selector(FollowViewController.indexChanged(_:)), for: .valueChanged)
         self.segmentedControl.setTitle("Following", forSegmentAt: 0)
@@ -32,10 +31,6 @@ class FollowViewController: UIViewController, StoryboardInstantiable {
         
 //        var items = ["first", "second"]
 //        self.navigationItem.titleView = UISegmentedControl(items: items)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear from FollowViewController")
     }
     
     @objc func indexChanged(_ sender: UISegmentedControl) {

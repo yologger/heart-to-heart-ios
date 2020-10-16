@@ -5,7 +5,6 @@ class SearchHistoryViewController: UITableViewController, StoryboardInstantiable
     static var storyboard: AppStoryboard = .searchHistory
     
     override func viewDidLoad() {
-    
         self.tableView.register(UINib(nibName: "SearchHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "search_history_table_view_cell")
     }
     
