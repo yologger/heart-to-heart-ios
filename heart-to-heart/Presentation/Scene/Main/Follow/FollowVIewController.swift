@@ -42,7 +42,6 @@ class FollowViewController: UIViewController, StoryboardInstantiable {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear from FollowViewController")
         // self.tableView.rowHeight = 200
         // 임시로 사용될 셀의 높이
         // self.tableView.estimatedRowHeight = 100

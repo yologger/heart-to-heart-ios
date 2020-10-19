@@ -8,6 +8,10 @@ class CreatePostViewModel: BaseViewModel {
     
     private let createPostUseCase: CreatePostUseCase
     
+    private var name: String = "Ronaldo"
+    private var age: Int = 5
+    
+    
     init(createPostUseCase: CreatePostUseCase) {
         self.createPostUseCase = createPostUseCase
     }

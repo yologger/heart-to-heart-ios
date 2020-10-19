@@ -1,6 +1,6 @@
 import RxSwift
 
-class SignUpUseCase: BaseUseCase {
+class GetSessionUseCase: BaseUseCase {
     
     private let sessionRepository: SessionRepository
     
@@ -9,7 +9,7 @@ class SignUpUseCase: BaseUseCase {
     }
     
     func execute() {
-        print("execute() from SignUpUseCase")
-        sessionRepository.signUp()
+        print("execute() from GetSessionUseCase")
+        sessionRepository.test()
     }
 }

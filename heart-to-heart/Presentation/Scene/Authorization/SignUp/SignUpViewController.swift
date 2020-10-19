@@ -9,92 +9,128 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
     private let disposeBag = DisposeBag()
     var viewModel: SignUpViewModel?
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var fullnameTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var emailErrorMessageLabel: UILabel!
-    @IBOutlet weak var fullNameErrorMessageLabel: UILabel!
-    @IBOutlet weak var nicknameErrorMessage: UILabel!
-    @IBOutlet weak var passwordErrorMessage: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var fullnameLabel: UILabel!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
     
-    var emailErrorLabelHeight: NSLayoutConstraint!
-    var fullNameErrorLabelHeight: NSLayoutConstraint!
-    var nicknameErrorLabelHeight: NSLayoutConstraint!
-    var passwordErrorLabelHeight: NSLayoutConstraint!
+    var emailLabelHeight: NSLayoutConstraint!
+    var fullnameLabelHeight: NSLayoutConstraint!
+    var nicknameLabelHeight: NSLayoutConstraint!
+    var passwordLabelHeight: NSLayoutConstraint!
     
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
     
-    
-        
     override func viewDidLoad() {
-        self.bindUI()
+        self.initBinding()
     }
     
-    private func bindUI() {
-        guard let viewModel = self.viewModel else { return }
+    override func viewWillAppear(_ animated: Bool) {
+        self.initUI()
+    }
+    
+    private func initBinding() {
         
-        self.emailErrorLabelHeight = emailErrorMessageLabel.heightAnchor.constraint(equalToConstant: 0)
-        self.fullNameErrorLabelHeight = fullNameErrorMessageLabel.heightAnchor.constraint(equalToConstant: 0)
-        self.nicknameErrorLabelHeight = nicknameErrorMessage.heightAnchor.constraint(equalToConstant: 0)
-        self.passwordErrorLabelHeight = passwordErrorMessage.heightAnchor.constraint(equalToConstant: 0)
+        guard let viewModel = self.viewModel else { return }
+
+        self.emailLabelHeight = emailLabel.heightAnchor.constraint(equalToConstant: 0)
+        self.fullnameLabelHeight = fullnameLabel.heightAnchor.constraint(equalToConstant: 0)
+        self.nicknameLabelHeight = nicknameLabel.heightAnchor.constraint(equalToConstant: 0)
+        self.passwordLabelHeight = passwordLabel.heightAnchor.constraint(equalToConstant: 0)
         
         self.emailTextField.rx.text.orEmpty
             .bind(to: viewModel.email)
             .disposed(by: self.disposeBag)
-        
-        self.fullNameTextField.rx.text.orEmpty
+
+        self.fullnameTextField.rx.text.orEmpty
             .bind(to: viewModel.fullName)
             .disposed(by: self.disposeBag)
-        
+
         self.nicknameTextField.rx.text.orEmpty
             .bind(to: viewModel.nickname)
             .disposed(by: self.disposeBag)
-        
+
         self.passwordTextField.rx.text.orEmpty
             .bind(to: viewModel.password)
             .disposed(by: self.disposeBag)
         
         viewModel.isEmailValid.subscribe { [weak self] isEmailValid in
             if isEmailValid.element! {
-                self?.emailErrorLabelHeight.isActive = true
+                self?.emailLabelHeight.isActive = true
             } else {
-                self?.emailErrorLabelHeight.isActive = false
+                self?.emailLabelHeight.isActive = false
             }
         }.disposed(by: self.disposeBag)
-        
+
         viewModel.isFullNameValid.subscribe { [weak self] isFullNameValid in
             if isFullNameValid.element! {
-                self?.fullNameErrorLabelHeight.isActive = true
+                self?.fullnameLabelHeight.isActive = true
             } else {
-                self?.fullNameErrorLabelHeight.isActive = false
+                self?.fullnameLabelHeight.isActive = false
             }
         }.disposed(by: self.disposeBag)
-        
+
         viewModel.isNicknameValid.subscribe { [weak self] isNicknameValid in
             if isNicknameValid.element! {
-                self?.nicknameErrorLabelHeight.isActive = true
+                self?.nicknameLabelHeight.isActive = true
             } else {
-                self?.nicknameErrorLabelHeight.isActive = false
+                self?.nicknameLabelHeight.isActive = false
             }
         }.disposed(by: self.disposeBag)
-        
+
         viewModel.isPasswordValid.subscribe { [weak self] isPasswordValid in
             if isPasswordValid.element! {
-                self?.passwordErrorLabelHeight.isActive = true
+                self?.passwordLabelHeight.isActive = true
             } else {
-                self?.passwordErrorLabelHeight.isActive = false
+                self?.passwordLabelHeight.isActive = false
             }
         }.disposed(by: self.disposeBag)
-        
+
         self.logInButton.rx.tap
             .bind { [weak self] in self?.viewModel?.logIn() }
             .disposed(by: self.disposeBag)
-        
+
         self.signUpButton.rx.tap
             .bind { [weak self] in self?.viewModel?.signUp() }
             .disposed(by: self.disposeBag)
+    }
+    
+    private func initUI() {
+        self.emailTextField.clearButtonMode = .whileEditing
+        self.fullnameTextField.clearButtonMode = .whileEditing
+        self.nicknameTextField.clearButtonMode = .whileEditing
+        self.passwordTextField.isSecureTextEntry.toggle()
+        self.passwordTextField.rightViewMode = .always
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    @objc func keyboardWillShow(_ notification:NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            scrollView.contentInset.bottom = keyboardHeight - self.view.safeAreaInsets.bottom
+            scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight - self.view.safeAreaInsets.bottom
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification:NSNotification) {
+        scrollView.contentInset.bottom = 0
+        scrollView.verticalScrollIndicatorInsets.bottom = 0
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 }

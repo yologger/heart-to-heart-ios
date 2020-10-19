@@ -66,8 +66,8 @@ class SignUpViewModel: BaseViewModel {
     }
     
     func signUp() {
-        self.signUpUseCase.execute()
         print("signUp() from SignUpViewModel")
+//        self.signUpUseCase.execute()
         // didClickSignUpButton.onNext(true)
     }
     

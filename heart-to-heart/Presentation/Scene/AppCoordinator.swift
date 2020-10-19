@@ -4,13 +4,15 @@ import RxSwift
 class AppCoordinator: BaseCoordinator {
     
     private var window = UIWindow(frame: UIScreen.main.bounds)
-    private var isLoggedIn = true
+    private var isLoggedIn = false
 
     private let disposeBag = DisposeBag()
-    private let sessionRepository: SessionRepository
     
-    init(sessionRepository: SessionRepository) {
-        self.sessionRepository = sessionRepository
+    private let getSessionUseCase: GetSessionUseCase
+    
+    init(getSessionUseCase: GetSessionUseCase) {
+        self.getSessionUseCase = getSessionUseCase
+        getSessionUseCase.execute()
     }
     
     override func start() {
@@ -35,12 +37,5 @@ class AppCoordinator: BaseCoordinator {
     }
     
     func subscribeSessionChange() {
-        self.sessionRepository.didLogIn
-            .subscribe { [weak self] in self?.showMain() }
-            .disposed(by: disposeBag)
-        
-        self.sessionRepository.didLogOut
-            .subscribe { [weak self] in self?.showAuthorization() }
-            .disposed(by: disposeBag)
     }
 }

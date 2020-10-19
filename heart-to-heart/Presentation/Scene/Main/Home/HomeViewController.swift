@@ -53,14 +53,6 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
         viewModel!.getAllPosts()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear from HomeViewController")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear from HomeViewController")
-    }
-    
     @objc private func buttonPressed(_ sender: Any) {
         if let button = sender as? UIBarButtonItem {
             switch button.tag {
