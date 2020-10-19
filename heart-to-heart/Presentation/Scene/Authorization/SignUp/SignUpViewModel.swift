@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 enum SignUpCoordinatorScreen {
     case signUp
@@ -8,6 +9,8 @@ enum SignUpCoordinatorScreen {
 }
 
 class SignUpViewModel: BaseViewModel {
+    
+    let didCoordinatorChange = PublishSubject<AuthorizationCoordinatorOptions>()
     
     let email = BehaviorSubject<String>(value: "")
     let fullName = BehaviorSubject<String>(value: "")
@@ -68,11 +71,11 @@ class SignUpViewModel: BaseViewModel {
     func signUp() {
         print("signUp() from SignUpViewModel")
 //        self.signUpUseCase.execute()
-        // didClickSignUpButton.onNext(true)
+        
     }
     
     func logIn() {
-        
-        // didClickLogInButton.onNext(true)
+        print("LogIn() from SignUpViewModel")
+        self.didCoordinatorChange.onNext(.closeSignUpVC)
     }
 }

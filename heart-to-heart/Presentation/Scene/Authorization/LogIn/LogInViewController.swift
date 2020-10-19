@@ -94,13 +94,48 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func initUI() {
+        self.initEmailTextField()
+        self.initPasswordTextField()
+        self.initEmailLabel()
+        self.initPasswordLabel()
+        self.initLogInButton()
+    }
+    
+    private func initEmailTextField() {
         let border = CALayer()
         border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-1, width: emailTextField.frame.width, height: 1)
         border.backgroundColor = UIColor.black.cgColor
+
         emailTextField.layer.addSublayer(border)
-        // emailTextField.textAlignment = .center
         emailTextField.textColor = UIColor.black
         emailTextField.backgroundColor = .orange
+        self.emailTextField.clearButtonMode = .whileEditing
+    }
+    
+    private func initPasswordTextField() {
+//        let border = CALayer()
+//        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
+//        border.backgroundColor = UIColor.black.cgColor
+//
+//        passwordTextField.layer.addSublayer(border)
+//        passwordTextField.textColor = UIColor.black
+//        passwordTextField.backgroundColor = .orange
+//        self.passwordTextField.clearButtonMode = .whileEditing
+    }
+    
+    private func initEmailLabel() {
+        self.emailLabel.text = "Wrong Email Format"
+        self.emailLabel.textColor = .red
+    }
+    
+    private func initPasswordLabel() {
+        self.passwordLabel.text = "Wrong Password Format"
+        self.passwordLabel.textColor = .red
+    }
+    
+    private func initLogInButton() {
+        self.logInButton.backgroundColor = .blue
+        self.logInButton.setTitleColor(.white, for: .normal)
     }
     
     @objc func keyboardWillShow(_ notification:NSNotification) {

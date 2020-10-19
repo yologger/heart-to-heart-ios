@@ -4,7 +4,7 @@ import RxCocoa
 
 class HomeViewModel: BaseViewModel {
     
-    let didCoordinatorChange = BehaviorSubject<HomeCoordinatorOptions>(value: .showCreatePostVC)
+    let didCoordinatorChange = PublishSubject<HomeCoordinatorOptions>()
     
     private let getAllPostsUseCase: GetAllPostsUseCase
     

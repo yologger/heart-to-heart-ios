@@ -4,6 +4,8 @@ import RxCocoa
 
 class LogInViewModel: BaseViewModel {
 
+    let didCoordinatorChange = PublishSubject<AuthorizationCoordinatorOptions>()
+    
     let email = BehaviorSubject<String>(value: "")
     let password = BehaviorSubject<String>(value: "")
     let isEmailValid = BehaviorSubject<Bool>(value: false)
@@ -54,11 +56,11 @@ class LogInViewModel: BaseViewModel {
     }
     
     func signUp() {
-        didClickSignUpButton.onNext(true)
+        didCoordinatorChange.onNext(.showSignUpVC)
     }
     
     func findPassword() {
         self.logInUseCase.test()
-        // didClickFindPasswordButton.onNext(true)
+        didCoordinatorChange.onNext(.showFindPasswordVC)
     }
 }
