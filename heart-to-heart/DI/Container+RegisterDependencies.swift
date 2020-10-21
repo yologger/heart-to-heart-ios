@@ -8,5 +8,6 @@ extension Container {
         self.registerViewModels()
         self.registerUseCases()
         self.registerRepositories()
+        self.registerDataSources()
     }
 }

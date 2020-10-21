@@ -1,4 +1,4 @@
-protocol SessionRepository: BaseRepository {
+protocol AuthorizationApi {
     
     func test()
     

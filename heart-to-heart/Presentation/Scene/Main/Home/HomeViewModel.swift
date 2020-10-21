@@ -12,6 +12,10 @@ class HomeViewModel: BaseViewModel {
         self.getAllPostsUseCase = getAllPostsUseCase
     }
     
+    func showPostList() {
+        didCoordinatorChange.onNext(.showPostListVC)
+    }
+    
     func getAllPosts() {
         getAllPostsUseCase.execute()
     }

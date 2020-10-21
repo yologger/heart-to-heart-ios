@@ -13,12 +13,14 @@ class SignUpViewModel: BaseViewModel {
     let didCoordinatorChange = PublishSubject<AuthorizationCoordinatorOptions>()
     
     let email = BehaviorSubject<String>(value: "")
-    let fullName = BehaviorSubject<String>(value: "")
+    let firstname = BehaviorSubject<String>(value: "")
+    let lastname = BehaviorSubject<String>(value: "")
     let nickname = BehaviorSubject<String>(value: "")
     let password = BehaviorSubject<String>(value: "")
     
     let isEmailValid = BehaviorSubject<Bool>(value: false)
-    let isFullNameValid = BehaviorSubject<Bool>(value: false)
+    let isFirstnameValid = BehaviorSubject<Bool>(value: false)
+    let isLastnameValid = BehaviorSubject<Bool>(value: false)
     let isNicknameValid = BehaviorSubject<Bool>(value: false)
     let isPasswordValid = BehaviorSubject<Bool>(value: false)
     
@@ -35,14 +37,14 @@ class SignUpViewModel: BaseViewModel {
     
     private func bindUI() {
         email.map(checkEmailValidation).bind(to: self.isEmailValid).disposed(by: self.disposeBag)
-        fullName.map(checkFullNameValidation).bind(to: self.isFullNameValid).disposed(by: self.disposeBag)
+        firstname.map(checkFullNameValidation).bind(to: self.isFirstnameValid).disposed(by: self.disposeBag)
+        lastname.map(checkFullNameValidation).bind(to: self.isLastnameValid).disposed(by: self.disposeBag)
         nickname.map(checkNicknameValidation).bind(to: self.isNicknameValid).disposed(by: self.disposeBag)
         password.map(checkPasswordValidation).bind(to: self.isPasswordValid).disposed(by: self.disposeBag)
     }
     
     private func checkEmailValidation(_ email: String?) -> Bool {
         guard email != nil else { return false }
-        
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
@@ -68,10 +70,13 @@ class SignUpViewModel: BaseViewModel {
         return passwordPred.evaluate(with: password)
     }
     
-    func signUp() {
+    func signUp(email: String, fullname: String, nickname: String, password: String) {
         print("signUp() from SignUpViewModel")
-//        self.signUpUseCase.execute()
-        
+        self.signUpUseCase.email = email
+        self.signUpUseCase.fullname = fullname
+        self.signUpUseCase.nickname = nickname
+        self.signUpUseCase.password = password
+        self.signUpUseCase.execute()
     }
     
     func logIn() {

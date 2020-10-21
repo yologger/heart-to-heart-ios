@@ -51,6 +51,8 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         viewModel!.getAllPosts()
+        viewModel!.showPostList()
+
     }
     
     @objc private func buttonPressed(_ sender: Any) {

@@ -12,7 +12,8 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var fullnameTextField: UITextField!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -31,6 +32,20 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         self.initBinding()
+
+        emailTextField.text = "ronaldo@gmail.com"
+        firstnameTextField.text = "Cristiano"
+        lastnameTextField.text = "Ronaldo"
+        nicknameTextField.text = "CR9"
+        passwordTextField.text = "PW123Ronaldo!"
+        
+        
+        emailTextField.text = "sonny@gmail.com"
+        firstnameTextField.text = "Heungmin"
+        lastnameTextField.text = "Son"
+        nicknameTextField.text = "sonny92"
+        passwordTextField.text = "PW123Son!"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,8 +65,12 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
             .bind(to: viewModel.email)
             .disposed(by: self.disposeBag)
 
-        self.fullnameTextField.rx.text.orEmpty
-            .bind(to: viewModel.fullName)
+        self.firstnameTextField.rx.text.orEmpty
+            .bind(to: viewModel.firstname)
+            .disposed(by: self.disposeBag)
+
+        self.lastnameTextField.rx.text.orEmpty
+            .bind(to: viewModel.lastname)
             .disposed(by: self.disposeBag)
 
         self.nicknameTextField.rx.text.orEmpty
@@ -70,37 +89,40 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
             }
         }.disposed(by: self.disposeBag)
 
-        viewModel.isFullNameValid.subscribe { [weak self] isFullNameValid in
-            if isFullNameValid.element! {
-                self?.fullnameLabelHeight.isActive = true
-            } else {
-                self?.fullnameLabelHeight.isActive = false
-            }
-        }.disposed(by: self.disposeBag)
-
-        viewModel.isNicknameValid.subscribe { [weak self] isNicknameValid in
-            if isNicknameValid.element! {
-                self?.nicknameLabelHeight.isActive = true
-            } else {
-                self?.nicknameLabelHeight.isActive = false
-            }
-        }.disposed(by: self.disposeBag)
-
-        viewModel.isPasswordValid.subscribe { [weak self] isPasswordValid in
-            if isPasswordValid.element! {
-                self?.passwordLabelHeight.isActive = true
-            } else {
-                self?.passwordLabelHeight.isActive = false
-            }
-        }.disposed(by: self.disposeBag)
+//        viewModel.isFullNameValid.subscribe { [weak self] isFullNameValid in
+//            if isFullNameValid.element! {
+//                self?.fullnameLabelHeight.isActive = true
+//            } else {
+//                self?.fullnameLabelHeight.isActive = false
+//            }
+//        }.disposed(by: self.disposeBag)
+//
+//        viewModel.isNicknameValid.subscribe { [weak self] isNicknameValid in
+//            if isNicknameValid.element! {
+//                self?.nicknameLabelHeight.isActive = true
+//            } else {
+//                self?.nicknameLabelHeight.isActive = false
+//            }
+//        }.disposed(by: self.disposeBag)
+//
+//        viewModel.isPasswordValid.subscribe { [weak self] isPasswordValid in
+//            if isPasswordValid.element! {
+//                self?.passwordLabelHeight.isActive = true
+//            } else {
+//                self?.passwordLabelHeight.isActive = false
+//            }
+//        }.disposed(by: self.disposeBag)
 
         self.logInButton.rx.tap
             .bind { [weak self] in self?.viewModel?.logIn() }
             .disposed(by: self.disposeBag)
 
-        self.signUpButton.rx.tap
-            .bind { [weak self] in self?.viewModel?.signUp() }
-            .disposed(by: self.disposeBag)
+//        self.signUpButton.rx.tap
+//            .bind { [weak self] in
+//                guard let email = self?.emailTextField.text, let fullname = self?.fullnameTextField.text, let nickname = self?.nicknameTextField.text, let password = self?.passwordTextField.text else { return }
+//                self?.viewModel?.signUp(email: email, fullname: fullname, nickname: nickname, password: password)
+//            }
+//            .disposed(by: self.disposeBag)
     }
     
     @objc func keyboardWillShow(_ notification:NSNotification) {
@@ -127,12 +149,14 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.emailTextField.placeholder = "Email"
-        self.fullnameTextField.placeholder = "Full Name"
+        self.firstnameTextField.placeholder = "First Name"
+        self.lastnameTextField.placeholder = "Last Name"
         self.nicknameTextField.placeholder = "Nickname"
         self.passwordTextField.placeholder = "Password"
         
         self.emailTextField.clearButtonMode = .whileEditing
-        self.fullnameTextField.clearButtonMode = .whileEditing
+        self.firstnameTextField.clearButtonMode = .whileEditing
+        self.lastnameTextField.clearButtonMode = .whileEditing
         self.nicknameTextField.clearButtonMode = .whileEditing
         self.passwordTextField.isSecureTextEntry = true
     }

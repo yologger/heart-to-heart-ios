@@ -61,16 +61,29 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prC-Fo-C6y" userLabel="Fullname Container View">
                                                         <rect key="frame" x="0.0" y="116.5" width="382" height="116.5"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GT3-90-cSb" userLabel="Fullname TextField">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EEi-T4-fiw">
                                                                 <rect key="frame" x="16" y="16" width="350" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="Dho-km-O0S"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GT3-90-cSb" userLabel="Firstname TextField">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="Dho-km-O0S"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPE-OG-fQc" userLabel="Lastname TextField">
+                                                                        <rect key="frame" x="183" y="0.0" width="167" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="qif-Kn-saT"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Let-j5-sjZ" userLabel="Fullname Label">
-                                                                <rect key="frame" x="16" y="60" width="350" height="40.5"/>
+                                                                <rect key="frame" x="16" y="72" width="350" height="28.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -78,11 +91,11 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="Let-j5-sjZ" secondAttribute="trailing" constant="16" id="2ec-ZD-3zj"/>
-                                                            <constraint firstItem="Let-j5-sjZ" firstAttribute="top" secondItem="GT3-90-cSb" secondAttribute="bottom" constant="4" id="9o6-Pk-7zs"/>
+                                                            <constraint firstItem="Let-j5-sjZ" firstAttribute="top" secondItem="EEi-T4-fiw" secondAttribute="bottom" constant="16" id="C9Q-5d-bm9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="EEi-T4-fiw" secondAttribute="trailing" constant="16" id="Da0-tG-B6E"/>
                                                             <constraint firstAttribute="bottom" secondItem="Let-j5-sjZ" secondAttribute="bottom" constant="16" id="EeB-1I-rxQ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="GT3-90-cSb" secondAttribute="trailing" constant="16" id="HL4-vd-FF9"/>
-                                                            <constraint firstItem="GT3-90-cSb" firstAttribute="top" secondItem="prC-Fo-C6y" secondAttribute="top" constant="16" id="NaB-Ot-Bdr"/>
-                                                            <constraint firstItem="GT3-90-cSb" firstAttribute="leading" secondItem="prC-Fo-C6y" secondAttribute="leading" constant="16" id="qlT-ue-3BH"/>
+                                                            <constraint firstItem="EEi-T4-fiw" firstAttribute="leading" secondItem="prC-Fo-C6y" secondAttribute="leading" constant="16" id="bqK-Qz-b03"/>
+                                                            <constraint firstItem="EEi-T4-fiw" firstAttribute="top" secondItem="prC-Fo-C6y" secondAttribute="top" constant="16" id="r9Q-aE-lAO"/>
                                                             <constraint firstItem="Let-j5-sjZ" firstAttribute="leading" secondItem="prC-Fo-C6y" secondAttribute="leading" constant="16" id="ujp-1B-AlE"/>
                                                         </constraints>
                                                     </view>
@@ -202,8 +215,9 @@
                     <connections>
                         <outlet property="emailLabel" destination="jP0-ke-TUB" id="UkQ-7K-OzL"/>
                         <outlet property="emailTextField" destination="V6l-uP-wL2" id="hfj-4D-HAJ"/>
+                        <outlet property="firstnameTextField" destination="GT3-90-cSb" id="BGP-vP-vD4"/>
                         <outlet property="fullnameLabel" destination="Let-j5-sjZ" id="ohZ-s5-HQQ"/>
-                        <outlet property="fullnameTextField" destination="GT3-90-cSb" id="1yx-dy-vWC"/>
+                        <outlet property="lastnameTextField" destination="dPE-OG-fQc" id="dgr-uk-OvX"/>
                         <outlet property="logInButton" destination="nQx-fN-w61" id="V3R-LW-Pbh"/>
                         <outlet property="nicknameLabel" destination="ZHj-e8-k18" id="P3g-0f-6mC"/>
                         <outlet property="nicknameTextField" destination="FXR-fO-lO5" id="1Hn-0a-Kud"/>

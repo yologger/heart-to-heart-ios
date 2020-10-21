@@ -29,7 +29,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K9N-zw-ZmX">
-                                                <rect key="frame" x="68" y="786" width="278.5" height="30"/>
+                                                <rect key="frame" x="64" y="786" width="286.5" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't you have any account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-ng-tYA" userLabel="SignUp Label">
                                                         <rect key="frame" x="0.0" y="0.0" width="219.5" height="30"/>
@@ -38,8 +38,8 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmo-51-ZoU" userLabel="SignUp Button">
-                                                        <rect key="frame" x="227.5" y="0.0" width="51" height="30"/>
-                                                        <state key="normal" title="Sign In."/>
+                                                        <rect key="frame" x="227.5" y="0.0" width="59" height="30"/>
+                                                        <state key="normal" title="Sign Up."/>
                                                     </button>
                                                 </subviews>
                                             </stackView>

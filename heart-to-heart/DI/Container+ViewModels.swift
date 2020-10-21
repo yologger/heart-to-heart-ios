@@ -7,6 +7,7 @@ extension Container {
         self.autoregister(SignUpViewModel.self, initializer: SignUpViewModel.init)
         self.autoregister(FindPasswordViewModel.self, initializer: FindPasswordViewModel.init)
         self.autoregister(HomeViewModel.self, initializer: HomeViewModel.init)
+        self.autoregister(PostListViewModel.self, initializer: PostListViewModel.init)
         self.autoregister(CreatePostViewModel.self, initializer: CreatePostViewModel.init)
         self.autoregister(SearchHistoryViewModel.self, initializer: SearchHistoryViewModel.init)
         self.autoregister(FollowViewModel.self, initializer: FollowViewModel.init)

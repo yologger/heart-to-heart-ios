@@ -1,11 +1,17 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PostListViewController: UITableViewController, StoryboardInstantiable {
     
     static var storyboard: AppStoryboard = .postList
     
+    private let disposeBag = DisposeBag()
+    var viewModel: PostListViewModel?
+    
     override func viewDidLoad() {
         self.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "post_table_view_cell")
+        viewModel?.test()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
