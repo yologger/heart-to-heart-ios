@@ -76,16 +76,29 @@ class SignUpViewModel: BaseViewModel {
         self.signUpUseCase.lastname = lastname
         self.signUpUseCase.nickname = nickname
         self.signUpUseCase.password = password
-        self.signUpUseCase.executeTest().subscribe(onNext: { [weak self] result in
-            self?.didCoordinatorChange.onNext(.closeSignUpVC)
-        }, onError: { error in
-            print(error)
-            // Show something
-        }, onCompleted: {
-            print("onCompleted.")
-        }) {
-            print("onDisposed")
-        }.disposed(by: self.disposeBag)
+        
+        self.signUpUseCase.execute()
+            .subscribe(onNext: { [weak self] signUpResponse in
+                print("onNext()")
+                switch signUpResponse {
+                case .success:
+                    self?.didCoordinatorChange.onNext(.closeSignUpVC)
+                case .error(let error):
+                    switch error {
+                    case .accountAlreadyExist:
+                        print("AccountAlreadyExist")
+                    default:
+                        print("Other Error")
+                    }
+                }
+            }, onError: { error in
+                print("onError")
+                print(error.localizedDescription)
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
+            }).disposed(by: self.disposeBag)
     }
     
     func logIn() {

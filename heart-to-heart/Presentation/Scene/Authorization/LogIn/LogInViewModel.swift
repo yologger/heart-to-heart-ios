@@ -60,7 +60,7 @@ class LogInViewModel: BaseViewModel {
     }
     
     func findPassword() {
-        self.logInUseCase.test()
+        self.logInUseCase.execute()
         didCoordinatorChange.onNext(.showFindPasswordVC)
     }
 }

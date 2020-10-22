@@ -9,7 +9,7 @@ enum HttpMethod: String {
 }
 
 enum HttpStatusCode: Int {
-    case success = 200
+    case susccess = 200
     case badRequest = 400
     case authenticationFailed = 401
     case forbidden = 403
@@ -26,15 +26,11 @@ class NetworkRequest {
     
 }
 
-//class NetworkResponse {
-//    case success()
-//    case error()
-//}
 
 
 protocol AuthorizationApi {
     
     func test()
     
-    func signUp(email: String, firstname: String, lastname: String,  nickname: String, password: String) -> Observable<Bool>
+    func signUp(email: String, firstname: String, lastname: String,  nickname: String, password: String) -> Observable<SignUpResponse>
 }

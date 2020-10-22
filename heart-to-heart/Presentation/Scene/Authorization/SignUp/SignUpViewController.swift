@@ -32,20 +32,19 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         self.initBinding()
+                
+//        emailTextField.text = "sonny@gmail.com"
+//        firstnameTextField.text = "Heungmin"
+//        lastnameTextField.text = "Son"
+//        nicknameTextField.text = "sonny92"
+//        passwordTextField.text = "PW123Son!"
 
+        
         emailTextField.text = "ronaldo@gmail.com"
         firstnameTextField.text = "Cristiano"
         lastnameTextField.text = "Ronaldo"
         nicknameTextField.text = "CR9"
         passwordTextField.text = "PW123Ronaldo!"
-        
-        
-        emailTextField.text = "sonny@gmail.com"
-        firstnameTextField.text = "Heungmin"
-        lastnameTextField.text = "Son"
-        nicknameTextField.text = "sonny92"
-        passwordTextField.text = "PW123Son!"
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

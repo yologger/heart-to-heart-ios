@@ -1,6 +1,6 @@
 import RxSwift
 
-final class SignUpUseCase {
+class SignUpUseCase {
     
     var email: String?
     var firstname: String?
@@ -13,29 +13,21 @@ final class SignUpUseCase {
     init(sessionRepository: SessionRepository) {
         self.sessionRepository = sessionRepository
     }
-}
 
-
-extension SignUpUseCase: BaseUseCase {
     
-    func executeTest() -> Observable<Bool> {
-        return Observable<Bool>.create { observer -> Disposable in
-            observer.onNext(true)
-            return Disposables.create()
-        }
+    func execute() -> Observable<SignUpResponse> {
+        return self.signUp()
     }
     
-    func execute() {
-        self.signUp()
-    }
-    
-    private func signUp() {
+    private func signUp() -> Observable<SignUpResponse> {
         guard let email = self.email,
             let firstname = self.firstname,
             let lastname =  self.lastname,
             let nickname = self.nickname,
-            let password = self.password else { return }
+            let password = self.password else { return Observable<SignUpResponse>.create{ observer in
+                return Disposables.create()
+                } }
         
-        sessionRepository.signUp(email: email, firstname: firstname, lastname: lastname, nickname: nickname, password: password)
+        return sessionRepository.signUp(email: email, firstname: firstname, lastname: lastname, nickname: nickname, password: password)
     }
 }

@@ -1,6 +1,6 @@
 import RxSwift
 
-class LogInUseCase {
+final class LogInUseCase {
     
     var email: String?
     var password: String?
@@ -10,6 +10,9 @@ class LogInUseCase {
     init(sessionRepository: SessionRepository) {
         self.sessionRepository = sessionRepository
     }
+}
+
+extension LogInUseCase: BaseUseCase{
     
     func test() {
         print("LogInUsecase")
@@ -17,11 +20,11 @@ class LogInUseCase {
     }
     
     func execute(){
+        self.logIn()
+    }
+    
+    func logIn() {
+        guard let email = self.email, let password = self.password else { return }
         
-//        return Observable<Bool>.create { emitter -> Disposable in
-//            emitter.onNext(true)
-//            emitter.onCompleted()
-//            return Disposables.create()
-//        }
     }
 }

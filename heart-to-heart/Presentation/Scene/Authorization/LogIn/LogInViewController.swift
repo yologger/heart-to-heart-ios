@@ -32,6 +32,8 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.initUI()
+        emailTextField.text = "sonny@gmail.com"
+        passwordTextField.text = "PW123Son!"
     }
     
     private func initBinding() {
