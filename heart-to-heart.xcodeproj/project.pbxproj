@@ -104,6 +104,7 @@
 		9AD127F8253EECF5003DEDA3 /* Container+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD127F7253EECF5003DEDA3 /* Container+DataSource.swift */; };
 		9AD127FA253EEE6E003DEDA3 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD127F9253EEE6E003DEDA3 /* PostListViewModel.swift */; };
 		9AD127FC253EEFD7003DEDA3 /* PostList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD127FB253EEFD7003DEDA3 /* PostList.storyboard */; };
+		9AD127FE2541021C003DEDA3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD127FD2541021C003DEDA3 /* SwiftyJSON.framework */; };
 		9AFD5AF9251B58E1000D0DEC /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFD5AF8251B58E1000D0DEC /* test.png */; };
 		9AFD5AFB251C6FF8000D0DEC /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD5AFA251C6FF8000D0DEC /* CreatePostViewController.swift */; };
 		9AFD5B00251C772E000D0DEC /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD5AFF251C772E000D0DEC /* CreatePostViewModel.swift */; };
@@ -231,6 +232,7 @@
 		9AD127F7253EECF5003DEDA3 /* Container+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+DataSource.swift"; sourceTree = "<group>"; };
 		9AD127F9253EEE6E003DEDA3 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		9AD127FB253EEFD7003DEDA3 /* PostList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostList.storyboard; sourceTree = "<group>"; };
+		9AD127FD2541021C003DEDA3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		9AFD5AF8251B58E1000D0DEC /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		9AFD5AFA251C6FF8000D0DEC /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		9AFD5AFF251C772E000D0DEC /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD127FE2541021C003DEDA3 /* SwiftyJSON.framework in Frameworks */,
 				9AD127EC253DCD83003DEDA3 /* Alamofire.framework in Frameworks */,
 				9AD127ED253DCD83003DEDA3 /* Kingfisher.framework in Frameworks */,
 				9A6F26112507683600000BD8 /* SwinjectAutoregistration.framework in Frameworks */,
@@ -422,6 +425,7 @@
 		9A6F259624F9238800000BD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AD127FD2541021C003DEDA3 /* SwiftyJSON.framework */,
 				9AD127EA253DCD83003DEDA3 /* Alamofire.framework */,
 				9AD127EB253DCD83003DEDA3 /* Kingfisher.framework */,
 				9A6F26102507683600000BD8 /* SwinjectAutoregistration.framework */,
@@ -868,6 +872,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwinjectAutoregistration.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputFileListPaths = (
 			);

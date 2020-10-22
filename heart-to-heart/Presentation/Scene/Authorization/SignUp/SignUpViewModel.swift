@@ -70,13 +70,22 @@ class SignUpViewModel: BaseViewModel {
         return passwordPred.evaluate(with: password)
     }
     
-    func signUp(email: String, fullname: String, nickname: String, password: String) {
-        print("signUp() from SignUpViewModel")
+    func signUp(email: String, firstname: String, lastname: String, nickname: String, password: String) {
         self.signUpUseCase.email = email
-        self.signUpUseCase.fullname = fullname
+        self.signUpUseCase.firstname = firstname
+        self.signUpUseCase.lastname = lastname
         self.signUpUseCase.nickname = nickname
         self.signUpUseCase.password = password
-        self.signUpUseCase.execute()
+        self.signUpUseCase.executeTest().subscribe(onNext: { [weak self] result in
+            self?.didCoordinatorChange.onNext(.closeSignUpVC)
+        }, onError: { error in
+            print(error)
+            // Show something
+        }, onCompleted: {
+            print("onCompleted.")
+        }) {
+            print("onDisposed")
+        }.disposed(by: self.disposeBag)
     }
     
     func logIn() {

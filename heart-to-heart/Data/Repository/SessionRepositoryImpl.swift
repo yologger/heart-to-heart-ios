@@ -1,5 +1,6 @@
 import RxSwift
 import Alamofire
+import SwiftyJSON
 
 final class SessionRepositoryImpl {
     
@@ -11,13 +12,17 @@ final class SessionRepositoryImpl {
 }
 
 extension SessionRepositoryImpl: SessionRepository {
+    func signUp(email: String, firstname: String, lastname: String, nickname: String, password: String) {
+        
+    }
+    
     
     func test() {
         print("test() from SessionRepositoryImpl")
     }
     
-    func signUp(email: String, fullname: String, nickname: String, password: String) {
-        print("signUp() from SessionRepositoryImpl")
-        authorizationApi.signUp(email: email, fullname: fullname, nickname: nickname, password: password)
+    func signUp(email: String, firstname: String, lastname: String,  nickname: String, password: String) -> Observable<Bool> {
+        
+        authorizationApi.signUp(email: email, firstname: firstname, lastname: lastname, nickname: nickname, password: password)
     }
 }

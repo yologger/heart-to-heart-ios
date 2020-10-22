@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
         lastnameTextField.text = "Son"
         nicknameTextField.text = "sonny92"
         passwordTextField.text = "PW123Son!"
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,12 +117,22 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
             .bind { [weak self] in self?.viewModel?.logIn() }
             .disposed(by: self.disposeBag)
 
-//        self.signUpButton.rx.tap
-//            .bind { [weak self] in
-//                guard let email = self?.emailTextField.text, let fullname = self?.fullnameTextField.text, let nickname = self?.nicknameTextField.text, let password = self?.passwordTextField.text else { return }
-//                self?.viewModel?.signUp(email: email, fullname: fullname, nickname: nickname, password: password)
-//            }
-//            .disposed(by: self.disposeBag)
+        self.signUpButton.rx.tap
+            .bind { [weak self] in
+                guard let email = self?.emailTextField.text,
+                    let firstname = self?.firstnameTextField.text,
+                    let lastname = self?.lastnameTextField.text,
+                    let nickname = self?.nicknameTextField.text,
+                    let password = self?.passwordTextField.text else { return }
+                self?.viewModel?.signUp(
+                    email: email,
+                    firstname: firstname,
+                    lastname: lastname,
+                    nickname: nickname,
+                    password: password
+                )
+            }
+            .disposed(by: self.disposeBag)
     }
     
     @objc func keyboardWillShow(_ notification:NSNotification) {

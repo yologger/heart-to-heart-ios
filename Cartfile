@@ -3,3 +3,4 @@ github "Swinject/Swinject"
 github "Swinject/SwinjectAutoregistration" "2.7.0"
 github "Alamofire/Alamofire" ~> 5.2
 github "onevcat/Kingfisher"
+github "SwiftyJSON/SwiftyJSON" ~> 4.0
