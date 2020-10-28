@@ -5,18 +5,24 @@ class AppCoordinator: BaseCoordinator {
     
     private var window = UIWindow(frame: UIScreen.main.bounds)
     private var isLoggedIn = false
-
+    
     private let disposeBag = DisposeBag()
     
     private let getSessionUseCase: GetSessionUseCase
+    private let getDidLogInUseCase: GetDidLogInUseCase
+    private let getDidLogOutUseCase: GetDidLogOutUseCase
     
-    init(getSessionUseCase: GetSessionUseCase) {
+    init(getDidLogInUseCase: GetDidLogInUseCase, getDidLogOutUseCase: GetDidLogOutUseCase, getSessionUseCase: GetSessionUseCase) {
+        self.getDidLogInUseCase = getDidLogInUseCase
+        self.getDidLogOutUseCase = getDidLogOutUseCase
         self.getSessionUseCase = getSessionUseCase
-        getSessionUseCase.execute()
     }
     
     override func start() {
-        isLoggedIn ? showMain() : showAuthorization()
+        self.getSessionUseCase.execute() == nil
+            ? self.showAuthorization()
+            : self.showMain()
+        
         self.subscribeSessionChange()
     }
     
@@ -37,5 +43,28 @@ class AppCoordinator: BaseCoordinator {
     }
     
     func subscribeSessionChange() {
+        self.getDidLogInUseCase
+            .execute()
+            .subscribe(onNext: {
+                self.showMain()
+            }, onError: { error in
+                
+            }, onCompleted: {
+                
+            }, onDisposed: {
+                
+            }).disposed(by: self.disposeBag)
+        
+        self.getDidLogOutUseCase
+            .execute()
+            .subscribe(onNext: {
+                self.showAuthorization()
+            }, onError: { error in
+                
+            }, onCompleted: {
+                
+            }, onDisposed: {
+                
+            }).disposed(by: self.disposeBag)
     }
 }

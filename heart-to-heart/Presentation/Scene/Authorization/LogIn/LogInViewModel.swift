@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 
 class LogInViewModel: BaseViewModel {
-
+    
     let didCoordinatorChange = PublishSubject<AuthorizationCoordinatorOptions>()
     
     let email = BehaviorSubject<String>(value: "")
@@ -44,15 +44,36 @@ class LogInViewModel: BaseViewModel {
         return passwordPred.evaluate(with: password)
     }
     
-    func logIn() {
-        Observable
-        .combineLatest(self.email, self.password)
-        .bind { [weak self] email, password in
-            self?.logInUseCase.email = email
-            self?.logInUseCase.password = password
-            self?.logInUseCase.test()
-        }
-        .disposed(by: disposeBag)
+    func logIn(email: String, password: String) {
+        logInUseCase.email = email
+        logInUseCase.password = password
+        logInUseCase.execute()
+            .subscribe(onNext: { logInResponse in
+                print("subscribe() onNext()")
+                switch logInResponse {
+                case .success:
+                    print("success")
+                case .error(let error):
+                    switch error {
+                    case .wrongEmailError:
+                        print("wrongEmailError")
+                    case .wrongPasswordError:
+                        print("wrongPasswordError")
+                    case .internalServerError:
+                        print("internalServerError")
+                    case .networkError:
+                        print("networkError")
+                    case .unknownError:
+                        print("unknownError")
+                    }
+                }
+            }, onError: { error in
+                print(error)
+            }, onCompleted: {
+                print("onCompleted")
+            }) {
+                print("onDisposed")
+        }.disposed(by: self.disposeBag)
     }
     
     func signUp() {

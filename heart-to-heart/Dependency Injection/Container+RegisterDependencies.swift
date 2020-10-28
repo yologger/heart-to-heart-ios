@@ -9,5 +9,6 @@ extension Container {
         self.registerUseCases()
         self.registerRepositories()
         self.registerDataSources()
+        self.registerInfrastructure()
     }
 }

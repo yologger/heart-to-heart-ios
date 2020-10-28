@@ -1,7 +1,7 @@
 import RxSwift
 
-final class LogInUseCase {
-    
+class LogInUseCase {
+
     var email: String?
     var password: String?
     
@@ -10,21 +10,17 @@ final class LogInUseCase {
     init(sessionRepository: SessionRepository) {
         self.sessionRepository = sessionRepository
     }
-}
-
-extension LogInUseCase: BaseUseCase{
     
     func test() {
         print("LogInUsecase")
         self.sessionRepository.test()
     }
     
-    func execute(){
+    func execute() -> Observable<LogInResponse> {
         self.logIn()
     }
     
-    func logIn() {
-        guard let email = self.email, let password = self.password else { return }
-        
+    private func logIn() -> Observable<LogInResponse> {
+        return sessionRepository.logIn(email: self.email!, password: self.password!)
     }
 }

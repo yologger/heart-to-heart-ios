@@ -1,14 +1,20 @@
 import RxSwift
 
-class GetSessionUseCase {
+class LogOutUseCase {
     
     private let sessionRepository: SessionRepository
     
     init(sessionRepository: SessionRepository) {
         self.sessionRepository = sessionRepository
     }
+}
 
-    func execute() -> Session? {
-        self.sessionRepository.getSessionState()
+extension LogOutUseCase {
+    func execute() {
+        
+    }
+    
+    private func logOut() {
+        
     }
 }

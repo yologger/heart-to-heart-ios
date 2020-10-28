@@ -46,7 +46,7 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
         self.passwordTextField.rx.text.orEmpty
             .bind(to: viewModel.password)
             .disposed(by: self.disposeBag)
-
+        
         self.emailLabelHeight = emailLabel.heightAnchor.constraint(equalToConstant: 0)
         self.passwordLabelHeight = passwordLabel.heightAnchor.constraint(equalToConstant: 0)
         
@@ -71,25 +71,28 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
             self.viewModel!.isPasswordValid,
             resultSelector: { s1, s2 in s1 && s2 }
         )
-        .subscribe { [weak self] areInputsValid in
-            if areInputsValid.element! {
-                self?.logInButton.alpha = 1
-                self?.logInButton.isEnabled = true
-            } else {
-                self?.logInButton.alpha = 0.3
-                self?.logInButton.isEnabled = false
-            }
+            .subscribe { [weak self] areInputsValid in
+                if areInputsValid.element! {
+                    self?.logInButton.alpha = 1
+                    self?.logInButton.isEnabled = true
+                } else {
+                    self?.logInButton.alpha = 0.3
+                    self?.logInButton.isEnabled = false
+                }
         }
         .disposed(by: disposeBag)
         
         self.logInButton.rx.tap
-            .bind { [weak self] in self?.viewModel?.logIn() }
+            .bind { [weak self] in self?.viewModel?.logIn(
+                email: (self?.emailTextField.text)!,
+                password: (self?.passwordTextField.text)!
+                ) }
             .disposed(by: self.disposeBag)
-
+        
         self.signInButton.rx.tap
             .bind { [weak self] in self?.viewModel?.signUp() }
             .disposed(by: self.disposeBag)
-
+        
         self.forgotPasswordButton.rx.tap
             .bind { [weak self] in self?.viewModel?.findPassword() }
             .disposed(by: self.disposeBag)
@@ -107,7 +110,7 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
         let border = CALayer()
         border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-1, width: emailTextField.frame.width, height: 1)
         border.backgroundColor = UIColor.black.cgColor
-
+        
         emailTextField.layer.addSublayer(border)
         emailTextField.textColor = UIColor.black
         emailTextField.backgroundColor = .orange
@@ -115,14 +118,14 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func initPasswordTextField() {
-//        let border = CALayer()
-//        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
-//        border.backgroundColor = UIColor.black.cgColor
-//
-//        passwordTextField.layer.addSublayer(border)
-//        passwordTextField.textColor = UIColor.black
-//        passwordTextField.backgroundColor = .orange
-//        self.passwordTextField.clearButtonMode = .whileEditing
+        //        let border = CALayer()
+        //        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
+        //        border.backgroundColor = UIColor.black.cgColor
+        //
+        //        passwordTextField.layer.addSublayer(border)
+        //        passwordTextField.textColor = UIColor.black
+        //        passwordTextField.backgroundColor = .orange
+        //        self.passwordTextField.clearButtonMode = .whileEditing
     }
     
     private func initEmailLabel() {
@@ -159,3 +162,6 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
         NotificationCenter.default.removeObserver(self)
     }
 }
+
+
+

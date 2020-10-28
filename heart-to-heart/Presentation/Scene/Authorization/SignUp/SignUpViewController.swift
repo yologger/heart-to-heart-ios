@@ -38,7 +38,6 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
 //        lastnameTextField.text = "Son"
 //        nicknameTextField.text = "sonny92"
 //        passwordTextField.text = "PW123Son!"
-
         
         emailTextField.text = "ronaldo@gmail.com"
         firstnameTextField.text = "Cristiano"
