@@ -2,6 +2,20 @@
 
 -----
 
+## [5.15.8 - KFImage handler](https://github.com/onevcat/Kingfisher/releases/tag/5.15.8) (2020-11-27)
+
+#### Fix
+* An issue caused the `onSuccess` handler not be called when the image is already cached. [#1570](https://github.com/onevcat/Kingfisher/pull/1570)
+
+---
+
+## [5.15.7 - Cancel Lock](https://github.com/onevcat/Kingfisher/releases/tag/5.15.7) (2020-10-29)
+
+#### Fix
+* A potential crash when cancelling image downloading task while accessing its original request on iOS 13 or earlier. [#1558](https://github.com/onevcat/Kingfisher/pull/1558)
+
+---
+
 ## [5.15.6 - ImageBinder Callback](https://github.com/onevcat/Kingfisher/releases/tag/5.15.6) (2020-10-11)
 
 #### Fix

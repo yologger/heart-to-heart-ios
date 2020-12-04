@@ -3,7 +3,8 @@ import SwinjectAutoregistration
 
 extension Container {
     func registerDataSources() {
-        self.autoregister(AuthorizationApi.self, initializer: AuthorizationApiImpl.init).inObjectScope(.container)
-        self.autoregister(TokenStorage.self, initializer: DefaultTokenStorage.init).inObjectScope(.container)
+        self.autoregister(AuthAPI.self, initializer: DefaultAuthAPI.init).inObjectScope(.container)
+        self.autoregister(PostAPI.self, initializer: DefaultPostAPI.init).inObjectScope(.container)
+        self.autoregister(SessionStorage.self, initializer: DefaultSessionStorage.init).inObjectScope(.container)
     }
 }

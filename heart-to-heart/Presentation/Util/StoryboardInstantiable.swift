@@ -19,6 +19,7 @@ enum AppStoryboard: String {
     case changeNickname = "ChangeNickname"
     case getCurrentPassword = "GetCurrentPassword"
     case changePassword = "ChangePassword"
+    case test = "Test"
 }
 
 protocol StoryboardInstantiable {

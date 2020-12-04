@@ -36,7 +36,7 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "7923CD2E-D26A-4C8E-9542-951F228A205F - 4471b591050c5497"
+                  uuid = "7923CD2E-D26A-4C8E-9542-951F228A205F - 76fef1efbd44a8ae"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -51,7 +51,7 @@
                   offsetFromSymbolStart = "189">
                </Location>
                <Location
-                  uuid = "7923CD2E-D26A-4C8E-9542-951F228A205F - 1209fa9eff1cfd1"
+                  uuid = "7923CD2E-D26A-4C8E-9542-951F228A205F - 33afdbd757b933e8"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -224,6 +224,22 @@
             endingLineNumber = "19"
             landmarkName = "save(key:value:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C34E8299-B605-49E5-B21E-9CCC727EB48C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "heart-to-heart/Presentation/Screen/Main/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "HomeViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

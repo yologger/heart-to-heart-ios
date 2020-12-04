@@ -8,7 +8,4 @@ class GetDidLogOutUseCase {
         self.sessionRepository = sessionRepository
     }
     
-    func execute() -> Observable<Void> {
-        return self.sessionRepository.getDidLogOut()
-    }
 }

@@ -4,6 +4,7 @@ import SwinjectAutoregistration
 extension Container {
     func registerViewModels() {
         self.autoregister(LogInViewModel.self, initializer: LogInViewModel.init)
+        self.autoregister(TestViewModel.self, initializer: TestViewModel.init)
         self.autoregister(SignUpViewModel.self, initializer: SignUpViewModel.init)
         self.autoregister(FindPasswordViewModel.self, initializer: FindPasswordViewModel.init)
         self.autoregister(HomeViewModel.self, initializer: HomeViewModel.init)

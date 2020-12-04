@@ -1,6 +1,6 @@
 import RxSwift
 
-class GetAllPostsUseCase: BaseUseCase {
+class GetAllPostsUseCase {
     
     private let postRepository: PostRepository
     
@@ -8,8 +8,10 @@ class GetAllPostsUseCase: BaseUseCase {
         self.postRepository = postRepository
     }
     
-    func execute() {
+    func execute() -> Observable<GetAllPostsResult> {
         print("execute() from GetAllPostsUseCase")
-        self.postRepository.test()
+        return self.postRepository.test()
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+        .observeOn(MainScheduler.instance)
     }
 }

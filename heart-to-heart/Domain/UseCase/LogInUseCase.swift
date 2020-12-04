@@ -13,14 +13,15 @@ class LogInUseCase {
     
     func test() {
         print("LogInUsecase")
-        self.sessionRepository.test()
     }
     
-    func execute() -> Observable<LogInResponse> {
+    func execute() -> Observable<LogInResult> {
         self.logIn()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+            .observeOn(MainScheduler.instance)
     }
     
-    private func logIn() -> Observable<LogInResponse> {
+    private func logIn() -> Observable<LogInResult> {
         return sessionRepository.logIn(email: self.email!, password: self.password!)
     }
 }

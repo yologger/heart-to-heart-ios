@@ -1,6 +1,6 @@
 import RxSwift
 
 protocol PostRepository: BaseRepository {
-    func test()
+    func test() -> Observable<GetAllPostsResult >
     // func fetchAllMovies() -> Observable<Any>
 }

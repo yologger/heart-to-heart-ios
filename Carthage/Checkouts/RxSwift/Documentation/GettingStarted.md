@@ -443,18 +443,27 @@ let subscription1 = counter
     .subscribe(onNext: { n in
         print("First \(n)")
     })
+    
+print("Subscribed")
+
 let subscription2 = counter
     .subscribe(onNext: { n in
         print("Second \(n)")
     })
+    
+print("Subscribed")
 
 Thread.sleep(forTimeInterval: 0.5)
 
 subscription1.dispose()
 
+print("Disposed")
+
 Thread.sleep(forTimeInterval: 0.5)
 
 subscription2.dispose()
+
+print("Disposed")
 
 print("Ended ----")
 ```
@@ -539,7 +548,6 @@ First 3
 Second 3
 First 4
 Second 4
-First 5
 Second 5
 Second 6
 Second 7
@@ -1081,20 +1089,12 @@ URLSession.shared.rx.response(myURLRequest)
 ```
 ### Logging HTTP traffic
 
-In debug mode RxCocoa will log all HTTP request to console by default. In case you want to change that behavior, please set `Logging.URLRequests` filter.
+RxCocoa will log all HTTP request info to the console by default when run in debug mode. You may overwrite the `URLSession.rx.shouldLogRequest` closure to define which requests should and shouldn't be logged.
 
 ```swift
-// read your own configuration
-public struct Logging {
-    public typealias LogURLRequest = (URLRequest) -> Bool
-
-    public static var URLRequests: LogURLRequest =  { _ in
-    #if DEBUG
-        return true
-    #else
-        return false
-    #endif
-    }
+URLSession.rx.shouldLogRequest = { request in
+    // Only log requests to reactivex.org     
+    return request.url?.host == "reactivex.org" || request.url?.host == "www.reactivex.org"
 }
 ```
 
