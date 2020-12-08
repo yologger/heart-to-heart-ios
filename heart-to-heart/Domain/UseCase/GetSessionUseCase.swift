@@ -7,8 +7,10 @@ class GetSessionUseCase {
     init(sessionRepository: SessionRepository) {
         self.sessionRepository = sessionRepository
     }
-    
-    func execute() -> Observable<Bool> {
+}
+
+extension GetSessionUseCase: BaseUseCase {
+    func call() -> Observable<Bool> {
         return sessionRepository.getSessionState()
     }
 }

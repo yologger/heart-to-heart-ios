@@ -9,8 +9,8 @@ class LogOutUseCase {
     }
 }
 
-extension LogOutUseCase {
-    func execute() -> Observable<LogOutResult> {
+extension LogOutUseCase: BaseUseCase {
+    func call() -> Observable<LogOutResult> {
         return sessionRepository.logOut()
     }
 }

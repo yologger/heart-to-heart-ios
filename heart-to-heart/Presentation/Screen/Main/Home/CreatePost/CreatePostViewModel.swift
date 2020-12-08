@@ -8,29 +8,49 @@ class CreatePostViewModel: BaseViewModel {
     
     private let createPostUseCase: CreatePostUseCase
     
-    private var name: String = "Ronaldo"
-    private var age: Int = 5
-    
+    let isLoading = BehaviorSubject<Bool>(value: false)
+    let content = BehaviorSubject<String>(value: "")
     
     init(createPostUseCase: CreatePostUseCase) {
         self.createPostUseCase = createPostUseCase
     }
     
     func closeCreatePost() {
-        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+        print("closeCreatePost() from CreatePostViewModel")
+        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
     func showCamera() {
-        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+        print("showCamera() from CreatePostViewModel")
+        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
-    func showAlbum() {
-        self.didCoordinatorChange.onNext(.closeCreatePostVC)
+    func showGallery() {
+        print("showGallery() from CreatePostViewModel")
+        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
     func createPost() {
-        print("createPost() from CreatePostViewModel")
-        self.createPostUseCase.execute()
+//        self.isLoading.onNext(true)
+//        self.content
+//            .take(1)
+//            .flatMapLatest { [weak self] text in
+//                self?.createPostUseCase.execute() ?? Observable.empty()
+//            }
+//            .subscribe(
+//                onNext: { [weak self] value in
+//                    self?.isLoading.onNext(false)
+//                    print(value)
+//                }, onError: { error in
+//
+//                }, onCompleted: {
+//                    print("onCompleted")
+//                }, onDisposed: {
+//                    print("onDisposed")
+//                }
+//            ).disposed(by: disposeBag)
+        
+        // self.createPostUseCase.execute()
         // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
 }

@@ -36,16 +36,16 @@ class HomeCoordinator: BaseCoordinator {
     
     override func start() {
         
-        self.testViewController = TestViewController.instantiate()
-        self.testViewController!.viewModel = self.testViewModel
-        self.navigationController.viewControllers = [self.testViewController!]
+        //        self.testViewController = TestViewController.instantiate()
+        //        self.testViewController!.viewModel = self.testViewModel
+        //        self.navigationController.viewControllers = [self.testViewController!]
         
-        //        self.homeViewController = HomeViewController.instantiate()
-        //        self.homeViewController!.viewModel = self.homeViewModel
-        //        self.navigationController.viewControllers = [self.homeViewController!]
-        //
-        //        self.bindToHomeViewModel()
-        //        self.bindToCreatePostViewModel()
+        self.homeViewController = HomeViewController.instantiate()
+        self.homeViewController!.viewModel = self.homeViewModel
+        self.navigationController.viewControllers = [self.homeViewController!]
+        
+        self.bindToHomeViewModel()
+        self.bindToCreatePostViewModel()
     }
     
     private func showPostList() {
@@ -96,11 +96,11 @@ class HomeCoordinator: BaseCoordinator {
                     case .showSearchHistoryVC: self.showSearchHistory()
                     case .closeSearchHistoryVC: self.closeSearchHistory()
                     }
-            },
+                },
                 onError: { error in print(error) },
                 onCompleted: { print("onCompleted") },
                 onDisposed: { print("onDisposed") }
-        )
+            )
             .disposed(by: disposeBag)
     }
     
@@ -116,11 +116,11 @@ class HomeCoordinator: BaseCoordinator {
                     case .showSearchHistoryVC: self.showSearchHistory()
                     case .closeSearchHistoryVC: self.closeSearchHistory()
                     }
-            },
+                },
                 onError: { error in print(error) },
                 onCompleted: { print("onCompleted") },
                 onDisposed: { print("onDisposed") }
-        )
+            )
             .disposed(by: disposeBag)
     }
     

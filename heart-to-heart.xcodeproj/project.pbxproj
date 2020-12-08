@@ -107,11 +107,9 @@
 		9A78DBBA2577D23500EAE50E /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78DBB92577D23500EAE50E /* PostService.swift */; };
 		9A7ADFE525347CE400A99065 /* Following.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7ADFE425347CE400A99065 /* Following.storyboard */; };
 		9A8096422578CD690003B58F /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8096412578CD690003B58F /* AuthInterceptor.swift */; };
-		9A810EF825483E79004C6279 /* GetDidLogInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810EF725483E78004C6279 /* GetDidLogInUseCase.swift */; };
 		9A810F0625484A9E004C6279 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810F0525484A9E004C6279 /* UserSession.swift */; };
 		9A810F0825484AB5004C6279 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810F0725484AB5004C6279 /* Profile.swift */; };
 		9A810F0A25484CB8004C6279 /* SettingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810F0925484CB8004C6279 /* SettingKey.swift */; };
-		9A810F0C25485400004C6279 /* GetDidLogOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810F0B25485400004C6279 /* GetDidLogOutUseCase.swift */; };
 		9A810F0E25492F03004C6279 /* Container+Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810F0D25492F03004C6279 /* Container+Infrastructure.swift */; };
 		9A810F1025493594004C6279 /* LogOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810F0F25493594004C6279 /* LogOutUseCase.swift */; };
 		9A810F1325495702004C6279 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A810F1225495702004C6279 /* HttpMethod.swift */; };
@@ -284,11 +282,9 @@
 		9A78DBB92577D23500EAE50E /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		9A7ADFE425347CE400A99065 /* Following.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Following.storyboard; sourceTree = "<group>"; };
 		9A8096412578CD690003B58F /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
-		9A810EF725483E78004C6279 /* GetDidLogInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDidLogInUseCase.swift; sourceTree = "<group>"; };
 		9A810F0525484A9E004C6279 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		9A810F0725484AB5004C6279 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9A810F0925484CB8004C6279 /* SettingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingKey.swift; sourceTree = "<group>"; };
-		9A810F0B25485400004C6279 /* GetDidLogOutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDidLogOutUseCase.swift; sourceTree = "<group>"; };
 		9A810F0D25492F03004C6279 /* Container+Infrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Infrastructure.swift"; sourceTree = "<group>"; };
 		9A810F0F25493594004C6279 /* LogOutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutUseCase.swift; sourceTree = "<group>"; };
 		9A810F1225495702004C6279 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
@@ -611,12 +607,10 @@
 			isa = PBXGroup;
 			children = (
 				9A6F25FC250721E100000BD8 /* GetSessionUseCase.swift */,
-				9A810EF725483E78004C6279 /* GetDidLogInUseCase.swift */,
 				9A6F25FE250723B400000BD8 /* LogInUseCase.swift */,
 				9A5BF28E2537049E002B633C /* SignUpUseCase.swift */,
 				9A9B2BCA2537ECC900D37FB8 /* GetAllPostsUseCase.swift */,
 				9A9B2BCC2537F1C000D37FB8 /* CreatePostUseCase.swift */,
-				9A810F0B25485400004C6279 /* GetDidLogOutUseCase.swift */,
 				9A810F0F25493594004C6279 /* LogOutUseCase.swift */,
 				9AA958C82570E38A0044B219 /* GetTestDataUseCase.swift */,
 			);
@@ -1180,7 +1174,6 @@
 				9A78DBB02577A01500EAE50E /* UserDefaults.swift in Sources */,
 				9A9B2BC92537EA7500D37FB8 /* BaseRepository.swift in Sources */,
 				9A810F2325495938004C6279 /* LogOutResponse.swift in Sources */,
-				9A810F0C25485400004C6279 /* GetDidLogOutUseCase.swift in Sources */,
 				9A78DBB22577A04A00EAE50E /* ObjectSavableError.swift in Sources */,
 				9A9282AF24F7DC3600D61580 /* LogInViewController.swift in Sources */,
 				9A6F257C24F8EC3000000BD8 /* StoryboardInstantiable.swift in Sources */,
@@ -1197,7 +1190,6 @@
 				9A78DBB62577D15100EAE50E /* PostAPI.swift in Sources */,
 				9AD127FA253EEE6E003DEDA3 /* PostListViewModel.swift in Sources */,
 				9A7013F02522FB830002DC74 /* FollowingViewModel.swift in Sources */,
-				9A810EF825483E79004C6279 /* GetDidLogInUseCase.swift in Sources */,
 				9A9B2BCB2537ECC900D37FB8 /* GetAllPostsUseCase.swift in Sources */,
 				9A7013E025223B730002DC74 /* ProfileViewModel.swift in Sources */,
 				9A04D4BD251DCAE60088CCAB /* SearchHistoryViewController.swift in Sources */,

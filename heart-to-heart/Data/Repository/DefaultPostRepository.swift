@@ -60,4 +60,9 @@ extension DefaultPostRepository: PostRepository {
         
     }
     
+    
+    func createPost() {
+        print("createPost() from DefaultPostRepository")
+        
+    }
 }

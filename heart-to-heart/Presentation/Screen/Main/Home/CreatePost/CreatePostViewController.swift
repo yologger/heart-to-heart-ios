@@ -2,41 +2,54 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CreatePostViewController: UIViewController, StoryboardInstantiable {
+class CreatePostViewController: BaseViewController, StoryboardInstantiable {
     
     static var storyboard = AppStoryboard.createPost
     
-    private let disposeBag = DisposeBag()
     var viewModel: CreatePostViewModel?
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet weak var galleryButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var contentTextView: UITextView!
     
     override func viewDidLoad() {
+        self.initBinding()
         self.initUI()
-        self.bindUI()
     }
     
-    private func initUI() {
-        self.initCloseButton()
-        self.initCameraButton()
-        self.initPhotoButton()
-        self.initCreateButton()
-    }
-    
-    private func bindUI() {
+    private func initBinding() {
         guard let viewModel = self.viewModel else { return }
         
         self.closeButton.rx.tap
             .bind { [weak self] in self?.viewModel?.closeCreatePost() }
             .disposed(by: self.disposeBag)
         
+        self.cameraButton.rx.tap
+            .bind { [weak self] in self?.viewModel?.showCamera() }
+            .disposed(by: self.disposeBag)
+        
+        self.galleryButton.rx.tap
+            .bind { [weak self] in self?.viewModel?.showGallery() }
+            .disposed(by: self.disposeBag)
+        
         self.createButton.rx.tap
             .bind { [weak self] in self?.viewModel?.createPost() }
             .disposed(by: self.disposeBag)
+        
+        self.contentTextView.rx.text.orEmpty
+            .bind(to: viewModel.content)
+            .disposed(by: self.disposeBag)
     }
+    
+    private func initUI() {
+        self.initCloseButton()
+        self.initCameraButton()
+        self.initGalleryButton()
+        self.initCreateButton()
+    }
+    
     
     private func initCloseButton() {
         self.closeButton.setTitle("", for: .normal)
@@ -54,12 +67,12 @@ class CreatePostViewController: UIViewController, StoryboardInstantiable {
         cameraButton.tintColor = .black
     }
     
-    private func initPhotoButton() {
-        self.photoButton.setTitle("", for: .normal)
+    private func initGalleryButton() {
+        self.galleryButton.setTitle("", for: .normal)
         let orignalImage = UIImage(named: "album_icon")
         let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
-        photoButton.setImage(tintedImage, for: .normal)
-        photoButton.tintColor = .black
+        galleryButton.setImage(tintedImage, for: .normal)
+        galleryButton.tintColor = .black
     }
     
     private func initCreateButton() {
@@ -69,4 +82,5 @@ class CreatePostViewController: UIViewController, StoryboardInstantiable {
         createButton.setImage(tintedImage, for: .normal)
         createButton.tintColor = .black
     }
+    
 }

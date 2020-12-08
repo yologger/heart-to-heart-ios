@@ -67,7 +67,8 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
             }
         }.disposed(by: self.disposeBag)
         
-        Observable.combineLatest(
+        Observable
+            .combineLatest(
             self.viewModel!.isEmailValid,
             self.viewModel!.isPasswordValid,
             resultSelector: { s1, s2 in s1 && s2 }
