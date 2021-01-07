@@ -11,26 +11,44 @@ class CreatePostViewModel: BaseViewModel {
     let isLoading = BehaviorSubject<Bool>(value: false)
     let content = BehaviorSubject<String>(value: "")
     
+    // var selectedImages: [UIImage?]?
+    
+    var selectedImages: [UIImage?] = []
+    let selectedImagesObservable = BehaviorSubject<[UIImage?]>(value: [])
+    
     init(createPostUseCase: CreatePostUseCase) {
         self.createPostUseCase = createPostUseCase
     }
-    
-    func closeCreatePost() {
-        print("closeCreatePost() from CreatePostViewModel")
-        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
+
+    func addImages(images: [UIImage?]) {
+        selectedImages.append(contentsOf: images)
+        selectedImagesObservable.onNext(selectedImages)
     }
     
-    func showCamera() {
-        print("showCamera() from CreatePostViewModel")
-        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
+    func closeCreatePost() {
+        self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
     func showGallery() {
-        print("showGallery() from CreatePostViewModel")
+        
         // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
     func createPost() {
+        print("createPost")
+        print("showGallery() from CreatePostViewModel")
+        
+        Observable
+            .combineLatest(self.content, self.selectedImagesObservable)
+            .take(1)
+            .subscribe { content, selectedImages in
+                print("content: \(content)")
+                print("selectedImages:")
+                print(selectedImages)
+            }
+            .disposed(by: self.disposeBag)
+        
+//         print(images)
 //        self.isLoading.onNext(true)
 //        self.content
 //            .take(1)

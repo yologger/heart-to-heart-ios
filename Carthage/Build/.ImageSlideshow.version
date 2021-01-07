@@ -1,0 +1,11 @@
+{
+  "commitish" : "1.9.2",
+  "iOS" : [
+    {
+      "hash" : "d676eb23b9060ce1cea7b1ca41c0106aaa190aa139314e80d6ebb4ae6c7bc6d7",
+      "name" : "ImageSlideshow",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+    }
+  ]
+}

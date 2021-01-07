@@ -1,26 +1,29 @@
 import RxSwift
+import UIKit
 
 final class CreatePostUseCase {
     
-    private let postRepository: PostRepository
+    private let _postRepository: PostRepository
     
-    private var text: String?
+    private var _text: String?
+    private var _images: [UIImage?]?
     
     init(postRepository: PostRepository) {
-        self.postRepository = postRepository
+        self._postRepository = postRepository
     }
 }
 
 extension CreatePostUseCase: BaseUseCase {
     
     func call() -> Observable<Bool> {
-        print("execute() from CreatePostUseCase")
-        return Observable<Bool>.create { emitter -> Disposable in
+        
+        return Observable<Bool>.create { [weak self] emitter -> Disposable in
+            
             emitter.onNext(true)
             return Disposables.create()
         }
         
-//        print("execute() from CreatePostUseCase")
-//        postRepository.createPost()
+        //        print("execute() from CreatePostUseCase")
+        //        postRepository.createPost()
     }
 }

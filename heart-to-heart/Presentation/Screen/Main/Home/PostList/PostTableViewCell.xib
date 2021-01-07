@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="post_table_view_cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="post_table_view_cell" rowHeight="461" id="5g0-7C-kZC" customClass="PostTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="423" height="461"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="post_table_view_cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="post_table_view_cell" rowHeight="297" id="5g0-7C-kZC" customClass="PostTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="423" height="297"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5g0-7C-kZC" id="JoH-40-Y7w">
-                <rect key="frame" x="0.0" y="0.0" width="423" height="461"/>
+                <rect key="frame" x="0.0" y="0.0" width="423" height="297"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WLx-fL-7F5">
-                        <rect key="frame" x="0.0" y="0.0" width="423" height="461"/>
+                        <rect key="frame" x="0.0" y="0.0" width="423" height="297"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhs-Wd-Q5i" userLabel="Header Container">
-                                <rect key="frame" x="0.0" y="0.0" width="423" height="215"/>
+                                <rect key="frame" x="0.0" y="0.0" width="423" height="66"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar1.png" translatesAutoresizingMaskIntoConstraints="NO" id="AF7-Sk-IFh" userLabel="Avatar Image">
                                         <rect key="frame" x="8" y="8" width="50" height="50"/>
@@ -41,7 +43,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6a-uz-Py1" userLabel="Follow Button">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6a-uz-Py1" userLabel="Follow Button">
                                                         <rect key="frame" x="32" y="0.0" width="61" height="30"/>
                                                         <color key="backgroundColor" red="0.89601788319999998" green="0.78542500940000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="FOLLOW"/>
@@ -57,12 +59,12 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O82-5g-RJi" userLabel="Delete Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O82-5g-RJi" userLabel="Delete Button">
                                         <rect key="frame" x="360" y="18" width="55" height="30"/>
                                         <state key="normal" title="DELETE"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="O82-5g-RJi" secondAttribute="trailing" constant="8" id="2DJ-9K-jJa"/>
                                     <constraint firstItem="Hjb-au-8Z3" firstAttribute="leading" secondItem="AF7-Sk-IFh" secondAttribute="trailing" constant="8" id="8gh-9E-Pyj"/>
@@ -74,21 +76,21 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYH-9j-Sff" userLabel="Content Container">
-                                <rect key="frame" x="0.0" y="215" width="423" height="200"/>
+                                <rect key="frame" x="0.0" y="66" width="423" height="200"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rM-Ud-8sg">
                                         <rect key="frame" x="0.0" y="0.0" width="423" height="200"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="V72-b0-dMo"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliciviuda.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4rM-Ud-8sg" firstAttribute="leading" secondItem="xYH-9j-Sff" secondAttribute="leading" id="2G5-bX-a4j"/>
                                     <constraint firstItem="4rM-Ud-8sg" firstAttribute="top" secondItem="xYH-9j-Sff" secondAttribute="top" id="Iyd-DG-6O7"/>
@@ -97,23 +99,23 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2y-DB-V41" userLabel="Trailer Container">
-                                <rect key="frame" x="0.0" y="415" width="423" height="46"/>
+                                <rect key="frame" x="0.0" y="266" width="423" height="31"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="an9-Hc-Slz">
-                                        <rect key="frame" x="8" y="8" width="106" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="106" height="15"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxJ-mO-ru4" userLabel="Like button">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxJ-mO-ru4" userLabel="Like button">
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="15"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBv-Nx-Jy0" userLabel="Value Label">
-                                                <rect key="frame" x="46" y="0.0" width="20.5" height="30"/>
+                                                <rect key="frame" x="46" y="0.0" width="20.5" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rj-at-5kP" userLabel="Title Label">
-                                                <rect key="frame" x="66.5" y="0.0" width="39.5" height="30"/>
+                                                <rect key="frame" x="66.5" y="0.0" width="39.5" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -121,7 +123,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstItem="an9-Hc-Slz" firstAttribute="leading" secondItem="U2y-DB-V41" secondAttribute="leading" constant="8" id="TV4-w1-V3N"/>
                                     <constraint firstAttribute="bottom" secondItem="an9-Hc-Slz" secondAttribute="bottom" constant="8" id="gmX-au-amc"/>
@@ -142,10 +144,22 @@
                 <outlet property="contentTextView" destination="4rM-Ud-8sg" id="xve-NF-AYJ"/>
                 <outlet property="contextTextViewHeight" destination="V72-b0-dMo" id="bbL-3f-ycc"/>
             </connections>
-            <point key="canvasLocation" x="-100.72463768115942" y="-305.02232142857139"/>
+            <point key="canvasLocation" x="-100.72463768115942" y="-359.93303571428572"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="avatar1.png" width="362" height="319"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

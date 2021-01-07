@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import TLPhotoPicker
 
 class CreatePostViewController: BaseViewController, StoryboardInstantiable {
     
@@ -9,10 +10,10 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
     var viewModel: CreatePostViewModel?
     
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var galleryButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var openGalleryButton: UIButton!
     @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         self.initBinding()
@@ -26,13 +27,9 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
             .bind { [weak self] in self?.viewModel?.closeCreatePost() }
             .disposed(by: self.disposeBag)
         
-        self.cameraButton.rx.tap
-            .bind { [weak self] in self?.viewModel?.showCamera() }
-            .disposed(by: self.disposeBag)
-        
-        self.galleryButton.rx.tap
-            .bind { [weak self] in self?.viewModel?.showGallery() }
-            .disposed(by: self.disposeBag)
+        //        self.galleryButton.rx.tap
+        //            .bind { [weak self] in self?.viewModel?.showGallery() }
+        //            .disposed(by: self.disposeBag)
         
         self.createButton.rx.tap
             .bind { [weak self] in self?.viewModel?.createPost() }
@@ -41,15 +38,23 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         self.contentTextView.rx.text.orEmpty
             .bind(to: viewModel.content)
             .disposed(by: self.disposeBag)
+        
+        viewModel.selectedImagesObservable.subscribe { [weak self] images in
+            self?.collectionView.reloadData()
+        }.disposed(by: self.disposeBag)
     }
     
     private func initUI() {
         self.initCloseButton()
-        self.initCameraButton()
-        self.initGalleryButton()
         self.initCreateButton()
+        self.initCollectionView()
     }
     
+    @IBAction func openGallery(_ sender: Any) {
+        let photosPickerViewController = TLPhotosPickerViewController()
+        photosPickerViewController.delegate = self
+        self.present(photosPickerViewController, animated: true, completion: nil)
+    }
     
     private func initCloseButton() {
         self.closeButton.setTitle("", for: .normal)
@@ -57,22 +62,6 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
         closeButton.setImage(tintedImage, for: .normal)
         closeButton.tintColor = .black
-    }
-    
-    private func initCameraButton() {
-        self.cameraButton.setTitle("", for: .normal)
-        let orignalImage = UIImage(named: "camera_icon")
-        let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
-        cameraButton.setImage(tintedImage, for: .normal)
-        cameraButton.tintColor = .black
-    }
-    
-    private func initGalleryButton() {
-        self.galleryButton.setTitle("", for: .normal)
-        let orignalImage = UIImage(named: "album_icon")
-        let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
-        galleryButton.setImage(tintedImage, for: .normal)
-        galleryButton.tintColor = .black
     }
     
     private func initCreateButton() {
@@ -83,4 +72,60 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         createButton.tintColor = .black
     }
     
+    private func initCollectionView() {
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.collectionView.collectionViewLayout = flowLayout
+        self.collectionView.register(UINib(nibName: "ImageItemWithClearButton", bundle: nil), forCellWithReuseIdentifier: "ImageItemWithClearButton")
+    }
+}
+
+extension CreatePostViewController: TLPhotosPickerViewControllerDelegate {
+    
+    func shouldDismissPhotoPicker(withTLPHAssets: [TLPHAsset]) -> Bool {
+        guard let viewModel = self.viewModel else { return false }
+        let selectedImages = withTLPHAssets.map { withTLPHAsset in
+            return withTLPHAsset.fullResolutionImage
+        }
+        viewModel.addImages(images: selectedImages)
+        return true
+    }
+    
+    func photoPickerDidCancel() {
+        print("cancel")
+    }
+    
+    func handleNoAlbumPermissions(picker: TLPhotosPickerViewController) {
+        print("handle no album permission")
+    }
+    
+    func handleNoCameraPermissions(picker: TLPhotosPickerViewController) {
+        print("handle no camera permission")
+    }
+}
+
+extension CreatePostViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let vm = self.viewModel else { return 0 }
+        return vm.selectedImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageItemWithClearButton", for: indexPath) as! ImageItemWithClearButton
+        cell.imageView.image = viewModel?.selectedImages[indexPath.row]
+        return cell
+    }
+    
+}
+
+
+extension CreatePostViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+    }
 }

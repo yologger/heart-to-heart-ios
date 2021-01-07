@@ -1,4 +1,5 @@
 import RxSwift
+import UIKit
 import ObjectMapper
 
 final class DefaultPostRepository {
@@ -13,8 +14,6 @@ final class DefaultPostRepository {
 extension DefaultPostRepository: PostRepository {
     
     func test() -> Observable<GetAllPostsResult> {
-        
-        print("test() from DefaultPostRepository")
         
         let postService = postAPI.getPostService()
         
@@ -54,15 +53,11 @@ extension DefaultPostRepository: PostRepository {
                     emitter.onNext(.failure(.NetworkTimeOutError))
                 }
             }
-            
             return Disposables.create()
         }
-        
     }
     
-    
-    func createPost() {
-        print("createPost() from DefaultPostRepository")
-        
-    }
+//    func createPost(title: String, images: [UIImage?]) -> Observable<CreatePostResult> {
+//        
+//    }
 }

@@ -27,6 +27,8 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initBinding()
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,10 +71,10 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
         
         Observable
             .combineLatest(
-            self.viewModel!.isEmailValid,
-            self.viewModel!.isPasswordValid,
-            resultSelector: { s1, s2 in s1 && s2 }
-        )
+                self.viewModel!.isEmailValid,
+                self.viewModel!.isPasswordValid,
+                resultSelector: { s1, s2 in s1 && s2 }
+            )
             .subscribe { [weak self] areInputsValid in
                 if areInputsValid.element! {
                     self?.logInButton.alpha = 1
@@ -81,14 +83,14 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
                     self?.logInButton.alpha = 0.3
                     self?.logInButton.isEnabled = false
                 }
-        }
-        .disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
         self.logInButton.rx.tap
             .bind { [weak self] in self?.viewModel?.logIn(
                 email: (self?.emailTextField.text)!,
                 password: (self?.passwordTextField.text)!
-                ) }
+            ) }
             .disposed(by: self.disposeBag)
         
         self.signInButton.rx.tap

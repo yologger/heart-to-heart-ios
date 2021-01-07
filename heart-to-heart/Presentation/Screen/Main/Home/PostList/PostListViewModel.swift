@@ -13,7 +13,7 @@ class PostListViewModel: BaseViewModel {
     }
     
     func test() {
-        print("test() from PostListViewModel")
+        // print("test() from PostListViewModel")
     }
     
     func getAllPost() {
