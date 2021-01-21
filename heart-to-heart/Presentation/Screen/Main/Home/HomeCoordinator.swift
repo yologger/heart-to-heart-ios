@@ -14,20 +14,17 @@ class HomeCoordinator: BaseCoordinator {
     
     private let disposeBag = DisposeBag()
     
-    private var testViewController: TestViewController?
     private var homeViewController: HomeViewController?
     private var postListViewController: PostListViewController?
     private var searchHistoryViewController: SearchHistoryViewController?
     private var createPostViewController: CreatePostViewController?
     
-    private let testViewModel: TestViewModel
     private let homeViewModel: HomeViewModel
     private let postListViewModel: PostListViewModel
     private let createPostViewModel: CreatePostViewModel
     private let searchHistoryViewModel: SearchHistoryViewModel
     
-    init(testViewModel: TestViewModel, homeViewModel: HomeViewModel, postListViewModel: PostListViewModel, createPostViewModel: CreatePostViewModel, searchHistoryViewModel: SearchHistoryViewModel) {
-        self.testViewModel = testViewModel
+    init(homeViewModel: HomeViewModel, postListViewModel: PostListViewModel, createPostViewModel: CreatePostViewModel, searchHistoryViewModel: SearchHistoryViewModel) {
         self.homeViewModel = homeViewModel
         self.postListViewModel = postListViewModel
         self.createPostViewModel = createPostViewModel
@@ -137,7 +134,6 @@ class HomeCoordinator: BaseCoordinator {
         self.navigationController.dismiss(animated: true, completion: nil) 
         // self.navigationController.popViewController(animated: true)
     }
-    
-    
+
 }
 

@@ -19,7 +19,7 @@ final class LogInService {
         ]
         
         return AF.request(
-            "\(Constants.AuthBaseUrl)/auth/login",
+            "\(Constant.API.AuthBaseUrl)/auth/login",
             method: .post,
             parameters: parameters,
             encoder: URLEncodedFormParameterEncoder.default,

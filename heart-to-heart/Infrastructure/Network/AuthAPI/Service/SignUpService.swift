@@ -24,7 +24,7 @@ final class SignUpService {
             ]
             
             AF.request(
-                "\(Constants.AuthBaseUrl)/auth/signup",
+                "\(Constant.API.AuthBaseUrl)/auth/signup",
                 method: .post,
                 parameters: parameters,
                 encoder: URLEncodedFormParameterEncoder.default,

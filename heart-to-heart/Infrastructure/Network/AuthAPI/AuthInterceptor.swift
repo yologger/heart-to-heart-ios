@@ -67,7 +67,7 @@ class AuthInterceptor: Interceptor {
         ]
         
         AF.request(
-            "\(Constants.AuthBaseUrl)/auth/token",
+            "\(Constant.API.AuthBaseUrl)/auth/token",
             method: .post,
             parameters: parameters,
             encoding: JSONEncoding.default

@@ -26,7 +26,7 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
             action: #selector(buttonPressed(_:))
         )
         
-        button.tintColor = .black
+        
         
         button.tag = 2
         
@@ -42,14 +42,15 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
     }()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // self.initTableView()
         self.initNavigation()
-        self.initSearchBar()
+        // self.initSearchBar()
         self.initBinding()
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
+//        searchController.hidesNavigationBarDuringPresentation = false
+//        searchController.searchResultsUpdater = self
+//        searchController.searchBar.delegate = self
         viewModel!.getAllPosts()
         viewModel!.showPostList()
         
@@ -64,13 +65,13 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
             onDisposed: { print("onDisposed()")}
         )
         .disposed(by: disposeBag)
-        
-        
     }
     
+
     override func viewDidDisappear(_ animated: Bool) {
         disposeBag = DisposeBag()
     }
+
     
     @objc private func buttonPressed(_ sender: Any) {
         if let button = sender as? UIBarButtonItem {
@@ -108,44 +109,44 @@ extension HomeViewController {
 
 
 // MARK: - Search Bar
-extension HomeViewController: UISearchControllerDelegate {
-    
-    func initSearchBar() {
-        searchController.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        self.navigationItem.searchController = searchController
-    }
-    
-    func willPresentSearchController(_ searchController: UISearchController) {
-        self.toggleSearchHistoryVisibility()
-    }
-    
-    func willDismissSearchController(_ searchController: UISearchController) {
-        self.toggleSearchHistoryVisibility()
-    }
-    
-    func didDismissSearchController(_ searchController: UISearchController) {
-        self.toggleSearchHistoryVisibility()
-    }
-}
-
-extension HomeViewController: UISearchBarDelegate {
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        print("Result: \(text)")
-    }
-}
-
-extension HomeViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        print("Current value: \(text)")
-    }
-}
+//extension HomeViewController: UISearchControllerDelegate {
+//
+//    func initSearchBar() {
+//        searchController.delegate = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        self.navigationItem.searchController = searchController
+//    }
+//
+//    func willPresentSearchController(_ searchController: UISearchController) {
+//        self.toggleSearchHistoryVisibility()
+//    }
+//
+//    func willDismissSearchController(_ searchController: UISearchController) {
+//        self.toggleSearchHistoryVisibility()
+//    }
+//
+//    func didDismissSearchController(_ searchController: UISearchController) {
+//        self.toggleSearchHistoryVisibility()
+//    }
+//}
+//
+//extension HomeViewController: UISearchBarDelegate {
+//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        guard let text = searchController.searchBar.text else {
+//            return
+//        }
+//        print("Result: \(text)")
+//    }
+//}
+//
+//extension HomeViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        guard let text = searchController.searchBar.text else {
+//            return
+//        }
+//        print("Current value: \(text)")
+//    }
+//}
 
 
 // MARK: - TableView

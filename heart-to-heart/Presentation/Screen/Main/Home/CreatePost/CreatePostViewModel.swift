@@ -19,7 +19,7 @@ class CreatePostViewModel: BaseViewModel {
     init(createPostUseCase: CreatePostUseCase) {
         self.createPostUseCase = createPostUseCase
     }
-
+    
     func addImages(images: [UIImage?]) {
         selectedImages.append(contentsOf: images)
         selectedImagesObservable.onNext(selectedImages)
@@ -35,38 +35,46 @@ class CreatePostViewModel: BaseViewModel {
     }
     
     func createPost() {
-        print("createPost")
-        print("showGallery() from CreatePostViewModel")
-        
         Observable
             .combineLatest(self.content, self.selectedImagesObservable)
             .take(1)
-            .subscribe { content, selectedImages in
-                print("content: \(content)")
-                print("selectedImages:")
-                print(selectedImages)
+            .do { [weak self] content, selectedImages in
+                self?.createPostUseCase.content = content
+                self?.createPostUseCase.images = selectedImages
+            }
+            .flatMap { [weak self] content, selectedImages in
+                self?.createPostUseCase.execute() ?? Observable.empty()
+            }
+            .subscribe { result in
+                print("RESULT: \(result)")
             }
             .disposed(by: self.disposeBag)
-        
-//         print(images)
-//        self.isLoading.onNext(true)
-//        self.content
-//            .take(1)
-//            .flatMapLatest { [weak self] text in
-//                self?.createPostUseCase.execute() ?? Observable.empty()
+//            .subscribe { content, selectedImages in
+//                print("content: \(content)")
+//                print("selectedImages:")
+//                print(selectedImages)
 //            }
-//            .subscribe(
-//                onNext: { [weak self] value in
-//                    self?.isLoading.onNext(false)
-//                    print(value)
-//                }, onError: { error in
-//
-//                }, onCompleted: {
-//                    print("onCompleted")
-//                }, onDisposed: {
-//                    print("onDisposed")
-//                }
-//            ).disposed(by: disposeBag)
+//            .disposed(by: self.disposeBag)
+        
+        //         print(images)
+        //        self.isLoading.onNext(true)
+        //        self.content
+        //            .take(1)
+        //            .flatMapLatest { [weak self] text in
+        //                self?.createPostUseCase.execute() ?? Observable.empty()
+        //            }
+        //            .subscribe(
+        //                onNext: { [weak self] value in
+        //                    self?.isLoading.onNext(false)
+        //                    print(value)
+        //                }, onError: { error in
+        //
+        //                }, onCompleted: {
+        //                    print("onCompleted")
+        //                }, onDisposed: {
+        //                    print("onDisposed")
+        //                }
+        //            ).disposed(by: disposeBag)
         
         // self.createPostUseCase.execute()
         // self.didCoordinatorChange.onNext(.closeCreatePostVC)

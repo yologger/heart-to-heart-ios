@@ -28,7 +28,7 @@ class LogOutService {
         ]
         
         return AF.request(
-            "\(Constants.AuthBaseUrl)/auth/logout",
+            "\(Constant.API.AuthBaseUrl)/auth/logout",
             method: .post,
             parameters: parameters,
             encoder: URLEncodedFormParameterEncoder.default,

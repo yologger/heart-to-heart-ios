@@ -6,7 +6,7 @@ class LogInViewModel: BaseViewModel {
     
     let didCoordinatorChange = PublishSubject<AuthorizationCoordinatorOptions>()
     
-    let email = BehaviorSubject<String>(value: "")
+    let email = BehaviorSubject<String>(value: "ronaldo@gmail.com")
     let password = BehaviorSubject<String>(value: "")
     let isEmailValid = BehaviorSubject<Bool>(value: false)
     let isPasswordValid = BehaviorSubject<Bool>(value: false)

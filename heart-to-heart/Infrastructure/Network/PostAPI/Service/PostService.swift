@@ -23,7 +23,7 @@ final class PostService {
         ]
 
         return AF.request(
-            "\(Constants.AuthBaseUrl)/post/test",
+            "\(Constant.API.AuthBaseUrl)/post/test",
             method: .get,
             headers: headers,
             interceptor: self.authInterceptor
@@ -37,6 +37,7 @@ final class PostService {
 //        ]
 //
 //    }
+
 }
 
 

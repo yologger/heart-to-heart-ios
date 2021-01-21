@@ -7,6 +7,7 @@ class FollowingViewController: UITableViewController, StoryboardInstantiable {
     static var storyboard: AppStoryboard = .following
     
     override func viewDidLoad() {
+        view.backgroundColor = AppColor.Orange.normal
         self.tableView.register(UINib(nibName: "FollowingTableViewCell", bundle: nil), forCellReuseIdentifier: "following_table_view_cell")
     }
     

@@ -25,18 +25,13 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.initBinding()
-
-        
+        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.initUI()
-        emailTextField.text = "ronaldo@gmail.com"
-        passwordTextField.text = "1234Asfd"
-        
+        super.viewWillAppear(animated)
     }
     
     private func initBinding() {
@@ -102,6 +97,7 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
             .disposed(by: self.disposeBag)
     }
     
+    
     private func initUI() {
         self.initEmailTextField()
         self.initPasswordTextField()
@@ -109,6 +105,7 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
         self.initPasswordLabel()
         self.initLogInButton()
     }
+    
     
     private func initEmailTextField() {
         let border = CALayer()
@@ -143,7 +140,7 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func initLogInButton() {
-        self.logInButton.backgroundColor = .blue
+        // self.logInButton.backgroundColor = .blue
         self.logInButton.setTitleColor(.white, for: .normal)
     }
     

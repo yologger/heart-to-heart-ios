@@ -68,7 +68,8 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         self.createButton.setTitle("", for: .normal)
         let orignalImage = UIImage(named: "create_icon")
         let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
-        createButton.setImage(tintedImage, for: .normal)
+        // createButton.setImage(tintedImage, for: .normal)
+        createButton.setTitle("DONE", for: .normal)
         createButton.tintColor = .black
     }
     
@@ -87,6 +88,13 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
 extension CreatePostViewController: TLPhotosPickerViewControllerDelegate {
     
     func shouldDismissPhotoPicker(withTLPHAssets: [TLPHAsset]) -> Bool {
+        print("Images!!")
+        for (idx, asset) in withTLPHAssets.enumerated() {
+            // print("image \(idx): \(asset)")
+            print("ext \(idx): \(asset.extType().rawValue)")
+            print("original file name \(idx): \(asset.originalFileName)")
+        }
+        
         guard let viewModel = self.viewModel else { return false }
         let selectedImages = withTLPHAssets.map { withTLPHAsset in
             return withTLPHAsset.fullResolutionImage
