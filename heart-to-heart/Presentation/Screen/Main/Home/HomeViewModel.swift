@@ -31,4 +31,8 @@ class HomeViewModel: BaseViewModel {
     func closeSearchHistory() {
         self.didCoordinatorChange.onNext(.closeSearchHistoryVC)
     }
+    
+    func test() {
+        self.didCoordinatorChange.onNext(.openTestVC)
+    }
 }

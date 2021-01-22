@@ -1,11 +1,35 @@
 {
+  "Mac" : [
+    {
+      "hash" : "824801c250394c9331987a983dd50243064952125342d13f287ebbbd3801a47a",
+      "name" : "SwinjectAutoregistration",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+    }
+  ],
+  "watchOS" : [
+    {
+      "hash" : "8e7e143eb37cab2c01439733b8d7fe6ba10c20b32eb917cc730e69f034e56717",
+      "name" : "SwinjectAutoregistration",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "1a37f717522ef8a75982ebd1fadacbb1efca9cd6fb58bcf93bf5f29f3fc57f36",
+      "name" : "SwinjectAutoregistration",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+    }
+  ],
   "commitish" : "2.7.0",
   "iOS" : [
     {
-      "hash" : "650d230a106b997803046bd753db7fc93f6be9087ae996c2c8ca8ef50c42f39b",
+      "hash" : "743590998444acf6fe2ddb0200a97bcb49f94e01185539620db9daf4dbf6209f",
       "name" : "SwinjectAutoregistration",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
     }
   ]
 }

@@ -1,11 +1,35 @@
 {
+  "Mac" : [
+    {
+      "hash" : "6d9f7c2f74251d675ec99e88a3118575a5774d24d851aa6646bf3d1ab64ea985",
+      "name" : "Swinject",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+    }
+  ],
+  "watchOS" : [
+    {
+      "hash" : "4b55bcef09ab5acab2a86fa9879211ff76ac488681465e953b035cf8c7ababd3",
+      "name" : "Swinject",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "edbe3ae3710d4ac56abf0417ca1ce728cfbb565a3d078d94c6ac392876ef8d92",
+      "name" : "Swinject",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+    }
+  ],
   "commitish" : "2.7.1",
   "iOS" : [
     {
-      "hash" : "c7709c6773378c1618b2663a7d08d679d79b3332a28e25e6fe87d8f9ec744b58",
+      "hash" : "70d219ff4723ae5eb37467178f8f3447484297a68b37b03bc91a9d7a75ba9d3e",
       "name" : "Swinject",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
     }
   ]
 }

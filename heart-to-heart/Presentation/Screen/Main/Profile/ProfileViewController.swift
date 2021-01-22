@@ -7,10 +7,43 @@ class ProfileViewController: UITableViewController, StoryboardInstantiable {
     
     @IBOutlet weak var themeToggleButton: UISwitch!
     
+    lazy var imageViewAvatar: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.cornerRadius = imageView.frame.height/4
+        imageView.image = UIImage(named: "avatar_default.png")
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
     override func viewDidLoad() {
+        initBinding()
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initUI()
+    }
+    
+    private func initBinding() {
+        
+    }
+    
+    private func initUI() {
         initThemeToggleButton()
+        initImageViewAvatar()
+    }
+    
+    private func initImageViewAvatar() {
+        self.view.addSubview(imageViewAvatar)
+        imageViewAvatar.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(100)
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

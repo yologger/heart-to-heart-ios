@@ -25,9 +25,6 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
             target: self,
             action: #selector(buttonPressed(_:))
         )
-        
-        
-        
         button.tag = 2
         
         
@@ -40,6 +37,22 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
 
         return button
     }()
+    
+    lazy var testButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(
+            title: "TEST",
+            style: .plain,
+            target: self,
+            action: #selector(buttonPressed(_:))
+        )
+        
+        button.tag = 1
+        
+        
+        return button
+    }()
+    
+    
     
     override func viewDidLoad() {
         
@@ -76,6 +89,8 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
     @objc private func buttonPressed(_ sender: Any) {
         if let button = sender as? UIBarButtonItem {
             switch button.tag {
+            case 1:
+                self.viewModel?.test()
             case 2:
                 self.viewModel?.createPost()
             default:
@@ -103,7 +118,8 @@ extension HomeViewController {
 // MARK: - Navigation
 extension HomeViewController {
     func initNavigation() {
-        self.navigationItem.rightBarButtonItem = self.createPostButton
+        // self.navigationItem.rightBarButtonItem = self.createPostButton
+        self.navigationItem.rightBarButtonItems = [self.createPostButton, self.testButton]
     }
 }
 

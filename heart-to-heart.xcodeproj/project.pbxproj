@@ -39,11 +39,15 @@
 		9A2E21B525B995FD005AE72B /* navigation_bar_background_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E21B425B995FD005AE72B /* navigation_bar_background_light.png */; };
 		9A2E21BA25B9960D005AE72B /* tab_bar_background_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E21B925B9960D005AE72B /* tab_bar_background_light.png */; };
 		9A2E21CB25B9B905005AE72B /* test_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E21CA25B9B905005AE72B /* test_background.png */; };
+		9A2E21D125B9EA61005AE72B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E21D025B9EA61005AE72B /* TestViewController.swift */; };
+		9A2E21D925B9ED76005AE72B /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E21D825B9ED76005AE72B /* Test.storyboard */; };
 		9A302ABD2578DABF006526B6 /* GetAllPostsSuccessResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302ABC2578DABF006526B6 /* GetAllPostsSuccessResponseData.swift */; };
 		9A302ABF2578DB14006526B6 /* GetAllPostsSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302ABE2578DB14006526B6 /* GetAllPostsSuccessResponse.swift */; };
 		9A302AC12578DB7F006526B6 /* GetAllPostsFailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302AC02578DB7F006526B6 /* GetAllPostsFailureResponse.swift */; };
 		9A302AC32578DBD4006526B6 /* GetAllPostsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302AC22578DBD4006526B6 /* GetAllPostsError.swift */; };
 		9A302AC52578DBFC006526B6 /* GetAllPostsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302AC42578DBFC006526B6 /* GetAllPostsResult.swift */; };
+		9A38824425BAB15E0044806E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A38824325BAB15E0044806E /* SnapKit.framework */; };
+		9A38824925BAB78D0044806E /* avatar_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A38824825BAB78D0044806E /* avatar_default.png */; };
 		9A4483C324F3FDC500919FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4483C224F3FDC500919FA4 /* AppDelegate.swift */; };
 		9A4483CA24F3FDC500919FA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4483C824F3FDC500919FA4 /* Main.storyboard */; };
 		9A4483CC24F3FDC600919FA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4483CB24F3FDC600919FA4 /* Assets.xcassets */; };
@@ -212,11 +216,15 @@
 		9A2E21B425B995FD005AE72B /* navigation_bar_background_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_bar_background_light.png; sourceTree = "<group>"; };
 		9A2E21B925B9960D005AE72B /* tab_bar_background_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_background_light.png; sourceTree = "<group>"; };
 		9A2E21CA25B9B905005AE72B /* test_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_background.png; sourceTree = "<group>"; };
+		9A2E21D025B9EA61005AE72B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		9A2E21D825B9ED76005AE72B /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		9A302ABC2578DABF006526B6 /* GetAllPostsSuccessResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsSuccessResponseData.swift; sourceTree = "<group>"; };
 		9A302ABE2578DB14006526B6 /* GetAllPostsSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsSuccessResponse.swift; sourceTree = "<group>"; };
 		9A302AC02578DB7F006526B6 /* GetAllPostsFailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsFailureResponse.swift; sourceTree = "<group>"; };
 		9A302AC22578DBD4006526B6 /* GetAllPostsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsError.swift; sourceTree = "<group>"; };
 		9A302AC42578DBFC006526B6 /* GetAllPostsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsResult.swift; sourceTree = "<group>"; };
+		9A38824325BAB15E0044806E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		9A38824825BAB78D0044806E /* avatar_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_default.png; sourceTree = "<group>"; };
 		9A4483BF24F3FDC500919FA4 /* heart-to-heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "heart-to-heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4483C224F3FDC500919FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4483C924F3FDC500919FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -364,6 +372,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A38824425BAB15E0044806E /* SnapKit.framework in Frameworks */,
 				9A14967A258C3F090035BC21 /* ImageSlideshow.framework in Frameworks */,
 				9A14967B258C3F090035BC21 /* TLPhotoPicker.framework in Frameworks */,
 				9A923F402576AAAF001E7AAA /* ObjectMapper.framework in Frameworks */,
@@ -466,6 +475,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		9A2E21CF25B9EA50005AE72B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				9A2E21D025B9EA61005AE72B /* TestViewController.swift */,
+				9A2E21D825B9ED76005AE72B /* Test.storyboard */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		9A4483B624F3FDC500919FA4 = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +508,7 @@
 		9A4483C124F3FDC500919FA4 /* heart-to-heart */ = {
 			isa = PBXGroup;
 			children = (
+				9A38824825BAB78D0044806E /* avatar_default.png */,
 				9A2E21AF25B99584005AE72B /* navigation_bar_background_dark.png */,
 				9A2E21B425B995FD005AE72B /* navigation_bar_background_light.png */,
 				9A2E219C25B99123005AE72B /* tab_bar_background_dark.png */,
@@ -554,6 +573,7 @@
 		9A6F257F24F8F11E00000BD8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9A2E21CF25B9EA50005AE72B /* Test */,
 				9A6F258424F8F16700000BD8 /* HomeCoordinator.swift */,
 				9A6F258224F8F15900000BD8 /* HomeViewController.swift */,
 				9AFD5B01251C7A34000D0DEC /* HomeViewModel.swift */,
@@ -594,6 +614,7 @@
 		9A6F259624F9238800000BD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A38824325BAB15E0044806E /* SnapKit.framework */,
 				9A149678258C3F090035BC21 /* ImageSlideshow.framework */,
 				9A149679258C3F090035BC21 /* TLPhotoPicker.framework */,
 				9A923F3E2576AAAF001E7AAA /* ObjectMapper.framework */,
@@ -1110,9 +1131,11 @@
 				9A7ADFE525347CE400A99065 /* Following.storyboard in Resources */,
 				9A6F259524F8F4DE00000BD8 /* Main.storyboard in Resources */,
 				9A2E21CB25B9B905005AE72B /* test_background.png in Resources */,
+				9A2E21D925B9ED76005AE72B /* Test.storyboard in Resources */,
 				9A4483CC24F3FDC600919FA4 /* Assets.xcassets in Resources */,
 				9AFD5AF9251B58E1000D0DEC /* test.png in Resources */,
 				9A6F259324F8F26F00000BD8 /* Follow.storyboard in Resources */,
+				9A38824925BAB78D0044806E /* avatar_default.png in Resources */,
 				9A2E219D25B99123005AE72B /* tab_bar_background_dark.png in Resources */,
 				9A9282B124F7DC5200D61580 /* LogIn.storyboard in Resources */,
 				9A5BF27625359E5A002B633C /* SearchHistoryTableViewCell.xib in Resources */,
@@ -1158,6 +1181,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TLPhotoPicker.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ImageSlideshow.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1199,6 +1223,7 @@
 				9A6F258924F8F19100000BD8 /* ProfileViewController.swift in Sources */,
 				9A7013F22522FBE40002DC74 /* FollowerViewModel.swift in Sources */,
 				9A6F258524F8F16700000BD8 /* HomeCoordinator.swift in Sources */,
+				9A2E21D125B9EA61005AE72B /* TestViewController.swift in Sources */,
 				9A6D09CA257A3ABD0054F060 /* RefreshTokensSuccessResponse.swift in Sources */,
 				9A9B2BCF2539799B00D37FB8 /* SessionRepository.swift in Sources */,
 				9A6F25FD250721E100000BD8 /* GetSessionUseCase.swift in Sources */,

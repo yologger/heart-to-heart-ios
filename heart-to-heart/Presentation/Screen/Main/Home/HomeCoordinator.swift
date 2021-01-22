@@ -8,6 +8,7 @@ enum HomeCoordinatorOptions {
     case closeCreatePostVC
     case showSearchHistoryVC
     case closeSearchHistoryVC
+    case openTestVC
 }
 
 class HomeCoordinator: BaseCoordinator {
@@ -92,6 +93,7 @@ class HomeCoordinator: BaseCoordinator {
                     case .closeCreatePostVC: self.closeCreatePost()
                     case .showSearchHistoryVC: self.showSearchHistory()
                     case .closeSearchHistoryVC: self.closeSearchHistory()
+                    case .openTestVC: self.openTestVC()
                     }
                 },
                 onError: { error in print(error) },
@@ -112,6 +114,7 @@ class HomeCoordinator: BaseCoordinator {
                     case .closeCreatePostVC: self.closeCreatePost()
                     case .showSearchHistoryVC: self.showSearchHistory()
                     case .closeSearchHistoryVC: self.closeSearchHistory()
+                    case .openTestVC: self.openTestVC()
                     }
                 },
                 onError: { error in print(error) },
@@ -122,7 +125,7 @@ class HomeCoordinator: BaseCoordinator {
     }
     
     private func showCreatePost() {
-        var createPostViewController = CreatePostViewController.instantiate()
+        let createPostViewController = CreatePostViewController.instantiate()
         
         createPostViewController.viewModel = createPostViewModel
         // createPostViewController.modalPresentationStyle = .fullScreen
@@ -133,6 +136,12 @@ class HomeCoordinator: BaseCoordinator {
     private func closeCreatePost() {
         self.navigationController.dismiss(animated: true, completion: nil) 
         // self.navigationController.popViewController(animated: true)
+    }
+    
+    private func openTestVC() {
+        let testViewController = TestViewController.instantiate()
+        // self.navigationController.present(testViewController, animated: true, completion: nil)
+        self.navigationController.pushViewController(testViewController, animated: true)
     }
 
 }
