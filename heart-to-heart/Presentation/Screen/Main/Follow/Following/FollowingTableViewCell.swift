@@ -2,17 +2,29 @@ import UIKit
 
 class FollowingTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var followButton: UIButton!
-    
+    @IBOutlet weak var imageViewAvatar: UIImageView!
+    @IBOutlet weak var labelNickname: UILabel!
     
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    override func layoutSubviews() {
+        imageViewAvatar.layer.cornerRadius = 20
+        imageViewAvatar.clipsToBounds = true
+        
+        let separatorLineHeight: CGFloat = 1/UIScreen.main.scale
+        let separator = UIView()
+        separator.frame = CGRect(x: self.frame.origin.x,
+                                 y: self.frame.size.height - separatorLineHeight,
+                                 width: self.frame.size.width,
+                                 height: separatorLineHeight)
+        separator.backgroundColor = AppColor.Grey.light
+        self.addSubview(separator)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
 }

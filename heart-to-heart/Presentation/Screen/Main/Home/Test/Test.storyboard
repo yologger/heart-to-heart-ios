@@ -16,15 +16,44 @@
                     <view key="view" contentMode="scaleToFill" id="JvF-Nm-ivr" customClass="Test">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEk-qT-Oao" customClass="FollowButton" customModule="heart_to_heart" customModuleProvider="target">
+                                <rect key="frame" x="166.5" y="435" width="81" height="26"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60R-eH-GvD" customClass="LikeButton" customModule="heart_to_heart" customModuleProvider="target">
+                                <rect key="frame" x="192" y="481" width="30" height="30"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4Yx-Mv-cWc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="60R-eH-GvD" firstAttribute="centerX" secondItem="yEk-qT-Oao" secondAttribute="centerX" id="6dc-Jg-HG2"/>
+                            <constraint firstItem="60R-eH-GvD" firstAttribute="top" secondItem="yEk-qT-Oao" secondAttribute="bottom" constant="20" id="Zvm-rq-JHv"/>
+                            <constraint firstItem="yEk-qT-Oao" firstAttribute="centerY" secondItem="JvF-Nm-ivr" secondAttribute="centerY" id="vdD-Py-Pbc"/>
+                            <constraint firstItem="yEk-qT-Oao" firstAttribute="centerX" secondItem="JvF-Nm-ivr" secondAttribute="centerX" id="wvM-xb-Cdc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="followButton" destination="yEk-qT-Oao" id="boz-KQ-AfN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBN-7N-4BM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="97" y="72"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="60R-eH-GvD">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="yEk-qT-Oao">
+            <size key="intrinsicContentSize" width="81" height="26"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

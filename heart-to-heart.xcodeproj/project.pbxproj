@@ -46,6 +46,8 @@
 		9A302AC12578DB7F006526B6 /* GetAllPostsFailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302AC02578DB7F006526B6 /* GetAllPostsFailureResponse.swift */; };
 		9A302AC32578DBD4006526B6 /* GetAllPostsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302AC22578DBD4006526B6 /* GetAllPostsError.swift */; };
 		9A302AC52578DBFC006526B6 /* GetAllPostsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A302AC42578DBFC006526B6 /* GetAllPostsResult.swift */; };
+		9A33F09225BC61C200692936 /* FollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A33F09125BC61C200692936 /* FollowButton.swift */; };
+		9A33F09A25BC6E9300692936 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A33F09925BC6E9300692936 /* LikeButton.swift */; };
 		9A38824425BAB15E0044806E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A38824325BAB15E0044806E /* SnapKit.framework */; };
 		9A38824925BAB78D0044806E /* avatar_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A38824825BAB78D0044806E /* avatar_default.png */; };
 		9A4483C324F3FDC500919FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4483C224F3FDC500919FA4 /* AppDelegate.swift */; };
@@ -223,6 +225,8 @@
 		9A302AC02578DB7F006526B6 /* GetAllPostsFailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsFailureResponse.swift; sourceTree = "<group>"; };
 		9A302AC22578DBD4006526B6 /* GetAllPostsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsError.swift; sourceTree = "<group>"; };
 		9A302AC42578DBFC006526B6 /* GetAllPostsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsResult.swift; sourceTree = "<group>"; };
+		9A33F09125BC61C200692936 /* FollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowButton.swift; sourceTree = "<group>"; };
+		9A33F09925BC6E9300692936 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		9A38824325BAB15E0044806E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9A38824825BAB78D0044806E /* avatar_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_default.png; sourceTree = "<group>"; };
 		9A4483BF24F3FDC500919FA4 /* heart-to-heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "heart-to-heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -944,6 +948,8 @@
 			isa = PBXGroup;
 			children = (
 				9A9B2BD3253982B800D37FB8 /* LoadingButton.swift */,
+				9A33F09125BC61C200692936 /* FollowButton.swift */,
+				9A33F09925BC6E9300692936 /* LikeButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1235,6 +1241,7 @@
 				9AA958DB2570F2E90044B219 /* LogInService.swift in Sources */,
 				9A04D4C0251DCFC90088CCAB /* UIViewControllerExtension.swift in Sources */,
 				9AFD5B00251C772E000D0DEC /* CreatePostViewModel.swift in Sources */,
+				9A33F09225BC61C200692936 /* FollowButton.swift in Sources */,
 				9A6F25FA25071FD000000BD8 /* BaseUseCase.swift in Sources */,
 				9AA958DF2570F5420044B219 /* Constant.swift in Sources */,
 				9A9282AD24F7DBEE00D61580 /* AuthorizationCoordinator.swift in Sources */,
@@ -1288,6 +1295,7 @@
 				9AA958DD2570F3160044B219 /* LogOutService.swift in Sources */,
 				9A6F258324F8F15900000BD8 /* HomeViewController.swift in Sources */,
 				9A78DBAB2576C49400EAE50E /* LogInSuccessResponseData.swift in Sources */,
+				9A33F09A25BC6E9300692936 /* LikeButton.swift in Sources */,
 				9AA958CE2570F09E0044B219 /* LocalDataSource.swift in Sources */,
 				9A5BF28125364D57002B633C /* GetCurrentPasswordViewController.swift in Sources */,
 				9A6F25EC24FE41A800000BD8 /* FindPasswordViewController.swift in Sources */,

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,10 +26,11 @@
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyQ-Jn-BTU">
                                 <rect key="frame" x="0.0" y="75" width="414" height="787"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1lH-d4-hv2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AyQ-Jn-BTU" firstAttribute="leading" secondItem="1lH-d4-hv2" secondAttribute="leading" id="2z5-GA-Wca"/>
                             <constraint firstItem="1lH-d4-hv2" firstAttribute="trailing" secondItem="lCM-cQ-UCq" secondAttribute="trailing" id="Lhx-Y9-VqX"/>
@@ -37,7 +40,6 @@
                             <constraint firstItem="lCM-cQ-UCq" firstAttribute="top" secondItem="1lH-d4-hv2" secondAttribute="top" id="Wxb-hl-ujS"/>
                             <constraint firstItem="AyQ-Jn-BTU" firstAttribute="top" secondItem="lCM-cQ-UCq" secondAttribute="bottom" id="bQ3-Vs-DnJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1lH-d4-hv2"/>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="AyQ-Jn-BTU" id="GwT-7F-dhr"/>
@@ -49,4 +51,9 @@
             <point key="canvasLocation" x="48" y="44"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

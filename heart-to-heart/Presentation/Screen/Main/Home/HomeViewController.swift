@@ -16,11 +16,8 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
     
     lazy var createPostButton: UIBarButtonItem = {
         
-        let orignalImage = UIImage(named: "create_icon")
-        let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
-
         let button = UIBarButtonItem(
-            image: tintedImage,
+            title: "POST",
             style: .plain,
             target: self,
             action: #selector(buttonPressed(_:))
