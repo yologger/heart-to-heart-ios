@@ -5,7 +5,7 @@ import RxCocoa
 class BaseViewController: UIViewController {
     var disposeBag = DisposeBag()
     
-    override func viewDidDisappear(_ animated: Bool) {
+    deinit {
         self.disposeBag = DisposeBag()
     }
 }

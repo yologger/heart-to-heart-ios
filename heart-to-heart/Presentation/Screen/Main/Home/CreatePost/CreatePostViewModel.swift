@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import TLPhotoPicker
 
 class CreatePostViewModel: BaseViewModel {
     
@@ -11,44 +12,51 @@ class CreatePostViewModel: BaseViewModel {
     let isLoading = BehaviorSubject<Bool>(value: false)
     let content = BehaviorSubject<String>(value: "")
     
-    // var selectedImages: [UIImage?]?
-    
-    var selectedImages: [UIImage?] = []
-    let selectedImagesObservable = BehaviorSubject<[UIImage?]>(value: [])
+    var selectedTLPHAssets: [TLPHAsset] = []
+    let selectedTLPHAssetsObservable = BehaviorSubject<[TLPHAsset]>(value: [])
     
     init(createPostUseCase: CreatePostUseCase) {
         self.createPostUseCase = createPostUseCase
     }
     
-    func addImages(images: [UIImage?]) {
-        selectedImages.append(contentsOf: images)
-        selectedImagesObservable.onNext(selectedImages)
+ 
+    func addTLPHAssets(assets: [TLPHAsset]) {
+        selectedTLPHAssets.append(contentsOf: assets)
+        selectedTLPHAssetsObservable.onNext(selectedTLPHAssets)
     }
     
     func closeCreatePost() {
         self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
+    func clear() {
+        selectedTLPHAssets = []
+        selectedTLPHAssetsObservable.onNext(selectedTLPHAssets)
+    }
+    
     func showGallery() {
-        
         // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
     func createPost() {
-        Observable
-            .combineLatest(self.content, self.selectedImagesObservable)
-            .take(1)
-            .do { [weak self] content, selectedImages in
-                self?.createPostUseCase.content = content
-                self?.createPostUseCase.images = selectedImages
-            }
-            .flatMap { [weak self] content, selectedImages in
-                self?.createPostUseCase.execute() ?? Observable.empty()
-            }
-            .subscribe { result in
-                print("RESULT: \(result)")
-            }
-            .disposed(by: self.disposeBag)
+//        Observable
+//            .combineLatest(self.content, self.selectedImagesObservable)
+//            .take(1)
+//            .do { [weak self] content, selectedImages in
+//                self?.createPostUseCase.content = content
+//                self?.createPostUseCase.images = selectedImages
+//            }
+//            .flatMap { [weak self] content, selectedImages in
+//                self?.createPostUseCase.execute() ?? Observable.empty()
+//            }
+//            .subscribe { result in
+//                print("RESULT: \(result)")
+//            }
+//            .disposed(by: self.disposeBag)
+        
+        
+        
+        
 //            .subscribe { content, selectedImages in
 //                print("content: \(content)")
 //                print("selectedImages:")
@@ -78,5 +86,9 @@ class CreatePostViewModel: BaseViewModel {
         
         // self.createPostUseCase.execute()
         // self.didCoordinatorChange.onNext(.closeCreatePostVC)
+    }
+    
+    deinit {
+        print("deinit")
     }
 }
