@@ -164,6 +164,12 @@
 		9AA958DB2570F2E90044B219 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA958DA2570F2E90044B219 /* LogInService.swift */; };
 		9AA958DD2570F3160044B219 /* LogOutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA958DC2570F3160044B219 /* LogOutService.swift */; };
 		9AA958DF2570F5420044B219 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA958DE2570F5420044B219 /* Constant.swift */; };
+		9ACD9D8425BE9AAE00CA577F /* ToggleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8325BE9AAE00CA577F /* ToggleTextButton.swift */; };
+		9ACD9D8925BE9AD000CA577F /* ToggleIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8825BE9AD000CA577F /* ToggleIconButton.swift */; };
+		9ACD9D8E25BE9AF900CA577F /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8D25BE9AF900CA577F /* ContainedButton.swift */; };
+		9ACD9D9325BE9B2400CA577F /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D9225BE9B2400CA577F /* OutlinedButton.swift */; };
+		9ACF3D4625BD63540078C318 /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF3D4525BD63540078C318 /* TopTabBar.swift */; };
+		9ACF3D4B25BD94600078C318 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACF3D4A25BD94600078C318 /* XLPagerTabStrip.framework */; };
 		9AD127F8253EECF5003DEDA3 /* Container+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD127F7253EECF5003DEDA3 /* Container+DataSource.swift */; };
 		9AD127FA253EEE6E003DEDA3 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD127F9253EEE6E003DEDA3 /* PostListViewModel.swift */; };
 		9AD127FC253EEFD7003DEDA3 /* PostList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD127FB253EEFD7003DEDA3 /* PostList.storyboard */; };
@@ -355,6 +361,12 @@
 		9AA958DA2570F2E90044B219 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
 		9AA958DC2570F3160044B219 /* LogOutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutService.swift; sourceTree = "<group>"; };
 		9AA958DE2570F5420044B219 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		9ACD9D8325BE9AAE00CA577F /* ToggleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTextButton.swift; sourceTree = "<group>"; };
+		9ACD9D8825BE9AD000CA577F /* ToggleIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleIconButton.swift; sourceTree = "<group>"; };
+		9ACD9D8D25BE9AF900CA577F /* ContainedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedButton.swift; sourceTree = "<group>"; };
+		9ACD9D9225BE9B2400CA577F /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
+		9ACF3D4525BD63540078C318 /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
+		9ACF3D4A25BD94600078C318 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		9AD127EA253DCD83003DEDA3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9AD127EB253DCD83003DEDA3 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		9AD127F7253EECF5003DEDA3 /* Container+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+DataSource.swift"; sourceTree = "<group>"; };
@@ -376,6 +388,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACF3D4B25BD94600078C318 /* XLPagerTabStrip.framework in Frameworks */,
 				9A38824425BAB15E0044806E /* SnapKit.framework in Frameworks */,
 				9A14967A258C3F090035BC21 /* ImageSlideshow.framework in Frameworks */,
 				9A14967B258C3F090035BC21 /* TLPhotoPicker.framework in Frameworks */,
@@ -512,12 +525,6 @@
 		9A4483C124F3FDC500919FA4 /* heart-to-heart */ = {
 			isa = PBXGroup;
 			children = (
-				9A38824825BAB78D0044806E /* avatar_default.png */,
-				9A2E21AF25B99584005AE72B /* navigation_bar_background_dark.png */,
-				9A2E21B425B995FD005AE72B /* navigation_bar_background_light.png */,
-				9A2E219C25B99123005AE72B /* tab_bar_background_dark.png */,
-				9A2E21B925B9960D005AE72B /* tab_bar_background_light.png */,
-				9A2E21CA25B9B905005AE72B /* test_background.png */,
 				9A92824D24F6907000D61580 /* Application */,
 				9A92824E24F690C800D61580 /* DI */,
 				9A9281A424F4108000D61580 /* Presentation */,
@@ -526,12 +533,18 @@
 				9A810EF9254846F2004C6279 /* Infrastructure */,
 				9A4483C824F3FDC500919FA4 /* Main.storyboard */,
 				9A4483CB24F3FDC600919FA4 /* Assets.xcassets */,
+				9A4483D024F3FDC600919FA4 /* Info.plist */,
 				9A4483CD24F3FDC600919FA4 /* LaunchScreen.storyboard */,
+				9A38824825BAB78D0044806E /* avatar_default.png */,
+				9A2E21AF25B99584005AE72B /* navigation_bar_background_dark.png */,
+				9A2E21B425B995FD005AE72B /* navigation_bar_background_light.png */,
+				9A2E219C25B99123005AE72B /* tab_bar_background_dark.png */,
+				9A2E21B925B9960D005AE72B /* tab_bar_background_light.png */,
+				9A2E21CA25B9B905005AE72B /* test_background.png */,
 				9AE8AE5E25B8610A0095C001 /* avatar1.gif */,
 				9AE8AE5D25B861090095C001 /* avatar1.heic */,
 				9AE8AE5F25B8610A0095C001 /* avatar1.jpg */,
 				9AE8AE6025B8610A0095C001 /* avatar1.png */,
-				9A4483D024F3FDC600919FA4 /* Info.plist */,
 				9AFD5AF8251B58E1000D0DEC /* test.png */,
 			);
 			path = "heart-to-heart";
@@ -618,6 +631,7 @@
 		9A6F259624F9238800000BD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9ACF3D4A25BD94600078C318 /* XLPagerTabStrip.framework */,
 				9A38824325BAB15E0044806E /* SnapKit.framework */,
 				9A149678258C3F090035BC21 /* ImageSlideshow.framework */,
 				9A149679258C3F090035BC21 /* TLPhotoPicker.framework */,
@@ -950,6 +964,11 @@
 				9A9B2BD3253982B800D37FB8 /* LoadingButton.swift */,
 				9A33F09125BC61C200692936 /* FollowButton.swift */,
 				9A33F09925BC6E9300692936 /* LikeButton.swift */,
+				9ACF3D4525BD63540078C318 /* TopTabBar.swift */,
+				9ACD9D8325BE9AAE00CA577F /* ToggleTextButton.swift */,
+				9ACD9D8825BE9AD000CA577F /* ToggleIconButton.swift */,
+				9ACD9D8D25BE9AF900CA577F /* ContainedButton.swift */,
+				9ACD9D9225BE9B2400CA577F /* OutlinedButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1188,6 +1207,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TLPhotoPicker.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ImageSlideshow.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1212,6 +1232,8 @@
 				9A6F260F250741E900000BD8 /* Container+Coordinators.swift in Sources */,
 				9AA958C32570CA630044B219 /* BaseViewController.swift in Sources */,
 				9A6F25F32506214300000BD8 /* FindPasswordViewModel.swift in Sources */,
+				9ACD9D8925BE9AD000CA577F /* ToggleIconButton.swift in Sources */,
+				9ACD9D8425BE9AAE00CA577F /* ToggleTextButton.swift in Sources */,
 				9A6F260B2507416500000BD8 /* Container+RegisterDependencies.swift in Sources */,
 				9A923F442576BF58001E7AAA /* LogInFailureResponse.swift in Sources */,
 				9A92825224F6914C00D61580 /* AppCoordinator.swift in Sources */,
@@ -1267,6 +1289,8 @@
 				9A9282AB24F7DA4F00D61580 /* BaseCoordinator.swift in Sources */,
 				9A810F0E25492F03004C6279 /* Container+Infrastructure.swift in Sources */,
 				9A78DBB82577D1A500EAE50E /* DefaultPostAPI.swift in Sources */,
+				9ACD9D9325BE9B2400CA577F /* OutlinedButton.swift in Sources */,
+				9ACF3D4625BD63540078C318 /* TopTabBar.swift in Sources */,
 				9A2E219325B987F1005AE72B /* AppStyle.swift in Sources */,
 				9A6F25A124F9251100000BD8 /* LogInViewModel.swift in Sources */,
 				9A78DBB02577A01500EAE50E /* UserDefaults.swift in Sources */,
@@ -1308,6 +1332,7 @@
 				9A6F258F24F8F1CD00000BD8 /* FollowCoordinator.swift in Sources */,
 				9A97A28325A5AB970027F977 /* ImageItemWithClearButton.swift in Sources */,
 				9A6F25EA24FE415800000BD8 /* SignUpViewController.swift in Sources */,
+				9ACD9D8E25BE9AF900CA577F /* ContainedButton.swift in Sources */,
 				9A302AC12578DB7F006526B6 /* GetAllPostsFailureResponse.swift in Sources */,
 				9A810F1725495740004C6279 /* LogInResult.swift in Sources */,
 				9A78DBBA2577D23500EAE50E /* PostService.swift in Sources */,

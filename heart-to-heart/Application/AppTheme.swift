@@ -147,14 +147,35 @@ struct ThemeManager {
         UILabel.appearance().textColor = theme.labelTextColor
         
         // Initialize UITextField
-        UITextField.appearance().textColor = AppColor.Orange.normal
+        // UITextField.appearance().textColor = AppColor.Orange.normal
         
         // Initialize UIBarButtonItem
         UIBarButtonItem.appearance().tintColor = theme.barButtonItemColor
         
         // Initialize UISwitch
-        
         UISwitch.appearance().thumbTintColor = theme.switchOnThumbTintColor
         UISwitch.appearance().onTintColor = theme.switchOnTintColor
+        
+        // initialize UISegmentedControl
+        //        UISegmentedControl.appearance().backgroundColor = AppColor.Grey.light
+        //        UISegmentedControl.appearance().selectedSegmentTintColor = AppColor.Primary.normal
+        //        UISegmentedControl.appearance().layer.cornerRadius = 10
+        
+        
+        //        let border = CALayer()
+        //        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
+        //        border.backgroundColor = UIColor.black.cgColor
+        //
+        //        passwordTextField.layer.addSublayer(border)
+        //        passwordTextField.textColor = UIColor.black
+        //        passwordTextField.backgroundColor = .orange
+        //        self.passwordTextField.clearButtonMode = .whileEditing
+        
+//        let border = CALayer()
+//        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
+//        border.backgroundColor = UIColor.black.cgColor
+//        UITextField.appearance().layer.addSublayer(border)
+//        UITextField.appearance().backgroundColor = AppColor.Blue.normal
+        
     }
 }

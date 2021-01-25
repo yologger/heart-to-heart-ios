@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +30,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kR3-BG-deN">
-                                                <rect key="frame" x="16" y="52.5" width="382" height="496"/>
+                                                <rect key="frame" x="16" y="52.5" width="382" height="526"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXn-LI-o1C" userLabel="Email Container View">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="116.5"/>
@@ -42,18 +44,19 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP0-ke-TUB" userLabel="Email Label">
-                                                                <rect key="frame" x="16" y="60" width="350" height="40.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="16" y="60" width="350" height="48.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="V6l-uP-wL2" firstAttribute="leading" secondItem="FXn-LI-o1C" secondAttribute="leading" constant="16" id="DeA-yj-PAE"/>
                                                             <constraint firstItem="jP0-ke-TUB" firstAttribute="leading" secondItem="FXn-LI-o1C" secondAttribute="leading" constant="16" id="EPN-JC-Ksb"/>
                                                             <constraint firstItem="V6l-uP-wL2" firstAttribute="top" secondItem="FXn-LI-o1C" secondAttribute="top" constant="16" id="HeO-Sl-Vd3"/>
                                                             <constraint firstAttribute="trailing" secondItem="V6l-uP-wL2" secondAttribute="trailing" constant="16" id="ILj-cH-Imj"/>
-                                                            <constraint firstAttribute="bottom" secondItem="jP0-ke-TUB" secondAttribute="bottom" constant="16" id="c6h-vV-NLt"/>
+                                                            <constraint firstAttribute="bottom" secondItem="jP0-ke-TUB" secondAttribute="bottom" constant="8" id="c6h-vV-NLt"/>
                                                             <constraint firstItem="jP0-ke-TUB" firstAttribute="top" secondItem="V6l-uP-wL2" secondAttribute="bottom" constant="4" id="eFW-Hb-F3q"/>
                                                             <constraint firstAttribute="trailing" secondItem="jP0-ke-TUB" secondAttribute="trailing" constant="16" id="qaU-42-qRg"/>
                                                         </constraints>
@@ -83,17 +86,18 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Let-j5-sjZ" userLabel="Fullname Label">
-                                                                <rect key="frame" x="16" y="72" width="350" height="28.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="16" y="60" width="350" height="48.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="Let-j5-sjZ" secondAttribute="trailing" constant="16" id="2ec-ZD-3zj"/>
-                                                            <constraint firstItem="Let-j5-sjZ" firstAttribute="top" secondItem="EEi-T4-fiw" secondAttribute="bottom" constant="16" id="C9Q-5d-bm9"/>
+                                                            <constraint firstItem="Let-j5-sjZ" firstAttribute="top" secondItem="EEi-T4-fiw" secondAttribute="bottom" constant="4" id="C9Q-5d-bm9"/>
                                                             <constraint firstAttribute="trailing" secondItem="EEi-T4-fiw" secondAttribute="trailing" constant="16" id="Da0-tG-B6E"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Let-j5-sjZ" secondAttribute="bottom" constant="16" id="EeB-1I-rxQ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Let-j5-sjZ" secondAttribute="bottom" constant="8" id="EeB-1I-rxQ"/>
                                                             <constraint firstItem="EEi-T4-fiw" firstAttribute="leading" secondItem="prC-Fo-C6y" secondAttribute="leading" constant="16" id="bqK-Qz-b03"/>
                                                             <constraint firstItem="EEi-T4-fiw" firstAttribute="top" secondItem="prC-Fo-C6y" secondAttribute="top" constant="16" id="r9Q-aE-lAO"/>
                                                             <constraint firstItem="Let-j5-sjZ" firstAttribute="leading" secondItem="prC-Fo-C6y" secondAttribute="leading" constant="16" id="ujp-1B-AlE"/>
@@ -111,8 +115,8 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHj-e8-k18" userLabel="Nickname Label">
-                                                                <rect key="frame" x="16" y="60" width="350" height="40.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="16" y="60" width="350" height="48.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -121,7 +125,7 @@
                                                             <constraint firstItem="FXR-fO-lO5" firstAttribute="leading" secondItem="Plg-i8-5EY" secondAttribute="leading" constant="16" id="Fna-w1-ULx"/>
                                                             <constraint firstAttribute="trailing" secondItem="FXR-fO-lO5" secondAttribute="trailing" constant="16" id="IJT-en-dJm"/>
                                                             <constraint firstAttribute="trailing" secondItem="ZHj-e8-k18" secondAttribute="trailing" constant="16" id="Icc-lM-oUf"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ZHj-e8-k18" secondAttribute="bottom" constant="16" id="W2g-7N-osO"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ZHj-e8-k18" secondAttribute="bottom" constant="8" id="W2g-7N-osO"/>
                                                             <constraint firstItem="FXR-fO-lO5" firstAttribute="top" secondItem="Plg-i8-5EY" secondAttribute="top" constant="16" id="ic1-me-7vu"/>
                                                             <constraint firstItem="ZHj-e8-k18" firstAttribute="leading" secondItem="Plg-i8-5EY" secondAttribute="leading" constant="16" id="pp2-zH-ehc"/>
                                                             <constraint firstItem="ZHj-e8-k18" firstAttribute="top" secondItem="FXR-fO-lO5" secondAttribute="bottom" constant="4" id="xZz-Rs-bAQ"/>
@@ -139,14 +143,14 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC2-pS-jTh" userLabel="Password Label">
-                                                                <rect key="frame" x="16" y="60" width="350" height="40.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="16" y="60" width="350" height="48.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="fC2-pS-jTh" secondAttribute="bottom" constant="16" id="Mst-77-BJf"/>
+                                                            <constraint firstAttribute="bottom" secondItem="fC2-pS-jTh" secondAttribute="bottom" constant="8" id="Mst-77-BJf"/>
                                                             <constraint firstItem="fC2-pS-jTh" firstAttribute="leading" secondItem="Fcl-cZ-a0w" secondAttribute="leading" constant="16" id="PIA-o0-oQQ"/>
                                                             <constraint firstItem="TwR-Me-2SD" firstAttribute="leading" secondItem="Fcl-cZ-a0w" secondAttribute="leading" constant="16" id="cTw-bz-mqs"/>
                                                             <constraint firstItem="TwR-Me-2SD" firstAttribute="top" secondItem="Fcl-cZ-a0w" secondAttribute="top" constant="16" id="eQp-n8-5MD"/>
@@ -155,30 +159,45 @@
                                                             <constraint firstItem="fC2-pS-jTh" firstAttribute="top" secondItem="TwR-Me-2SD" secondAttribute="bottom" constant="4" id="vo0-HS-gEF"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hH5-gO-sBs">
-                                                        <rect key="frame" x="0.0" y="466" width="382" height="30"/>
-                                                        <color key="backgroundColor" red="1" green="0.51940012690000004" blue="0.2547302535" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" title="SIGN UP"/>
-                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxO-J2-RDA">
+                                                        <rect key="frame" x="0.0" y="466" width="382" height="60"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hH5-gO-sBs" customClass="ContainedButton" customModule="heart_to_heart" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="16" width="350" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="44" id="ViA-yV-1rW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                <state key="normal" title="SIGN UP"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hH5-gO-sBs" firstAttribute="top" secondItem="GxO-J2-RDA" secondAttribute="top" constant="16" id="6yS-FI-Hf4"/>
+                                                            <constraint firstItem="hH5-gO-sBs" firstAttribute="leading" secondItem="GxO-J2-RDA" secondAttribute="leading" constant="16" id="QgG-9W-2zq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hH5-gO-sBs" secondAttribute="trailing" constant="16" id="c47-zr-mds"/>
+                                                            <constraint firstAttribute="bottom" secondItem="hH5-gO-sBs" secondAttribute="bottom" id="sbD-e9-LO8"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-HR-Ngr">
-                                                <rect key="frame" x="78" y="772" width="258.5" height="30"/>
+                                                <rect key="frame" x="78.5" y="772" width="257.5" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have any account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toL-58-TWW" userLabel="LogIn Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="204.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="203.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQx-fN-w61" userLabel="LogIn Button">
-                                                        <rect key="frame" x="212.5" y="0.0" width="46" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQx-fN-w61" userLabel="LogIn Button">
+                                                        <rect key="frame" x="211.5" y="0.0" width="46" height="30"/>
                                                         <state key="normal" title="Log In."/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ZmW-Ko-lYz" firstAttribute="top" secondItem="4wq-4q-t7W" secondAttribute="top" constant="16" id="5M0-PW-3RL"/>
                                             <constraint firstAttribute="bottom" secondItem="bN3-HR-Ngr" secondAttribute="bottom" constant="16" id="5Po-u7-ogU"/>
@@ -203,14 +222,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Y7e-HU-36x"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PoZ-5o-9L8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PoZ-5o-9L8" firstAttribute="bottom" secondItem="zQ4-xb-wEF" secondAttribute="bottom" id="KrD-Ou-dEi"/>
                             <constraint firstItem="PoZ-5o-9L8" firstAttribute="trailing" secondItem="zQ4-xb-wEF" secondAttribute="trailing" id="gqs-PL-xUf"/>
                             <constraint firstItem="zQ4-xb-wEF" firstAttribute="leading" secondItem="PoZ-5o-9L8" secondAttribute="leading" id="qje-2u-JZb"/>
                             <constraint firstItem="zQ4-xb-wEF" firstAttribute="top" secondItem="PoZ-5o-9L8" secondAttribute="top" id="s7v-Rt-hDH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PoZ-5o-9L8"/>
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="jP0-ke-TUB" id="UkQ-7K-OzL"/>
@@ -232,4 +251,14 @@
             <point key="canvasLocation" x="121.73913043478262" y="-64.285714285714278"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="hH5-gO-sBs">
+            <size key="intrinsicContentSize" width="66" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -11,11 +11,10 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var textFieldEmail: UITextField!
+    @IBOutlet weak var textFieldPassword: UITextField!
+    @IBOutlet weak var labelEmail: UILabel!
+    @IBOutlet weak var labelPassword: UILabel!
     
     var emailLabelHeight: NSLayoutConstraint!
     var passwordLabelHeight: NSLayoutConstraint!
@@ -31,22 +30,24 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     
     override func viewWillAppear(_ animated: Bool) {
         self.initUI()
+        textFieldEmail.text = "ronaldo@gmail.com"
+        textFieldPassword.text = "12345"
         super.viewWillAppear(animated)
     }
     
     private func initBinding() {
         guard let viewModel = self.viewModel else { return }
         
-        self.emailTextField.rx.text.orEmpty
+        self.textFieldEmail.rx.text.orEmpty
             .bind(to: viewModel.email)
             .disposed(by: self.disposeBag)
         
-        self.passwordTextField.rx.text.orEmpty
+        self.textFieldPassword.rx.text.orEmpty
             .bind(to: viewModel.password)
             .disposed(by: self.disposeBag)
         
-        self.emailLabelHeight = emailLabel.heightAnchor.constraint(equalToConstant: 0)
-        self.passwordLabelHeight = passwordLabel.heightAnchor.constraint(equalToConstant: 0)
+        self.emailLabelHeight = labelEmail.heightAnchor.constraint(equalToConstant: 0)
+        self.passwordLabelHeight = labelPassword.heightAnchor.constraint(equalToConstant: 0)
         
         viewModel.isEmailValid.subscribe{ [weak self] isEmailValid in
             if isEmailValid.element! {
@@ -64,27 +65,27 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
             }
         }.disposed(by: self.disposeBag)
         
-        Observable
-            .combineLatest(
-                self.viewModel!.isEmailValid,
-                self.viewModel!.isPasswordValid,
-                resultSelector: { s1, s2 in s1 && s2 }
-            )
-            .subscribe { [weak self] areInputsValid in
-                if areInputsValid.element! {
-                    self?.logInButton.alpha = 1
-                    self?.logInButton.isEnabled = true
-                } else {
-                    self?.logInButton.alpha = 0.3
-                    self?.logInButton.isEnabled = false
-                }
-            }
-            .disposed(by: disposeBag)
+//        Observable
+//            .combineLatest(
+//                self.viewModel!.isEmailValid,
+//                self.viewModel!.isPasswordValid,
+//                resultSelector: { s1, s2 in s1 && s2 }
+//            )
+//            .subscribe { [weak self] areInputsValid in
+//                if areInputsValid.element! {
+//                    self?.logInButton.alpha = 1
+//                    self?.logInButton.isEnabled = true
+//                } else {
+//                    self?.logInButton.alpha = 0.3
+//                    self?.logInButton.isEnabled = false
+//                }
+//            }
+//            .disposed(by: disposeBag)
         
         self.logInButton.rx.tap
             .bind { [weak self] in self?.viewModel?.logIn(
-                email: (self?.emailTextField.text)!,
-                password: (self?.passwordTextField.text)!
+                email: (self?.textFieldEmail.text)!,
+                password: (self?.textFieldPassword.text)!
             ) }
             .disposed(by: self.disposeBag)
         
@@ -97,50 +98,19 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
             .disposed(by: self.disposeBag)
     }
     
-    
     private func initUI() {
-        self.initEmailTextField()
-        self.initPasswordTextField()
-        self.initEmailLabel()
-        self.initPasswordLabel()
-        self.initLogInButton()
-    }
-    
-    
-    private func initEmailTextField() {
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-1, width: emailTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.black.cgColor
+        self.textFieldEmail.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: AppColor.Grey.light])
         
-        emailTextField.layer.addSublayer(border)
-        emailTextField.textColor = UIColor.black
-        emailTextField.backgroundColor = .orange
-        self.emailTextField.clearButtonMode = .whileEditing
-    }
-    
-    private func initPasswordTextField() {
-        //        let border = CALayer()
-        //        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
-        //        border.backgroundColor = UIColor.black.cgColor
-        //
-        //        passwordTextField.layer.addSublayer(border)
-        //        passwordTextField.textColor = UIColor.black
-        //        passwordTextField.backgroundColor = .orange
-        //        self.passwordTextField.clearButtonMode = .whileEditing
-    }
-    
-    private func initEmailLabel() {
-        self.emailLabel.text = "Wrong Email Format"
-        self.emailLabel.textColor = .red
-    }
-    
-    private func initPasswordLabel() {
-        self.passwordLabel.text = "Wrong Password Format"
-        self.passwordLabel.textColor = .red
-    }
-    
-    private func initLogInButton() {
-        // self.logInButton.backgroundColor = .blue
+        self.textFieldPassword.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: AppColor.Grey.light])
+        
+        
+        self.labelEmail.text = "Wrong Email Format"
+        self.labelEmail.textColor = .red
+        
+        
+        self.labelPassword.text = "Wrong Password Format"
+        self.labelPassword.textColor = .red
+        
         self.logInButton.setTitleColor(.white, for: .normal)
     }
     

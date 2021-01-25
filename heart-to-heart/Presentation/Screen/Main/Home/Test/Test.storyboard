@@ -27,6 +27,21 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60R-eH-GvD" customClass="LikeButton" customModule="heart_to_heart" customModuleProvider="target">
                                 <rect key="frame" x="192" y="481" width="30" height="30"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncw-9U-7Zy">
+                                <rect key="frame" x="92" y="121" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TextButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PM-VD-J3E" customClass="OutlinedButton" customModule="heart_to_heart" customModuleProvider="target">
+                                <rect key="frame" x="82" y="166" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OutlinedButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9W-yu-JKJ" customClass="ContainedButton" customModule="heart_to_heart" customModuleProvider="target">
+                                <rect key="frame" x="86" y="211" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ContainedButton"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Yx-Mv-cWc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,6 +64,12 @@
     <designables>
         <designable name="60R-eH-GvD">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="9PM-VD-J3E">
+            <size key="intrinsicContentSize" width="104" height="30"/>
+        </designable>
+        <designable name="r9W-yu-JKJ">
+            <size key="intrinsicContentSize" width="116" height="30"/>
         </designable>
         <designable name="yEk-qT-Oao">
             <size key="intrinsicContentSize" width="81" height="26"/>

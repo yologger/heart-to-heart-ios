@@ -28,7 +28,7 @@ class FollowCoordinator: BaseCoordinator {
     override func start() {
         self.followViewController = FollowViewController.instantiate()
         self.followViewController!.viewModel = self.followViewModel
-        self.navigationController.isNavigationBarHidden = true
+        // self.navigationController.isNavigationBarHidden = true
         self.navigationController.viewControllers = [self.followViewController!]
         
         self.bindToFollowViewModel()

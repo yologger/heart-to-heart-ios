@@ -1,32 +1,8 @@
 {
-  "Mac" : [
-    {
-      "hash" : "5bfc0e2ff3e7428036d1d56c94f15a62475f6a8f47bd13a1c23a00b11ef0f0c5",
-      "name" : "ObjectMapper",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
-    }
-  ],
-  "watchOS" : [
-    {
-      "hash" : "d3aa18f63c2360fe32f76f05c230628d82e87920d7d9291450244b893065861c",
-      "name" : "ObjectMapper",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
-    }
-  ],
-  "tvOS" : [
-    {
-      "hash" : "17c09867858298a1d1fa05a731e7b2be44443e016f9d1464c83831f5e4c4ba4f",
-      "name" : "ObjectMapper",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
-    }
-  ],
   "commitish" : "3.5.3",
   "iOS" : [
     {
-      "hash" : "603e4f2ea6777b65ebcc30a617c019382f5c0f1071502c317d8275fa7b3d65b9",
+      "hash" : "6f89cbce5a4c7f3ef48aa51ce3b869051dfc70b44b42a9c7149ec794491fc693",
       "name" : "ObjectMapper",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

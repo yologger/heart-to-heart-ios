@@ -14,6 +14,7 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
     @IBOutlet weak var openGalleryButton: UIButton!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var viewHeader: UIView!
     
     override func viewDidLoad() {
         self.initBinding()
@@ -45,9 +46,11 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
     }
     
     private func initUI() {
+        viewHeader.backgroundColor = AppColor.Primary.normal
         self.initCloseButton()
         self.initCreateButton()
         self.initCollectionView()
+        self.initOpenGalleryButton()
     }
     
     @IBAction func openGallery(_ sender: Any) {
@@ -56,12 +59,20 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         self.present(photosPickerViewController, animated: true, completion: nil)
     }
     
+    private func initOpenGalleryButton() {
+        openGalleryButton.backgroundColor = AppColor.White.normal
+        openGalleryButton.tintColor = AppColor.Primary.normal
+        openGalleryButton.layer.borderColor = AppColor.Primary.normal.cgColor
+        openGalleryButton.layer.borderWidth = 1
+        openGalleryButton.layer.cornerRadius = 16
+    }
+    
     private func initCloseButton() {
         self.closeButton.setTitle("", for: .normal)
         let orignalImage = UIImage(named: "clear_icon")
         let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
         closeButton.setImage(tintedImage, for: .normal)
-        closeButton.tintColor = .black
+        closeButton.tintColor = AppColor.White.normal
     }
     
     private func initCreateButton() {
@@ -70,7 +81,7 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         let tintedImage = orignalImage?.withRenderingMode(.alwaysTemplate)
         // createButton.setImage(tintedImage, for: .normal)
         createButton.setTitle("DONE", for: .normal)
-        createButton.tintColor = .black
+        createButton.tintColor = AppColor.White.normal
     }
     
     private func initCollectionView() {
@@ -88,12 +99,13 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
 extension CreatePostViewController: TLPhotosPickerViewControllerDelegate {
     
     func shouldDismissPhotoPicker(withTLPHAssets: [TLPHAsset]) -> Bool {
-        print("Images!!")
-        for (idx, asset) in withTLPHAssets.enumerated() {
+        print("Images!!!!!")
+       //  print(withTLPHAssets)
+        // for (idx, asset) in withTLPHAssets.enumerated() {
             // print("image \(idx): \(asset)")
-            print("ext \(idx): \(asset.extType().rawValue)")
-            print("original file name \(idx): \(asset.originalFileName)")
-        }
+//            print("ext \(idx): \(asset.extType().rawValue)")
+//            print("original file name \(idx): \(asset.originalFileName)")
+        // }
         
         guard let viewModel = self.viewModel else { return false }
         let selectedImages = withTLPHAssets.map { withTLPHAsset in
@@ -119,13 +131,14 @@ extension CreatePostViewController: TLPhotosPickerViewControllerDelegate {
 extension CreatePostViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let vm = self.viewModel else { return 0 }
-        return vm.selectedImages.count
+//        guard let vm = self.viewModel else { return 0 }
+//        return vm.selectedImages.count
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageItemWithClearButton", for: indexPath) as! ImageItemWithClearButton
-        cell.imageView.image = viewModel?.selectedImages[indexPath.row]
+        // cell.imageViewAvatar.image = viewModel?.selectedImages[indexPath.row]
         return cell
     }
     

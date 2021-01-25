@@ -10,45 +10,47 @@
     </dependencies>
     <scenes>
         <!--Follow View Controller-->
-        <scene sceneID="EE5-QK-9tq">
+        <scene sceneID="65M-3q-6Yq">
             <objects>
-                <viewController restorationIdentifier="FollowViewController" storyboardIdentifier="FollowViewController" id="ejd-WD-1WF" customClass="FollowViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pzG-SD-ddn">
+                <viewController restorationIdentifier="FollowViewController" storyboardIdentifier="FollowViewController" id="dyI-Qd-h4E" customClass="FollowViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4HC-D5-HZq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lCM-cQ-UCq" userLabel="Segmented Control">
-                                <rect key="frame" x="0.0" y="44" width="414" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyQ-Jn-BTU">
-                                <rect key="frame" x="0.0" y="75" width="414" height="787"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oEj-QP-lti" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3n5-DH-3oY"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TSj-yR-qc0">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yH5-dh-sdV">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                            </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="1lH-d4-hv2"/>
+                        <viewLayoutGuide key="safeArea" id="VFo-gi-8Hu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AyQ-Jn-BTU" firstAttribute="leading" secondItem="1lH-d4-hv2" secondAttribute="leading" id="2z5-GA-Wca"/>
-                            <constraint firstItem="1lH-d4-hv2" firstAttribute="trailing" secondItem="lCM-cQ-UCq" secondAttribute="trailing" id="Lhx-Y9-VqX"/>
-                            <constraint firstItem="lCM-cQ-UCq" firstAttribute="leading" secondItem="1lH-d4-hv2" secondAttribute="leading" id="Lwc-Ar-1de"/>
-                            <constraint firstItem="1lH-d4-hv2" firstAttribute="trailing" secondItem="AyQ-Jn-BTU" secondAttribute="trailing" id="Na8-CZ-Ufr"/>
-                            <constraint firstItem="1lH-d4-hv2" firstAttribute="bottom" secondItem="AyQ-Jn-BTU" secondAttribute="bottom" id="OHw-Py-Sur"/>
-                            <constraint firstItem="lCM-cQ-UCq" firstAttribute="top" secondItem="1lH-d4-hv2" secondAttribute="top" id="Wxb-hl-ujS"/>
-                            <constraint firstItem="AyQ-Jn-BTU" firstAttribute="top" secondItem="lCM-cQ-UCq" secondAttribute="bottom" id="bQ3-Vs-DnJ"/>
+                            <constraint firstItem="oEj-QP-lti" firstAttribute="top" secondItem="VFo-gi-8Hu" secondAttribute="top" id="Bt6-ER-fHS"/>
+                            <constraint firstItem="yH5-dh-sdV" firstAttribute="top" secondItem="oEj-QP-lti" secondAttribute="bottom" id="Hnh-zy-ktt"/>
+                            <constraint firstItem="VFo-gi-8Hu" firstAttribute="trailing" secondItem="yH5-dh-sdV" secondAttribute="trailing" id="Kfm-66-4Pc"/>
+                            <constraint firstItem="VFo-gi-8Hu" firstAttribute="bottom" secondItem="yH5-dh-sdV" secondAttribute="bottom" id="MOR-Pu-wid"/>
+                            <constraint firstItem="VFo-gi-8Hu" firstAttribute="trailing" secondItem="oEj-QP-lti" secondAttribute="trailing" id="k6j-Ib-es6"/>
+                            <constraint firstItem="yH5-dh-sdV" firstAttribute="leading" secondItem="VFo-gi-8Hu" secondAttribute="leading" id="pgz-FR-EIx"/>
+                            <constraint firstItem="oEj-QP-lti" firstAttribute="leading" secondItem="VFo-gi-8Hu" secondAttribute="leading" id="yuT-2Y-Mjn"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="containerView" destination="AyQ-Jn-BTU" id="GwT-7F-dhr"/>
-                        <outlet property="segmentedControl" destination="lCM-cQ-UCq" id="RCd-tT-wTE"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="06e-6A-qWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQh-uD-6fv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="44"/>
+            <point key="canvasLocation" x="48" y="-3"/>
         </scene>
     </scenes>
     <resources>

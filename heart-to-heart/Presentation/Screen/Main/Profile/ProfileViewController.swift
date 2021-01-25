@@ -9,6 +9,7 @@ class ProfileViewController: UITableViewController, StoryboardInstantiable {
     @IBOutlet weak var labelPostValue: UILabel!
     @IBOutlet weak var labelFollowingValue: UILabel!
     @IBOutlet weak var labelFollowerValue: UILabel!
+    @IBOutlet weak var viewStatisticContainer: UIView!
     
     @IBOutlet weak var switchToggleTheme: UISwitch!
     
@@ -16,6 +17,9 @@ class ProfileViewController: UITableViewController, StoryboardInstantiable {
         initBinding()
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200
+        viewStatisticContainer.layer.cornerRadius = 16
+        viewStatisticContainer.layer.borderWidth = 1
+        viewStatisticContainer.layer.borderColor = AppColor.Grey.light.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {

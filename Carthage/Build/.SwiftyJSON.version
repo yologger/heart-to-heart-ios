@@ -1,32 +1,8 @@
 {
-  "Mac" : [
-    {
-      "hash" : "4c975e5a0597ebf136fe032e9c39a41b68ab11cb972e073570edd33b6d986d4c",
-      "name" : "SwiftyJSON",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
-    }
-  ],
-  "watchOS" : [
-    {
-      "hash" : "e50cea3ba6842d7a3fe257ccc7eb1d365ebd8c387fc589b39db330a9bed19c12",
-      "name" : "SwiftyJSON",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
-    }
-  ],
-  "tvOS" : [
-    {
-      "hash" : "49c3c14fb43683538fe3589de7efc4df52c25e561c8ecd7bab7d57d78ea56848",
-      "name" : "SwiftyJSON",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
-    }
-  ],
   "commitish" : "4.3.0",
   "iOS" : [
     {
-      "hash" : "dd74750f9a5fdc32f3c277940069d20642c104e93a2c5de2e38a36bc43850bee",
+      "hash" : "402a89d7b3d0c9ca79997711c52fdddba8d7fde685f3472577a4a68209eabb2c",
       "name" : "SwiftyJSON",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

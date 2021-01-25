@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 
 class HomeViewController: UIViewController, StoryboardInstantiable {
- 
+    
     static var storyboard = AppStoryboard.home
     
     private var disposeBag = DisposeBag()
@@ -25,13 +25,13 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
         button.tag = 2
         
         
-//        let button = UIBarButtonItem(
-//            title: "Create",
-//            style: .plain,
-//            target: self,
-//            action: #selector(buttonPressed(_:)))
-//        button.tag = 2
-
+        //        let button = UIBarButtonItem(
+        //            title: "Create",
+        //            style: .plain,
+        //            target: self,
+        //            action: #selector(buttonPressed(_:)))
+        //        button.tag = 2
+        
         return button
     }()
     
@@ -53,35 +53,36 @@ class HomeViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         super.viewDidLoad()
         // self.initTableView()
         self.initNavigation()
         // self.initSearchBar()
         self.initBinding()
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        searchController.searchResultsUpdater = self
-//        searchController.searchBar.delegate = self
+        //        searchController.hidesNavigationBarDuringPresentation = false
+        //        searchController.searchResultsUpdater = self
+        //        searchController.searchBar.delegate = self
         viewModel!.getAllPosts()
         viewModel!.showPostList()
         
         let behaviorSubject = PublishSubject<String>()  // 초기값
         let observable = behaviorSubject.asObservable()
-
+        
         observable
-        .subscribe(
-            onNext: { data in print("onNext()")},
-            onError: { error in print("onError()") },
-            onCompleted: { print("onCompleted()")},
-            onDisposed: { print("onDisposed()")}
-        )
-        .disposed(by: disposeBag)
+            .subscribe(
+                onNext: { data in print("onNext()")},
+                onError: { error in print("onError()") },
+                onCompleted: { print("onCompleted()")},
+                onDisposed: { print("onDisposed()")}
+            )
+            .disposed(by: disposeBag)
     }
     
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         disposeBag = DisposeBag()
     }
-
+    
     
     @objc private func buttonPressed(_ sender: Any) {
         if let button = sender as? UIBarButtonItem {
@@ -117,6 +118,9 @@ extension HomeViewController {
     func initNavigation() {
         // self.navigationItem.rightBarButtonItem = self.createPostButton
         self.navigationItem.rightBarButtonItems = [self.createPostButton, self.testButton]
+        self.navigationController?.title = "Home"
+        // self.navigationItem.title = "Home"
+        self.navigationItem.largeTitleDisplayMode = .never
     }
 }
 

@@ -1,17 +1,8 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
   "commitish" : "2.1.3",
   "iOS" : [
     {
-      "hash" : "5191125bd1154d5bc8fb1487a907e06885dd1cce3f9a0dcd520ac40c59eef734",
+      "hash" : "8b4019262a853168c827de923498e3c8a448113d0f5db81272eea897bbd00132",
       "name" : "TLPhotoPicker",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

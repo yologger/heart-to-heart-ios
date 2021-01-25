@@ -1,17 +1,8 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
   "commitish" : "1.9.2",
   "iOS" : [
     {
-      "hash" : "cdc89791a9e8e53fad2715116b8ea2febf53a19ed329728f59dd89acb5d08cab",
+      "hash" : "6618520a300c0ebadd6f9b475f059f1b242396707cc030e44044244c813cabba",
       "name" : "ImageSlideshow",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

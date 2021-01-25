@@ -1,63 +1,45 @@
 import UIKit
 import RxSwift
+import XLPagerTabStrip
 
-class FollowViewController: UIViewController, StoryboardInstantiable {
+class FollowViewController: ButtonBarPagerTabStripViewController, StoryboardInstantiable {
     
     static var storyboard = AppStoryboard.follow
 
     private let disposeBase = DisposeBag()
     var viewModel: FollowViewModel?
-
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-//    @IBOutlet weak var tableView: UITableView! {
-//        didSet {
-//             tableView.dataSource = self
-//             tableView.separatorStyle = .none
-//        }
-//    }
+    let tabbarSelectedColor = AppColor.Primary.light
+    let tabbarUnselectedColor = AppColor.Grey.light
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        self.segmentedControl.addTarget(self, action: #selector(FollowViewController.indexChanged(_:)), for: .valueChanged)
-        self.segmentedControl.setTitle("Following", forSegmentAt: 0)
-        self.segmentedControl.setTitle("Follower", forSegmentAt: 1)
-
-        self.viewModel!.showFollowing()
-        // tableview에 tableview cell 등록
-        // self.tableView.register(UINib(nibName: "FollowTableViewCell", bundle: nil), forCellReuseIdentifier: "follow_table_view_cell")
+        settings.style.buttonBarBackgroundColor = .white
+        settings.style.buttonBarItemBackgroundColor = .white
+        settings.style.selectedBarBackgroundColor = tabbarSelectedColor
+        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 14)
+        settings.style.selectedBarHeight = 2.0
+        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.buttonBarItemTitleColor = AppColor.Grey.light
+        settings.style.buttonBarItemsShouldFillAvailableWidth = true
+        settings.style.buttonBarLeftContentInset = 0
+        settings.style.buttonBarRightContentInset = 0
         
-//        var items = ["first", "second"]
-//        self.navigationItem.titleView = UISegmentedControl(items: items)
-    }
-    
-    @objc func indexChanged(_ sender: UISegmentedControl) {
-        if segmentedControl.selectedSegmentIndex == 0 {
-            self.viewModel?.showFollowing()
-        } else if segmentedControl.selectedSegmentIndex == 1 {
-            self.viewModel?.showFollower()
+        changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.textColor = self?.tabbarUnselectedColor
+            newCell?.label.textColor = self?.tabbarSelectedColor
         }
+        
+        // self.navigationController?.isNavigationBarHidden = true
+        
+        
+        super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // self.tableView.rowHeight = 200
-        // 임시로 사용될 셀의 높이
-        // self.tableView.estimatedRowHeight = 100
-        // 동적으로 설정
-        // self.tableView.rowHeight = UITableView.automaticDimension
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        let followingViewController = FollowingViewController.instantiate()
+        let followerViewController = FollowerViewController.instantiate()
+        return [followingViewController, followerViewController]
     }
 }
-
-//extension FollowViewController: UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 5
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let followTableViewCell = tableView.dequeueReusableCell(withIdentifier: "follow_table_view_cell", for: indexPath) as! FollowTableViewCell
-//        return followTableViewCell
-//    }
-//}

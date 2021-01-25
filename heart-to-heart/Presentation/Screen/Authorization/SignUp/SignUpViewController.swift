@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
         firstnameTextField.text = "Cristiano"
         lastnameTextField.text = "Ronaldo"
         nicknameTextField.text = "CR9"
-        passwordTextField.text = "1234Asfd"
+        passwordTextField.text = "12345"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,19 +153,23 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func initUI() {
+        
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: AppColor.Grey.light])
+        self.firstnameTextField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes: [NSAttributedString.Key.foregroundColor: AppColor.Grey.light])
+        self.lastnameTextField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: [NSAttributedString.Key.foregroundColor: AppColor.Grey.light])
+        self.nicknameTextField.attributedPlaceholder = NSAttributedString(string: "Nickname", attributes: [NSAttributedString.Key.foregroundColor: AppColor.Grey.light])
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: AppColor.Grey.light])
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        self.emailTextField.placeholder = "Email"
-        self.firstnameTextField.placeholder = "First Name"
-        self.lastnameTextField.placeholder = "Last Name"
-        self.nicknameTextField.placeholder = "Nickname"
-        self.passwordTextField.placeholder = "Password"
+
         
         self.emailTextField.clearButtonMode = .whileEditing
         self.firstnameTextField.clearButtonMode = .whileEditing
         self.lastnameTextField.clearButtonMode = .whileEditing
         self.nicknameTextField.clearButtonMode = .whileEditing
         self.passwordTextField.isSecureTextEntry = true
+        self.passwordTextField.clearButtonMode = .whileEditing
     }
 }

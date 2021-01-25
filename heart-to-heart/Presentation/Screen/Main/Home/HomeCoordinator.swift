@@ -33,15 +33,13 @@ class HomeCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        
         //        self.testViewController = TestViewController.instantiate()
         //        self.testViewController!.viewModel = self.testViewModel
         //        self.navigationController.viewControllers = [self.testViewController!]
-        
         self.homeViewController = HomeViewController.instantiate()
         self.homeViewController!.viewModel = self.homeViewModel
         self.navigationController.viewControllers = [self.homeViewController!]
-        
+        self.navigationController.navigationBar.prefersLargeTitles = true
         self.bindToHomeViewModel()
         self.bindToCreatePostViewModel()
     }
