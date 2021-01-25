@@ -19,7 +19,7 @@ class CreatePostViewModel: BaseViewModel {
         self.createPostUseCase = createPostUseCase
     }
     
- 
+    
     func addTLPHAssets(assets: [TLPHAsset]) {
         selectedTLPHAssets.append(contentsOf: assets)
         selectedTLPHAssetsObservable.onNext(selectedTLPHAssets)
@@ -39,30 +39,48 @@ class CreatePostViewModel: BaseViewModel {
     }
     
     func createPost() {
-//        Observable
-//            .combineLatest(self.content, self.selectedImagesObservable)
-//            .take(1)
-//            .do { [weak self] content, selectedImages in
-//                self?.createPostUseCase.content = content
-//                self?.createPostUseCase.images = selectedImages
-//            }
-//            .flatMap { [weak self] content, selectedImages in
-//                self?.createPostUseCase.execute() ?? Observable.empty()
-//            }
-//            .subscribe { result in
-//                print("RESULT: \(result)")
-//            }
-//            .disposed(by: self.disposeBag)
+        
+        Observable
+            .combineLatest(self.content, self.selectedTLPHAssetsObservable)
+            .take(1)
+            .do { [weak self] content, selectedTLPHAssets in
+                self?.createPostUseCase.content = content
+                self?.createPostUseCase.assets = selectedTLPHAssets
+            }
+            .flatMap { [weak self] content, selectedTLPHAssets in
+                self?.createPostUseCase.execute() ?? Observable.empty()
+            }
+            .subscribe(onNext: { (result) in
+                switch result {
+                case .success(let data):
+                    print("post: \(data.post)")
+                case .failure(let error):
+                    switch error {
+                    case .NetworkTimeOutError:
+                        print("NetworkTimeOutError")
+                    case .UnknownError:
+                        print("NetworkTimeOutError")
+                    }
+                }
+                
+            }, onError: { (error) in
+                
+            }, onCompleted: {
+                
+            }, onDisposed: {
+                
+            })
+            .disposed(by: self.disposeBag)
         
         
         
         
-//            .subscribe { content, selectedImages in
-//                print("content: \(content)")
-//                print("selectedImages:")
-//                print(selectedImages)
-//            }
-//            .disposed(by: self.disposeBag)
+        //            .subscribe { content, selectedImages in
+        //                print("content: \(content)")
+        //                print("selectedImages:")
+        //                print(selectedImages)
+        //            }
+        //            .disposed(by: self.disposeBag)
         
         //         print(images)
         //        self.isLoading.onNext(true)

@@ -86,4 +86,9 @@ extension DefaultSessionStorage: SessionStorage {
             _session = nil
         }
     }
+    
+    func getUserId() -> Int? {
+        let userId = _session?.profile.userId
+        return userId
+    }
 }

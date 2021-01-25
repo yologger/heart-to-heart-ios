@@ -7,4 +7,5 @@ protocol SessionStorage: LocalDataSource {
     func getSessionState() -> Observable<Bool>
     func getAccessToken() -> String?
     func getRefreshToken() -> String?
+    func getUserId() -> Int?
 }

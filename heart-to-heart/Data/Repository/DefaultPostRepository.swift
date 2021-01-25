@@ -2,73 +2,42 @@ import RxSwift
 import UIKit
 import ObjectMapper
 import Alamofire
+import TLPhotoPicker
 
 final class DefaultPostRepository {
     
     private let postAPI: PostAPI
+    private let sessionStorage: SessionStorage
     
-    init(postAPI: PostAPI) {
+    init(postAPI: PostAPI, sessionStorage: SessionStorage) {
         self.postAPI = postAPI
+        self.sessionStorage = sessionStorage
     }
 }
 
 extension DefaultPostRepository: PostRepository {
-    
-    
-    func createPost(content: String, images: [UIImage?]) -> Observable<Bool> {
-        print("This is createPost() from DefaultPostRepository")
-        return Observable<Bool>.create { emitter -> Disposable in
-            let headers: HTTPHeaders = [
-                // "Authorization": "Basic VXNlcm5hbWU6UGFzc3dvcmQ=",
-                "Accept": "application/json"
-            ]
-            
-            let parameters: [String: String] = [
-                "user_id" : "\(4)"
-            ]
-            
-//            let testImage = UIImage(named: "avatar1.png")!
-//            let imageData = testImage.pngData()!
-            
-            // png, jpg, heic, gif 뭐로 읽든 UIImage()를 생성하면 Screen에서 표시될 수 있는 포맷으로 변환된다.
-            let pngImage = UIImage(named: "avatar1.png")!
-            let pngImageData = pngImage.pngData()!
-            
-            let jpgImage = UIImage(named: "avatar1.jpg")!
-            let jpgImageData = jpgImage.pngData()!
-            
-            let heicImage = UIImage(named: "avatar1.heic")!
-            let heicImageData = heicImage.pngData()!
-            
-            let gifImage = UIImage(named: "avatar1.gif")!
-            let gifImageData = pngImage.pngData()!
-            
-            
-            AF.upload(multipartFormData: { multipartFormData in
-                // Add body
-                for (key, value) in parameters {
-                    multipartFormData.append("\(value)".data(using: .utf8)!, withName: key, mimeType: "text/plain")
-                }
-                
-                // Add Image
-                // multipartFormData.append(imageData, withName: "field", fileName: "avatar1.png", mimeType: "image/*")
-                multipartFormData.append(pngImageData, withName: "field", fileName: "avatar1.png", mimeType: "image/jpg")
-                multipartFormData.append(jpgImageData, withName: "field", fileName: "avatar1.jpg", mimeType: "image/jpg")
-                multipartFormData.append(heicImageData, withName: "field", fileName: "avatarKKKK.jpg", mimeType: "image/jpg")
-                multipartFormData.append(gifImageData, withName: "field", fileName: "avatar1.gif", mimeType: "image/jpg")
-                
-                
-            }, to: "\(Constant.API.AuthBaseUrl)/post/post", method: .post, headers: headers )
+    func createPost(content: String?, assets: [TLPHAsset]?) -> Observable<CreatePostResult> {
+        let userId = sessionStorage.getUserId()!
+        let postService = postAPI.getPostService()
+        return Observable<CreatePostResult>.create { emitter in
+            postService.createPost(userId: userId, content: content, assets: assets)
             .responseString { responseString in
                 switch responseString.result {
                 case .success(let data):
-                    print("susccess")
-                    print(data)
-                    emitter.onNext(true)
+                    guard let statusCode = responseString.response?.statusCode else { return }
+                    switch statusCode {
+                    case 200..<300:
+                        let response = Mapper<CreatePostSuccessResponse>().map(JSONString: data)
+                        let post = response?.data?.post
+                        emitter.onNext(.success(CreatePostData(post: post!)))
+                    default:
+                        let response = Mapper<CreatePostFailureResponse>().map(JSONString: data)
+                        emitter.onNext(.failure(.UnknownError))
+                    }
                 case .failure(let error):
                     print("failure")
                     print(error.localizedDescription)
-                    emitter.onNext(false)
+                    emitter.onNext(.failure(.UnknownError))
                 }
             }
             return Disposables.create()
