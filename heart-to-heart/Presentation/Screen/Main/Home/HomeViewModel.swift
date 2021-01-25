@@ -17,7 +17,7 @@ class HomeViewModel: BaseViewModel {
     }
     
     func getAllPosts() {
-        getAllPostsUseCase.execute()
+        print("getAllPosts() from HomeViewModel")
     }
     
     func createPost() {

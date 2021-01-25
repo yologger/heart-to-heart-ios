@@ -173,6 +173,8 @@
 		9AC13B0825BEF8FA00C8BDC4 /* CreatePostResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC13B0725BEF8FA00C8BDC4 /* CreatePostResult.swift */; };
 		9AC13B0D25BEF92B00C8BDC4 /* CreatePostError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC13B0C25BEF92B00C8BDC4 /* CreatePostError.swift */; };
 		9AC13B1225BEF9AF00C8BDC4 /* CreatePostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC13B1125BEF9AF00C8BDC4 /* CreatePostData.swift */; };
+		9AC13B1725BF249300C8BDC4 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC13B1625BF249300C8BDC4 /* LoadingCell.xib */; };
+		9AC13B1C25BF24B300C8BDC4 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC13B1B25BF24B300C8BDC4 /* LoadingCell.swift */; };
 		9ACD9D8425BE9AAE00CA577F /* ToggleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8325BE9AAE00CA577F /* ToggleTextButton.swift */; };
 		9ACD9D8925BE9AD000CA577F /* ToggleIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8825BE9AD000CA577F /* ToggleIconButton.swift */; };
 		9ACD9D8E25BE9AF900CA577F /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8D25BE9AF900CA577F /* ContainedButton.swift */; };
@@ -379,6 +381,8 @@
 		9AC13B0725BEF8FA00C8BDC4 /* CreatePostResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostResult.swift; sourceTree = "<group>"; };
 		9AC13B0C25BEF92B00C8BDC4 /* CreatePostError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostError.swift; sourceTree = "<group>"; };
 		9AC13B1125BEF9AF00C8BDC4 /* CreatePostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostData.swift; sourceTree = "<group>"; };
+		9AC13B1625BF249300C8BDC4 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		9AC13B1B25BF24B300C8BDC4 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		9ACD9D8325BE9AAE00CA577F /* ToggleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTextButton.swift; sourceTree = "<group>"; };
 		9ACD9D8825BE9AD000CA577F /* ToggleIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleIconButton.swift; sourceTree = "<group>"; };
 		9ACD9D8D25BE9AF900CA577F /* ContainedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedButton.swift; sourceTree = "<group>"; };
@@ -469,6 +473,8 @@
 				9AD127F9253EEE6E003DEDA3 /* PostListViewModel.swift */,
 				9A2B4C1225356A9E00C66681 /* PostTableViewCell.xib */,
 				9A2B4C1425356AC300C66681 /* PostTableViewCell.swift */,
+				9AC13B1625BF249300C8BDC4 /* LoadingCell.xib */,
+				9AC13B1B25BF24B300C8BDC4 /* LoadingCell.swift */,
 			);
 			path = PostList;
 			sourceTree = "<group>";
@@ -1195,6 +1201,7 @@
 				9A6F25E824FE40C700000BD8 /* FindPassword.storyboard in Resources */,
 				9A2E21B025B99584005AE72B /* navigation_bar_background_dark.png in Resources */,
 				9A7013D9252234630002DC74 /* CreatePost.storyboard in Resources */,
+				9AC13B1725BF249300C8BDC4 /* LoadingCell.xib in Resources */,
 				9AE8AE6425B8610A0095C001 /* avatar1.png in Resources */,
 				9AE8AE6125B8610A0095C001 /* avatar1.heic in Resources */,
 				9A5BF27B25364C9D002B633C /* ChangeNickname.storyboard in Resources */,
@@ -1377,6 +1384,7 @@
 				9AA958DD2570F3160044B219 /* LogOutService.swift in Sources */,
 				9A6F258324F8F15900000BD8 /* HomeViewController.swift in Sources */,
 				9A78DBAB2576C49400EAE50E /* LogInSuccessResponseData.swift in Sources */,
+				9AC13B1C25BF24B300C8BDC4 /* LoadingCell.swift in Sources */,
 				9A33F09A25BC6E9300692936 /* LikeButton.swift in Sources */,
 				9AA958CE2570F09E0044B219 /* LocalDataSource.swift in Sources */,
 				9AC13B0825BEF8FA00C8BDC4 /* CreatePostResult.swift in Sources */,

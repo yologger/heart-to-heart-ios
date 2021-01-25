@@ -165,21 +165,3 @@ extension HomeViewController {
 //    }
 //}
 
-
-// MARK: - TableView
-//extension HomeViewController: UITableViewDataSource {
-//
-//    func initTableView() {
-//        self.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "post_table_view_cell")
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 0
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let postTableViewCell = tableView.dequeueReusableCell(withIdentifier: "post_table_view_cell", for: indexPath) as! PostTableViewCell
-//        return postTableViewCell
-//    }
-//}
-
