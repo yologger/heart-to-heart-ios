@@ -19,15 +19,12 @@ class AuthInterceptor: Interceptor {
             //
             return
         }
-        print("adapt() from AuthInterceptor")
         var urlRequest = urlRequest
         urlRequest.headers.add(.authorization(bearerToken: accessToken))
         completion(.success(urlRequest))
     }
     
     override func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
-        
-        print("retry() from AuthInterceptor")
         
         //        guard request.retryCount < retryLimit else {
         //            completion(.doNotRetry)
@@ -46,10 +43,8 @@ class AuthInterceptor: Interceptor {
                 // isSuccess ? completion(.retry) : completion(.doNotRetry)
                 
                 if (isSuccess) {
-                    print("refreshToken() success")
                     completion(.retry)
                 } else {
-                    print("refreshToken() failure")
                     completion(.doNotRetry)
                 }
             }
@@ -59,8 +54,6 @@ class AuthInterceptor: Interceptor {
     }
     
     func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
-        
-        print("refreshToken() from AuthInterceptor")
         let refreshToken = sessionStorage.getRefreshToken()
         let parameters = [
             "refresh_token": refreshToken
@@ -74,12 +67,10 @@ class AuthInterceptor: Interceptor {
         ).responseString { [weak self] responseString  in
             switch responseString.result {
             case .success(let data):
-                print("success")
                 guard let statusCode = responseString.response?.statusCode else { return }
                 switch statusCode {
                 case 200..<300:
                     let refreshTokenSuccessResponse = Mapper<RefreshTokensSuccessResponse>().map(JSONString: data)
-                    print("refreshTokenSuccessResponse: \(refreshTokenSuccessResponse)")
                     guard let newAccessToken = refreshTokenSuccessResponse?.data?.accessToken, let newRefreshToken = refreshTokenSuccessResponse?.data?.refreshToken else {
                         completion(false)
                         return
@@ -89,12 +80,10 @@ class AuthInterceptor: Interceptor {
                     completion(true)
                 default:
                     let refreshTokenFailureResponse = Mapper<RefreshTokensFailureResponse>().map(JSONString: data)
-                    print("refreshTokenFailureResponse: \(refreshTokenFailureResponse)")
                     self?.sessionStorage.removeSession()
                     completion(false)
                 }
             case .failure(let error):
-                print("failure")
                 completion(false)
             }
         }

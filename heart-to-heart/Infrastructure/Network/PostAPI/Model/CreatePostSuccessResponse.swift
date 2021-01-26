@@ -6,10 +6,7 @@ struct CreatePostSuccessResponse: Mappable {
     var message: String?
     var data: CreatePostSuccessResponseData?
     
-    
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) {}
     
     mutating func mapping(map: Map) {
         code    <- map["code"]

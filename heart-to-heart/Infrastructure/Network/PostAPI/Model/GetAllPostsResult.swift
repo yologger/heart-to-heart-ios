@@ -1,4 +1,4 @@
 enum GetAllPostsResult {
-    case success
+    case success(GetAllPostsData)
     case failure(GetAllPostsError)
 }

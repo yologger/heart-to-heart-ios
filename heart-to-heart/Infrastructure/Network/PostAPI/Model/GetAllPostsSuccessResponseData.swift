@@ -1,14 +1,11 @@
 import ObjectMapper
 
 struct GetAllPostsSuccessResponseData: Mappable {
+    var posts: [Post]?
     
-    var name: String?
-    
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) {}
     
     mutating func mapping(map: Map) {
-        name        <- map["name"]
+        posts    <- map["posts"]
     }
 }

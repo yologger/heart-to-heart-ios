@@ -11,7 +11,6 @@
         <!--Post List View Controller-->
         <scene sceneID="BUe-oX-aGA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H1c-af-q0J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="PostListViewController" id="uWb-if-ifT" customClass="PostListViewController" customModule="heart_to_heart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VSe-Zk-H5W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -32,7 +31,11 @@
                             <outlet property="delegate" destination="uWb-if-ifT" id="mpl-wp-8Ky"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="VSe-Zk-H5W" id="z9g-7d-FPb"/>
+                    </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1c-af-q0J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7" y="76"/>
         </scene>

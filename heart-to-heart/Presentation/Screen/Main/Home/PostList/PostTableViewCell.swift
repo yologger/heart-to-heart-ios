@@ -11,6 +11,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var viewDivider: UIView!
     @IBOutlet weak var viewPostDivider: UIView!
     
+    @IBOutlet weak var labelIndex: UILabel!
+    
     override class func awakeFromNib() {
     }
     

@@ -268,8 +268,8 @@
             filePath = "heart-to-heart/Infrastructure/Network/PostAPI/Model/CreatePostSuccessResponse.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20">
+            startingLineNumber = "17"
+            endingLineNumber = "17">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

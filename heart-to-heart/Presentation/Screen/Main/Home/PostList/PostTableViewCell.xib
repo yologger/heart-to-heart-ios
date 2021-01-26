@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="post_table_view_cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="post_table_view_cell" rowHeight="236" id="5g0-7C-kZC" customClass="PostTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PostTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="236" id="5g0-7C-kZC" customClass="PostTableViewCell" customModule="heart_to_heart" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="481" height="236"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5g0-7C-kZC" id="JoH-40-Y7w">
@@ -30,17 +30,17 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lMQ-KX-AIN">
-                                        <rect key="frame" x="82" y="20.5" width="155.5" height="41"/>
+                                        <rect key="frame" x="82" y="20.5" width="96.5" height="41"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CR7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q56-qd-pq0">
-                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <color key="highlightedColor" red="0.70144252350000003" green="1" blue="0.35745129349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ronaldo@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCK-g4-Y8D">
-                                                <rect key="frame" x="0.0" y="20.5" width="155.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000-20-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCK-g4-Y8D">
+                                                <rect key="frame" x="0.0" y="20.5" width="96.5" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -49,7 +49,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34e-Ux-zzS" customClass="FollowButton" customModule="heart_to_heart" customModuleProvider="target">
-                                        <rect key="frame" x="419" y="26" width="46" height="30"/>
+                                        <rect key="frame" x="405" y="28" width="60" height="26"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
@@ -110,9 +110,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXT-aH-IoQ">
+                                        <rect key="frame" x="423.5" y="29.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lXT-aH-IoQ" secondAttribute="trailing" constant="16" id="3P9-A0-qsx"/>
                                     <constraint firstItem="Lsq-O5-r0B" firstAttribute="centerY" secondItem="AmD-md-9Ax" secondAttribute="centerY" id="8Ri-zh-ySh"/>
                                     <constraint firstItem="AmD-md-9Ax" firstAttribute="leading" secondItem="RAv-Ng-VHo" secondAttribute="leading" constant="16" id="9Ji-eB-PRh"/>
                                     <constraint firstItem="Lsq-O5-r0B" firstAttribute="leading" secondItem="AmD-md-9Ax" secondAttribute="trailing" constant="8" id="Doy-YC-m0L"/>
@@ -120,6 +127,7 @@
                                     <constraint firstItem="AmD-md-9Ax" firstAttribute="top" secondItem="RAv-Ng-VHo" secondAttribute="top" constant="16" id="aTZ-Gs-IsP"/>
                                     <constraint firstAttribute="bottom" secondItem="AmD-md-9Ax" secondAttribute="bottom" constant="16" id="aoA-9J-48Y"/>
                                     <constraint firstItem="KrY-zh-GUQ" firstAttribute="leading" secondItem="Lsq-O5-r0B" secondAttribute="trailing" constant="4" id="xJv-AV-Mep"/>
+                                    <constraint firstItem="lXT-aH-IoQ" firstAttribute="centerY" secondItem="AmD-md-9Ax" secondAttribute="centerY" id="yBn-3k-CYi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Z-mf-FDd" userLabel="Divider View">
@@ -143,6 +151,7 @@
                 <outlet property="imageViewAvatar" destination="Nwa-Ds-AXJ" id="wvD-71-hvA"/>
                 <outlet property="labelContent" destination="K2I-sa-UF1" id="hcc-gD-gUM"/>
                 <outlet property="labelCreatedAt" destination="bCK-g4-Y8D" id="RdU-Fo-8At"/>
+                <outlet property="labelIndex" destination="lXT-aH-IoQ" id="rzb-oz-VK1"/>
                 <outlet property="labelLike" destination="Lsq-O5-r0B" id="lYe-vc-0JL"/>
                 <outlet property="labelNickname" destination="Q56-qd-pq0" id="aHD-zj-3ms"/>
                 <outlet property="viewDivider" destination="QqL-Mq-bsj" id="BG3-bb-YsY"/>
@@ -153,7 +162,7 @@
     </objects>
     <designables>
         <designable name="34e-Ux-zzS">
-            <size key="intrinsicContentSize" width="46" height="30"/>
+            <size key="intrinsicContentSize" width="60" height="26"/>
         </designable>
         <designable name="AmD-md-9Ax">
             <size key="intrinsicContentSize" width="30" height="34"/>

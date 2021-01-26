@@ -12,6 +12,24 @@ final class PostService {
         self.authInterceptor = authInterceptor
     }
     
+    func getAllPost(page: Int, size: Int) -> DataRequest {
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+        
+        let parameters: [String: Int] = [
+            "page": page,
+            "size": size
+        ]
+        
+        let url = "\(Constant.API.AuthBaseUrl)/post/posts"
+        return AF.request(url,
+                          method: .get,
+                          parameters: parameters,
+                          headers: headers,
+                          interceptor: authInterceptor)
+    }
+    
     func createPost(userId: Int, content: String?, assets: [TLPHAsset]?) -> DataRequest {
         
         let headers: HTTPHeaders = [

@@ -1,16 +1,19 @@
 import RxSwift
 
-class GetAllPostsUseCase {
+final class GetAllPostsUseCase {
     
     private let postRepository: PostRepository
     
     init(postRepository: PostRepository) {
         self.postRepository = postRepository
     }
+}
+
+extension GetAllPostsUseCase: BaseUseCase {
     
-    func execute() -> Observable<GetAllPostsResult> {
-        return self.postRepository.test()
-        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
-        .observeOn(MainScheduler.instance)
+    typealias Result = GetAllPostsResult
+    
+    func call() -> Observable<GetAllPostsResult> {
+        return postRepository.getAllPosts()
     }
 }

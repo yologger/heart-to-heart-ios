@@ -9,6 +9,5 @@ extension Container {
         self.autoregister(LogOutUseCase.self, initializer: LogOutUseCase.init)
         self.autoregister(CreatePostUseCase.self, initializer: CreatePostUseCase.init)
         self.autoregister(GetAllPostsUseCase.self, initializer: GetAllPostsUseCase.init)
-        self.autoregister(GetTestDataUseCase.self, initializer: GetTestDataUseCase.init)
     }
 }
