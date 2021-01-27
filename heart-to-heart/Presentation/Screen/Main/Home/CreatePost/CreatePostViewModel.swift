@@ -33,13 +33,9 @@ class CreatePostViewModel: BaseViewModel {
         selectedTLPHAssets = []
         selectedTLPHAssetsObservable.onNext(selectedTLPHAssets)
     }
-    
-    func showGallery() {
-        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
-    }
+
     
     func createPost() {
-        
         Observable
             .combineLatest(self.content, self.selectedTLPHAssetsObservable)
             .take(1)
@@ -54,12 +50,13 @@ class CreatePostViewModel: BaseViewModel {
                 switch result {
                 case .success(let data):
                     print("post: \(data.post)")
+                    self.didCoordinatorChange.onNext(.closeCreatePostVC)
                 case .failure(let error):
                     switch error {
                     case .NetworkTimeOutError:
                         print("NetworkTimeOutError")
                     case .UnknownError:
-                        print("NetworkTimeOutError")
+                        print("UnknownError")
                     }
                 }
                 

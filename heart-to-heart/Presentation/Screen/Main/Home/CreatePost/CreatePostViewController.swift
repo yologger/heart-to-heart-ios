@@ -20,6 +20,7 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         self.setup()
         self.setupBinding()
         super.viewDidLoad()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

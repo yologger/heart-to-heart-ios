@@ -12,23 +12,22 @@ class PostListViewController: BaseTableViewController, StoryboardInstantiable {
     private var isLoading = false
     
     override func viewDidLoad() {
-        
-        
         self.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
         self.tableView.register(UINib(nibName: "LoadingCell", bundle: nil), forCellReuseIdentifier: "LoadingCell")
         
         self.tableView.separatorStyle = .singleLine
-        viewModel?.getPosts()
-        self.setupBinding()
         
+        self.setupBinding()
     }
     
-    let contents = [
-        "hello",
-        "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello",
-        "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello",
-        "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohe"
-    ]
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel?.getPosts()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear")
+        viewModel?.clear()
+    }
     
     private func setupBinding() {
         guard let _viewModel = self.viewModel else { return }
@@ -78,7 +77,6 @@ extension PostListViewController {
         
         if indexPath.section == 0 {
             let postTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
-            postTableViewCell.labelIndex.text = "\(indexPath.row)"
             postTableViewCell.labelContent.text = viewModel?.posts[indexPath.row].content
             postTableViewCell.labelNickname.text = viewModel?.posts[indexPath.row].user?.nickname!
             
@@ -103,26 +101,51 @@ extension PostListViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-
-        if (offsetY > contentHeight - scrollView.frame.height - 100) && !isLoading {
-            loadMoreData()
+        guard let _viewModel = self.viewModel else { return }
+        
+        if (offsetY > contentHeight - scrollView.frame.height) && !_viewModel.isLoading {
+            fetchMorePosts()
         }
     }
 
-    func loadMoreData() {
-        print("loadMoreData()")
-
-        if !self.isLoading {
-            self.isLoading = true
-            DispatchQueue.global().async {
-                // Fake background loading task for 2 seconds
-                sleep(10)
-                // Download more data here
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.isLoading = false
-                }
-            }
-        }
+    private func fetchMorePosts() {
+        print("fetchMorePosts()")
+        viewModel?.getPosts()
+//        if !self.isLoading {
+//            self.isLoading = true
+//            DispatchQueue.global().async {
+//                // Fake background loading task for 2 seconds
+//                sleep(10)
+//                // Download more data here
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                    self.isLoading = false
+//                }
+//            }
+//        }
     }
+    
+//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offsetY = scrollView.contentOffset.y
+//        let contentHeight = scrollView.contentSize.height
+//
+//        if (offsetY > contentHeight - scrollView.frame.height - 100) && !isLoading {
+//            fetchMorePosts()
+//        }
+//    }
+    
+//    private func fetchMorePosts() {
+//        if !self.isLoading {
+//            self.isLoading = true
+//            DispatchQueue.global().async {
+//                // Fake background loading task for 2 seconds
+//                sleep(10)
+//                // Download more data here
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                    self.isLoading = false
+//                }
+//            }
+//        }
+//    }
 }

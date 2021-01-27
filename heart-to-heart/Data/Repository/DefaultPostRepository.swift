@@ -16,11 +16,11 @@ final class DefaultPostRepository {
 }
 
 extension DefaultPostRepository: PostRepository {
-    
-    func getAllPosts() -> Observable<GetAllPostsResult> {
+
+    func getAllPosts(pageNumber: Int, pageSize: Int) -> Observable<GetAllPostsResult> {
         let postService = postAPI.getPostService()
         return Observable.create { emitter -> Disposable in
-            postService.getAllPost(page: 0, size: 10)
+            postService.getAllPost(page: pageNumber, size: pageSize)
                 .responseString { responseString in
                     switch responseString.result {
                     case .success(let data):

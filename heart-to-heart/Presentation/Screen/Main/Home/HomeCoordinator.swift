@@ -126,7 +126,7 @@ class HomeCoordinator: BaseCoordinator {
         let createPostViewController = CreatePostViewController.instantiate()
         
         createPostViewController.viewModel = createPostViewModel
-        // createPostViewController.modalPresentationStyle = .fullScreen
+        createPostViewController.modalPresentationStyle = .fullScreen
         self.navigationController.present(createPostViewController, animated: true, completion: nil)
         // self.navigationController.pushViewController(createPostViewController, animated: true)
     }
