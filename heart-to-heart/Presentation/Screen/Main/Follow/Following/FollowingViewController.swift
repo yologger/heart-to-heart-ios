@@ -23,7 +23,6 @@ class FollowingViewController: UITableViewController, StoryboardInstantiable {
         DummyUser(nickname: "Anne", imageUrl: "https://static.wikia.nocookie.net/interstellarfilm/images/f/f8/Anne-hathaway-013.jpg/revision/latest/scale-to-width-down/340?cb=20161013100015"),
         DummyUser(nickname: "Marcelo", imageUrl: "https://i.pinimg.com/originals/2a/18/65/2a1865a7125e9ba4070501e223f91159.png"),
         DummyUser(nickname: "Ramos", imageUrl: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/07/07/12/Sergio-Ramos.jpg"),
-        DummyUser(nickname: "Emma", imageUrl: "https://lh3.googleusercontent.com/proxy/jok2k_R5H7LSqN3B9AxQXx4K9QVsaI12ha0XPgKwjdLalY6MwDJ6HVRVlbil1dOLCrTaF-93cL5QnuhAVn-blVfVvFsjzW2tjKh3rSOxXeVqiKzmaDJTfjq6ChoZKTtDlTmn_XltvGUqlHTi_2DQGaxG2w"),
         DummyUser(nickname: "Blake", imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/serena-gossip-girl-1588587514.jpg?crop=1.00xw:0.610xh;0,0.0467xh&resize=480:*"),
         DummyUser(nickname: "Blair", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAW_9mshAmBbMQBJis_yP0MD6u1a14_eOSEA&usqp=CAU")
     ]

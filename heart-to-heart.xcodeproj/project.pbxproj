@@ -153,6 +153,11 @@
 		9A9F149F25C001D40063691E /* GetAllPostsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F149E25C001D40063691E /* GetAllPostsError.swift */; };
 		9A9F14A425C002150063691E /* GetAllPostsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F14A325C002150063691E /* GetAllPostsData.swift */; };
 		9A9F14A925C002570063691E /* GetAllPostsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F14A825C002570063691E /* GetAllPostsResult.swift */; };
+		9A9F14D625C168A10063691E /* UpdateAvatarImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F14D525C168A10063691E /* UpdateAvatarImageUseCase.swift */; };
+		9A9F14DB25C16A030063691E /* FetchCurrentUserInformationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F14DA25C16A030063691E /* FetchCurrentUserInformationUseCase.swift */; };
+		9A9F14E425C16BD60063691E /* FetchCurrentUserInformationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F14E325C16BD60063691E /* FetchCurrentUserInformationResult.swift */; };
+		9A9F14F525C1A8890063691E /* UpdateAvatarImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F14F425C1A8890063691E /* UpdateAvatarImageService.swift */; };
+		9A9F150025C1C4430063691E /* UpdateAvatarImageSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9F14FF25C1C4430063691E /* UpdateAvatarImageSuccessResponse.swift */; };
 		9AA958C32570CA630044B219 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA958C22570CA630044B219 /* BaseViewController.swift */; };
 		9AA958C52570CB020044B219 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA958C42570CB020044B219 /* BaseTableViewController.swift */; };
 		9AA958CB2570F0390044B219 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA958CA2570F0390044B219 /* RemoteDataSource.swift */; };
@@ -173,6 +178,9 @@
 		9AC13B1C25BF24B300C8BDC4 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC13B1B25BF24B300C8BDC4 /* LoadingCell.swift */; };
 		9AC13B2425BFF7EB00C8BDC4 /* GetAllPostsSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC13B2325BFF7EB00C8BDC4 /* GetAllPostsSuccessResponse.swift */; };
 		9AC13B2C25BFF84300C8BDC4 /* GetAllPostsSuccessResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC13B2B25BFF84300C8BDC4 /* GetAllPostsSuccessResponseData.swift */; };
+		9ACA445525C1C8780070D84F /* UpdateAvatarImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA445425C1C8780070D84F /* UpdateAvatarImageResult.swift */; };
+		9ACA445A25C1C8B00070D84F /* UpdateAvatarImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA445925C1C8B00070D84F /* UpdateAvatarImageData.swift */; };
+		9ACA446825C1D7900070D84F /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACA446725C1D7900070D84F /* AlamofireImage.framework */; };
 		9ACD9D8425BE9AAE00CA577F /* ToggleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8325BE9AAE00CA577F /* ToggleTextButton.swift */; };
 		9ACD9D8925BE9AD000CA577F /* ToggleIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8825BE9AD000CA577F /* ToggleIconButton.swift */; };
 		9ACD9D8E25BE9AF900CA577F /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD9D8D25BE9AF900CA577F /* ContainedButton.swift */; };
@@ -359,6 +367,11 @@
 		9A9F149E25C001D40063691E /* GetAllPostsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsError.swift; sourceTree = "<group>"; };
 		9A9F14A325C002150063691E /* GetAllPostsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsData.swift; sourceTree = "<group>"; };
 		9A9F14A825C002570063691E /* GetAllPostsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsResult.swift; sourceTree = "<group>"; };
+		9A9F14D525C168A10063691E /* UpdateAvatarImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvatarImageUseCase.swift; sourceTree = "<group>"; };
+		9A9F14DA25C16A030063691E /* FetchCurrentUserInformationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCurrentUserInformationUseCase.swift; sourceTree = "<group>"; };
+		9A9F14E325C16BD60063691E /* FetchCurrentUserInformationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCurrentUserInformationResult.swift; sourceTree = "<group>"; };
+		9A9F14F425C1A8890063691E /* UpdateAvatarImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvatarImageService.swift; sourceTree = "<group>"; };
+		9A9F14FF25C1C4430063691E /* UpdateAvatarImageSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvatarImageSuccessResponse.swift; sourceTree = "<group>"; };
 		9AA958C22570CA630044B219 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9AA958C42570CB020044B219 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		9AA958CA2570F0390044B219 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoteDataSource.swift; path = "../New Group/RemoteDataSource.swift"; sourceTree = "<group>"; };
@@ -379,6 +392,9 @@
 		9AC13B1B25BF24B300C8BDC4 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		9AC13B2325BFF7EB00C8BDC4 /* GetAllPostsSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsSuccessResponse.swift; sourceTree = "<group>"; };
 		9AC13B2B25BFF84300C8BDC4 /* GetAllPostsSuccessResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsSuccessResponseData.swift; sourceTree = "<group>"; };
+		9ACA445425C1C8780070D84F /* UpdateAvatarImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvatarImageResult.swift; sourceTree = "<group>"; };
+		9ACA445925C1C8B00070D84F /* UpdateAvatarImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvatarImageData.swift; sourceTree = "<group>"; };
+		9ACA446725C1D7900070D84F /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		9ACD9D8325BE9AAE00CA577F /* ToggleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTextButton.swift; sourceTree = "<group>"; };
 		9ACD9D8825BE9AD000CA577F /* ToggleIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleIconButton.swift; sourceTree = "<group>"; };
 		9ACD9D8D25BE9AF900CA577F /* ContainedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedButton.swift; sourceTree = "<group>"; };
@@ -406,6 +422,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACA446825C1D7900070D84F /* AlamofireImage.framework in Frameworks */,
 				9ACF3D4B25BD94600078C318 /* XLPagerTabStrip.framework in Frameworks */,
 				9A38824425BAB15E0044806E /* SnapKit.framework in Frameworks */,
 				9A14967A258C3F090035BC21 /* ImageSlideshow.framework in Frameworks */,
@@ -491,6 +508,7 @@
 				9AA958D82570F2C30044B219 /* SignUpService.swift */,
 				9AA958DA2570F2E90044B219 /* LogInService.swift */,
 				9AA958DC2570F3160044B219 /* LogOutService.swift */,
+				9A9F14F425C1A8890063691E /* UpdateAvatarImageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -546,15 +564,12 @@
 		9A4483C124F3FDC500919FA4 /* heart-to-heart */ = {
 			isa = PBXGroup;
 			children = (
-				9A92824D24F6907000D61580 /* Application */,
+				9A92824D24F6907000D61580 /* App */,
 				9A92824E24F690C800D61580 /* DI */,
 				9A9281A424F4108000D61580 /* Presentation */,
 				9A9281A524F410B100D61580 /* Domain */,
 				9A9281A324F4107600D61580 /* Data */,
 				9A810EF9254846F2004C6279 /* Infrastructure */,
-				9A4483CB24F3FDC600919FA4 /* Assets.xcassets */,
-				9A4483D024F3FDC600919FA4 /* Info.plist */,
-				9A4483CD24F3FDC600919FA4 /* LaunchScreen.storyboard */,
 				9A38824825BAB78D0044806E /* avatar_default.png */,
 				9A2E21AF25B99584005AE72B /* navigation_bar_background_dark.png */,
 				9A2E21B425B995FD005AE72B /* navigation_bar_background_light.png */,
@@ -651,6 +666,7 @@
 		9A6F259624F9238800000BD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9ACA446725C1D7900070D84F /* AlamofireImage.framework */,
 				9ACF3D4A25BD94600078C318 /* XLPagerTabStrip.framework */,
 				9A38824325BAB15E0044806E /* SnapKit.framework */,
 				9A149678258C3F090035BC21 /* ImageSlideshow.framework */,
@@ -736,6 +752,8 @@
 				9A9B2BCA2537ECC900D37FB8 /* GetAllPostsUseCase.swift */,
 				9A9B2BCC2537F1C000D37FB8 /* CreatePostUseCase.swift */,
 				9A810F0F25493594004C6279 /* LogOutUseCase.swift */,
+				9A9F14D525C168A10063691E /* UpdateAvatarImageUseCase.swift */,
+				9A9F14DA25C16A030063691E /* FetchCurrentUserInformationUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -807,18 +825,10 @@
 			isa = PBXGroup;
 			children = (
 				9A78DBAC25779F4100EAE50E /* Util */,
-				9A810EFC254848B1004C6279 /* KeyChain */,
-				9A810EFA254847D2004C6279 /* DB */,
+				9A810EFC254848B1004C6279 /* Local DB */,
 				9A810EFB254847EA004C6279 /* Network */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		9A810EFA254847D2004C6279 /* DB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DB;
 			sourceTree = "<group>";
 		};
 		9A810EFB254847EA004C6279 /* Network */ = {
@@ -831,12 +841,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		9A810EFC254848B1004C6279 /* KeyChain */ = {
+		9A810EFC254848B1004C6279 /* Local DB */ = {
 			isa = PBXGroup;
 			children = (
+				9A9F14E225C16BBF0063691E /* Model */,
 				9AA958D12570F1120044B219 /* DefaultSessionStorage.swift */,
 			);
-			path = KeyChain;
+			path = "Local DB";
 			sourceTree = "<group>";
 		};
 		9A810F11254956E2004C6279 /* Model */ = {
@@ -862,10 +873,10 @@
 		9A9281A424F4108000D61580 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9A9281A724F410FD00D61580 /* Screen */,
 				9A9281A624F410F700D61580 /* Model */,
 				9A04D4BE251DCF9C0088CCAB /* Extension */,
 				9A6F25ED24FE457300000BD8 /* Base */,
-				9A9281A724F410FD00D61580 /* Screen */,
 				9A9B2BD22539829500D37FB8 /* Component */,
 				9A6F257624F8E95100000BD8 /* Util */,
 			);
@@ -927,16 +938,19 @@
 			path = Authorization;
 			sourceTree = "<group>";
 		};
-		9A92824D24F6907000D61580 /* Application */ = {
+		9A92824D24F6907000D61580 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				9A4483D024F3FDC600919FA4 /* Info.plist */,
+				9A4483CB24F3FDC600919FA4 /* Assets.xcassets */,
+				9A4483CD24F3FDC600919FA4 /* LaunchScreen.storyboard */,
 				9A4483C224F3FDC500919FA4 /* AppDelegate.swift */,
 				9AA958DE2570F5420044B219 /* Constant.swift */,
 				9A2E218425B95DC4005AE72B /* AppTheme.swift */,
 				9A2E219225B987F1005AE72B /* AppStyle.swift */,
 				9A2E219725B987FB005AE72B /* AppColor.swift */,
 			);
-			path = Application;
+			path = App;
 			sourceTree = "<group>";
 		};
 		9A92824E24F690C800D61580 /* DI */ = {
@@ -975,6 +989,14 @@
 				9ACD9D9225BE9B2400CA577F /* OutlinedButton.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		9A9F14E225C16BBF0063691E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A9F14E325C16BD60063691E /* FetchCurrentUserInformationResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9AA958CC2570F0870044B219 /* Base */ = {
@@ -1021,6 +1043,9 @@
 				9A6D09C9257A3ABD0054F060 /* RefreshTokensSuccessResponse.swift */,
 				9A6D09CE257A51350054F060 /* LogOutSuccessResponse.swift */,
 				9A6D09D3257A51F70054F060 /* LogOutFailureResponse.swift */,
+				9A9F14FF25C1C4430063691E /* UpdateAvatarImageSuccessResponse.swift */,
+				9ACA445425C1C8780070D84F /* UpdateAvatarImageResult.swift */,
+				9ACA445925C1C8B00070D84F /* UpdateAvatarImageData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1259,6 +1284,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ImageSlideshow.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1281,6 +1307,7 @@
 				9AA958CB2570F0390044B219 /* RemoteDataSource.swift in Sources */,
 				9AC13B2C25BFF84300C8BDC4 /* GetAllPostsSuccessResponseData.swift in Sources */,
 				9A6F260F250741E900000BD8 /* Container+Coordinators.swift in Sources */,
+				9A9F150025C1C4430063691E /* UpdateAvatarImageSuccessResponse.swift in Sources */,
 				9AA958C32570CA630044B219 /* BaseViewController.swift in Sources */,
 				9A6F25F32506214300000BD8 /* FindPasswordViewModel.swift in Sources */,
 				9AC13B0D25BEF92B00C8BDC4 /* CreatePostError.swift in Sources */,
@@ -1314,8 +1341,10 @@
 				9A6F25FD250721E100000BD8 /* GetSessionUseCase.swift in Sources */,
 				9A2B4C1525356AC300C66681 /* PostTableViewCell.swift in Sources */,
 				9A923F3C257639C6001E7AAA /* Tokens.swift in Sources */,
+				9A9F14E425C16BD60063691E /* FetchCurrentUserInformationResult.swift in Sources */,
 				9A5BF28325364D82002B633C /* GetCurrentPasswordViewModel.swift in Sources */,
 				9A810F1325495702004C6279 /* HttpMethod.swift in Sources */,
+				9A9F14DB25C16A030063691E /* FetchCurrentUserInformationUseCase.swift in Sources */,
 				9A810F0825484AB5004C6279 /* Profile.swift in Sources */,
 				9AA958DB2570F2E90044B219 /* LogInService.swift in Sources */,
 				9A04D4C0251DCFC90088CCAB /* UIViewControllerExtension.swift in Sources */,
@@ -1323,9 +1352,11 @@
 				9A33F09225BC61C200692936 /* FollowButton.swift in Sources */,
 				9A6F25FA25071FD000000BD8 /* BaseUseCase.swift in Sources */,
 				9AA958DF2570F5420044B219 /* Constant.swift in Sources */,
+				9ACA445525C1C8780070D84F /* UpdateAvatarImageResult.swift in Sources */,
 				9A9282AD24F7DBEE00D61580 /* AuthorizationCoordinator.swift in Sources */,
 				9A78DBB42577AF9800EAE50E /* LogOutResult.swift in Sources */,
 				9A6F26152507690B00000BD8 /* Container+Repositories.swift in Sources */,
+				9A9F14D625C168A10063691E /* UpdateAvatarImageUseCase.swift in Sources */,
 				9A923F422576ADA6001E7AAA /* LogInSuccessResponse.swift in Sources */,
 				9A810F1925495773004C6279 /* LogInData.swift in Sources */,
 				9A6F258B24F8F1AC00000BD8 /* ProfileCoordinator.swift in Sources */,
@@ -1366,10 +1397,12 @@
 				9A7013E42522EE880002DC74 /* SearchHistoryViewModel.swift in Sources */,
 				9AA958D62570F1600044B219 /* DefaultAuthAPI.swift in Sources */,
 				9A78DBB62577D15100EAE50E /* PostAPI.swift in Sources */,
+				9A9F14F525C1A8890063691E /* UpdateAvatarImageService.swift in Sources */,
 				9AD127FA253EEE6E003DEDA3 /* PostListViewModel.swift in Sources */,
 				9A7013F02522FB830002DC74 /* FollowingViewModel.swift in Sources */,
 				9A9B2BCB2537ECC900D37FB8 /* GetAllPostsUseCase.swift in Sources */,
 				9A7013E025223B730002DC74 /* ProfileViewModel.swift in Sources */,
+				9ACA445A25C1C8B00070D84F /* UpdateAvatarImageData.swift in Sources */,
 				9A04D4BD251DCAE60088CCAB /* SearchHistoryViewController.swift in Sources */,
 				9A6F257A24F8EA7F00000BD8 /* MainCoordiator.swift in Sources */,
 				9AA958DD2570F3160044B219 /* LogOutService.swift in Sources */,
@@ -1575,7 +1608,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "heart-to-heart/Info.plist";
+				INFOPLIST_FILE = "heart-to-heart/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1596,7 +1629,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "heart-to-heart/Info.plist";
+				INFOPLIST_FILE = "heart-to-heart/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

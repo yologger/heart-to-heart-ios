@@ -3,9 +3,9 @@ import RxSwift
 import RxCocoa
 
 class BaseTableViewController: UITableViewController {
-    private var disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
-    override func viewDidDisappear(_ animated: Bool) {
+    deinit {
         self.disposeBag = DisposeBag()
     }
 }

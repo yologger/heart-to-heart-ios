@@ -2,7 +2,7 @@
   "commitish" : "1.9.2",
   "iOS" : [
     {
-      "hash" : "6618520a300c0ebadd6f9b475f059f1b242396707cc030e44044244c813cabba",
+      "hash" : "7b8fb2dc8b999acb0b19875aabf6575e20d2848179f0540001ca4236dc4ae18b",
       "name" : "ImageSlideshow",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

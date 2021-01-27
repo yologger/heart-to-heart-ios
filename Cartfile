@@ -9,3 +9,5 @@ github "tilltue/TLPhotoPicker"
 github "zvonicek/ImageSlideshow" ~> 1.9.0
 github "SnapKit/SnapKit" ~> 5.0.0
 github "xmartlabs/XLPagerTabStrip" ~> 9.0
+github "Alamofire/AlamofireImage" ~> 4.1
+github "ImageSlideshow/Kingfisher"

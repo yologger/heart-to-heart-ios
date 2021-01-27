@@ -44,6 +44,11 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
         lastnameTextField.text = "Ronaldo"
         nicknameTextField.text = "CR9"
         passwordTextField.text = "12345"
+        
+        emailLabel.textColor = AppColor.White.normal
+        fullnameLabel.textColor = AppColor.White.normal
+        nicknameLabel.textColor = AppColor.White.normal
+        passwordLabel.textColor = AppColor.White.normal
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -2,7 +2,7 @@
   "commitish" : "4.3.0",
   "iOS" : [
     {
-      "hash" : "402a89d7b3d0c9ca79997711c52fdddba8d7fde685f3472577a4a68209eabb2c",
+      "hash" : "74796486a951ca58bfadcb02d65c3716e538944151bcd1e28457b3536e83dba7",
       "name" : "SwiftyJSON",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

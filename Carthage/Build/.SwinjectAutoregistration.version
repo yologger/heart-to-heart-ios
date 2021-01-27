@@ -2,7 +2,7 @@
   "commitish" : "2.7.0",
   "iOS" : [
     {
-      "hash" : "1b5bc50fa7bca39e4234924dccdedd441485fafd7b5bf9fc88cfbd8e2a211d18",
+      "hash" : "c0012ee0149f65ca58f06b2899c32ff62388c69085eea8cd73f033fd82fd73bc",
       "name" : "SwinjectAutoregistration",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

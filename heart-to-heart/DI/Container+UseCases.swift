@@ -9,5 +9,7 @@ extension Container {
         self.autoregister(LogOutUseCase.self, initializer: LogOutUseCase.init)
         self.autoregister(CreatePostUseCase.self, initializer: CreatePostUseCase.init)
         self.autoregister(GetAllPostsUseCase.self, initializer: GetAllPostsUseCase.init)
+        self.autoregister(FetchCurrentUserInformationUseCase.self, initializer: FetchCurrentUserInformationUseCase.init)
+        self.autoregister(UpdateAvatarImageUseCase.self, initializer: UpdateAvatarImageUseCase.init)
     }
 }

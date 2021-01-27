@@ -9,5 +9,6 @@ extension Container {
         self.autoregister(SignUpService.self, initializer: SignUpService.init)
         self.autoregister(LogInService.self, initializer: LogInService.init)
         self.autoregister(LogOutService.self, initializer: LogOutService.init)
+        self.autoregister(UpdateAvatarImageService.self, initializer: UpdateAvatarImageService.init)
     }
 }

@@ -39,6 +39,10 @@ class CreatePostViewController: BaseViewController, StoryboardInstantiable {
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.collectionViewLayout = flowLayout
         self.collectionView.register(UINib(nibName: "ImageItemWithClearButton", bundle: nil), forCellWithReuseIdentifier: "ImageItemWithClearButton")
+        
+        self.contentTextView.delegate = self
+        self.contentTextView.text = "What's on your mind?"
+        self.contentTextView.textColor = AppColor.Grey.light
     }
     
     private func setupBinding() {
@@ -136,5 +140,21 @@ extension CreatePostViewController: UICollectionViewDataSource {
 extension CreatePostViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+    }
+}
+
+extension CreatePostViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == AppColor.Grey.light {
+            textView.text = nil
+            textView.textColor = AppColor.Black.normal
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "What's on your mind?"
+            textView.textColor = AppColor.Grey.normal
+        }
     }
 }

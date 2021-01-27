@@ -2,6 +2,7 @@ import RxSwift
 import Alamofire
 import SwiftyJSON
 import ObjectMapper
+import UIKit
 
 final class DefaultSessionRepository {
     
@@ -34,13 +35,25 @@ extension DefaultSessionRepository: SessionRepository {
         return sessionStorage.getSessionState()
     }
     
+    func fetchCurrentUserInformation() -> Observable<FetchCurrentUserInformationResult> {
+        return Observable<FetchCurrentUserInformationResult>.create { [weak self] emitter in
+            
+            let currentSession = self?.sessionStorage.getCurrentSession()
+            if (currentSession != nil) {
+                emitter.onNext(.success(currentSession!))
+            } else {
+                emitter.onNext(.failure)
+            }
+            return Disposables.create()
+        }
+    }
+    
     func signUp(email: String, firstName: String, lastName: String,  nickname: String, password: String) -> Observable<SignUpResponse> {
         let signUpService = authAPI.getSignUpService()
         return signUpService.signUp(email: email, firstName: firstName, lastName: lastName, nickname: nickname, password: password)
     }
     
     func logIn(email: String, password: String) -> Observable<LogInResult> {
-        
         let logInService = authAPI.getLogInService()
         
         return Observable<LogInResult>.create { [weak self] emitter -> Disposable in
@@ -57,17 +70,15 @@ extension DefaultSessionRepository: SessionRepository {
                               let email = logInSuccessResponse?.data?.email,
                               let nickname = logInSuccessResponse?.data?.nickname
                         else { return }
-                        
-                        let tokens = Tokens(accessToken: accessToken, refreshToken: refreshToken)
-                        let profile = Profile(userId: userId, email: email, nickname: nickname)
+                        let url = logInSuccessResponse?.data?.url
+                        let tokens = Tokens(accessToken: accessToken, refreshToken: refreshToken )
+                        let profile = Profile(userId: userId, email: email, nickname: nickname, url: url)
                         let session = UserSession(email: email, profile: profile, tokens: tokens)
-                        
                         self?._session = session
                         self?.sessionStorage.setSession(session: session)
                         emitter.onNext(.success)
                         break
                     default:
-                        print("200>statusCode || 300>=statusCode")
                         let logInFailureResponse = Mapper<LogInFailureResponse>().map(JSONString: data)
                         guard let code = logInFailureResponse?.code else { return }
                         switch code {
@@ -146,4 +157,29 @@ extension DefaultSessionRepository: SessionRepository {
         }
     }
     
+    func updateAvatarImage(image: UIImage) -> Observable<UpdateAvatarImageResult> {
+        guard let userId = sessionStorage.getUserId() else { return Observable.empty() }
+        let service = authAPI.getUpdateAvatarImageService()
+        return Observable<UpdateAvatarImageResult>.create { emitter  -> Disposable in
+            service.updateAvatarImage(userId: userId, image: image)
+                .responseString { responseString in
+                    switch responseString.result {
+                    case .success(let data):
+                        guard let statusCode = responseString.response?.statusCode else { return }
+                        switch statusCode {
+                        case 200..<300:
+                            let response = Mapper<UpdateAvatarImageSuccessResponse>().map(JSONString: data)
+                            let imageUrl = response?.url
+                            emitter.onNext(.success(UpdateAvatarImageData(url: imageUrl)))
+                        default:
+                            emitter.onNext(.failure)
+                        }
+                    case .failure(let error):
+                        print(error)
+                        emitter.onNext(.failure)
+                    }
+                }
+            return Disposables.create()
+        }
+    }
 }

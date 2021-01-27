@@ -12,7 +12,6 @@ class FollowerViewController: UITableViewController, StoryboardInstantiable {
     var viewModel: FollowerViewModel?
     
     let users = [
-        DummyUser(nickname: "Sonny", imageUrl: "https://lh3.googleusercontent.com/proxy/xjIODs4CGSF2bDd3Jo8A8kIp6pm9kWt5FHaacETcTSA3rtyeEIQovYI10-oyHSTOydfTkovRsN48Cwz10XcmgvELUf63c_sqJ-z7-j0mBM0ocvxli7rK"),
         DummyUser(nickname: "Alex", imageUrl: "https://i.pinimg.com/originals/fe/74/fe/fe74fe34f8378c63409b88199b138da6.jpg"),
         DummyUser(nickname: "Blair", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAW_9mshAmBbMQBJis_yP0MD6u1a14_eOSEA&usqp=CAU"),
         DummyUser(nickname: "Blake", imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/serena-gossip-girl-1588587514.jpg?crop=1.00xw:0.610xh;0,0.0467xh&resize=480:*"),

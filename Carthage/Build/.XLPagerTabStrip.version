@@ -2,7 +2,7 @@
   "commitish" : "9.0.0",
   "iOS" : [
     {
-      "hash" : "6f5917b10c5dfda755d587a8faad41cc839d23aaec9325d17af6b4690fb74790",
+      "hash" : "8234b4c5f5bd52dd15c198de23eb2eedb2a53d0ecd0033a6280de3a57ad066ad",
       "name" : "XLPagerTabStrip",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"

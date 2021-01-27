@@ -6,7 +6,6 @@ class PostListViewController: BaseTableViewController, StoryboardInstantiable {
     
     static var storyboard: AppStoryboard = .postList
     
-    private let disposeBag = DisposeBag()
     var viewModel: PostListViewModel?
     
     private var isLoading = false
@@ -74,11 +73,16 @@ extension PostListViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         if indexPath.section == 0 {
-            let postTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
-            postTableViewCell.labelContent.text = viewModel?.posts[indexPath.row].content
-            postTableViewCell.labelNickname.text = viewModel?.posts[indexPath.row].user?.nickname!
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
+            cell.labelContent.text = viewModel?.posts[indexPath.row].content
+            cell.labelNickname.text = viewModel?.posts[indexPath.row].user?.nickname!
+            
+            let imageUrl = viewModel?.posts[indexPath.row].user?.url
+            if (imageUrl != nil) {
+                let url = URL(string: "\(Constant.API.AuthBaseUrl)/\(imageUrl!)")
+                cell.imageViewAvatar.kf.setImage(with: url)
+            }
             
             let dateString = viewModel!.posts[indexPath.row].createdAt!
             var dateFormatter = DateFormatter()
@@ -88,9 +92,13 @@ extension PostListViewController {
             dateFormatter.dateStyle = .full
             dateFormatter.timeStyle = .full
             dateFormatter.dateFormat = "MMMM d, eee"
-            postTableViewCell.labelCreatedAt.text = "\(dateFormatter.string(from: date))"
+            cell.labelCreatedAt.text = "\(dateFormatter.string(from: date))"
             
-            return postTableViewCell
+            let images = viewModel?.posts[indexPath.row].postImages
+            cell.updateImageSet(images: images)
+            
+            
+            return cell
         } else {
             let loadingCell = self.tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingCell
             loadingCell.activityIndicatorViewLoading.startAnimating()

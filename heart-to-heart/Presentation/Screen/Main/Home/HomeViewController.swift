@@ -116,8 +116,8 @@ extension HomeViewController {
 // MARK: - Navigation
 extension HomeViewController {
     func initNavigation() {
-        // self.navigationItem.rightBarButtonItem = self.createPostButton
-        self.navigationItem.rightBarButtonItems = [self.createPostButton, self.testButton]
+        self.navigationItem.rightBarButtonItem = self.createPostButton
+//        self.navigationItem.rightBarButtonItems = [self.createPostButton, self.testButton]
         self.navigationController?.title = "Home"
         // self.navigationItem.title = "Home"
         self.navigationItem.largeTitleDisplayMode = .never

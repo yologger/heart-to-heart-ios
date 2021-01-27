@@ -5,6 +5,7 @@ struct LogInSuccessResponseData: Mappable {
     var userId: Int?
     var email: String?
     var nickname: String?
+    var url: String?
     var accessToken: String?
     var refreshToken: String?
     
@@ -16,6 +17,7 @@ struct LogInSuccessResponseData: Mappable {
         userId          <- map["user_id"]
         email           <- map["email"]
         nickname        <- map["nickname"]
+        url             <- map["url"]
         accessToken     <- map["access_token"]
         refreshToken    <- map["refresh_token"]
     }

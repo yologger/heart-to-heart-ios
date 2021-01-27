@@ -33,6 +33,9 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
         textFieldEmail.text = "ronaldo@gmail.com"
         textFieldPassword.text = "12345"
         super.viewWillAppear(animated)
+        
+        labelEmail.textColor = AppColor.White.normal
+        labelPassword.textColor = AppColor.White.normal
     }
     
     private func initBinding() {
