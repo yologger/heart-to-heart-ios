@@ -15,6 +15,7 @@ You have to set up server-side application to run this. You can download [here](
 
 ## Dependencies
 Heart to Heart for iOS has following dependencies:
+* Swift 5.0
 * [Swinject](https://github.com/Swinject/Swinject) for DI
 * [SwinjectAutoregistration](https://github.com/Swinject/SwinjectAutoregistration) for DI
 * [RxSwift](https://github.com/ReactiveX/RxSwift)
