@@ -39,11 +39,11 @@ class SignUpViewController: UIViewController, StoryboardInstantiable {
 //        nicknameTextField.text = "sonny92"
 //        passwordTextField.text = "PW123Son!"
         
-        emailTextField.text = "ronaldo@gmail.com"
-        firstnameTextField.text = "Cristiano"
-        lastnameTextField.text = "Ronaldo"
-        nicknameTextField.text = "CR9"
-        passwordTextField.text = "12345"
+//        emailTextField.text = "ronaldo@gmail.com"
+//        firstnameTextField.text = "Cristiano"
+//        lastnameTextField.text = "Ronaldo"
+//        nicknameTextField.text = "CR9"
+//        passwordTextField.text = "12345"
         
         emailLabel.textColor = AppColor.White.normal
         fullnameLabel.textColor = AppColor.White.normal

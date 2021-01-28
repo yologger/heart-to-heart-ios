@@ -30,8 +30,8 @@ class LogInViewController: UIViewController, StoryboardInstantiable {
     
     override func viewWillAppear(_ animated: Bool) {
         self.initUI()
-        textFieldEmail.text = "ronaldo@gmail.com"
-        textFieldPassword.text = "12345"
+//        textFieldEmail.text = "ronaldo@gmail.com"
+//        textFieldPassword.text = "12345"
         super.viewWillAppear(animated)
         
         labelEmail.textColor = AppColor.White.normal
