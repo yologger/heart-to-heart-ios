@@ -68,39 +68,6 @@ class CreatePostViewModel: BaseViewModel {
                 
             })
             .disposed(by: self.disposeBag)
-        
-        
-        
-        
-        //            .subscribe { content, selectedImages in
-        //                print("content: \(content)")
-        //                print("selectedImages:")
-        //                print(selectedImages)
-        //            }
-        //            .disposed(by: self.disposeBag)
-        
-        //         print(images)
-        //        self.isLoading.onNext(true)
-        //        self.content
-        //            .take(1)
-        //            .flatMapLatest { [weak self] text in
-        //                self?.createPostUseCase.execute() ?? Observable.empty()
-        //            }
-        //            .subscribe(
-        //                onNext: { [weak self] value in
-        //                    self?.isLoading.onNext(false)
-        //                    print(value)
-        //                }, onError: { error in
-        //
-        //                }, onCompleted: {
-        //                    print("onCompleted")
-        //                }, onDisposed: {
-        //                    print("onDisposed")
-        //                }
-        //            ).disposed(by: disposeBag)
-        
-        // self.createPostUseCase.execute()
-        // self.didCoordinatorChange.onNext(.closeCreatePostVC)
     }
     
     deinit {

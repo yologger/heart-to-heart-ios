@@ -117,43 +117,6 @@ extension PostListViewController {
     }
 
     private func fetchMorePosts() {
-        print("fetchMorePosts()")
         viewModel?.getPosts()
-//        if !self.isLoading {
-//            self.isLoading = true
-//            DispatchQueue.global().async {
-//                // Fake background loading task for 2 seconds
-//                sleep(10)
-//                // Download more data here
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                    self.isLoading = false
-//                }
-//            }
-//        }
     }
-    
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offsetY = scrollView.contentOffset.y
-//        let contentHeight = scrollView.contentSize.height
-//
-//        if (offsetY > contentHeight - scrollView.frame.height - 100) && !isLoading {
-//            fetchMorePosts()
-//        }
-//    }
-    
-//    private func fetchMorePosts() {
-//        if !self.isLoading {
-//            self.isLoading = true
-//            DispatchQueue.global().async {
-//                // Fake background loading task for 2 seconds
-//                sleep(10)
-//                // Download more data here
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                    self.isLoading = false
-//                }
-//            }
-//        }
-//    }
 }

@@ -272,5 +272,53 @@
             endingLineNumber = "17">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D3D8804-4A6A-4DC1-AA47-CD494A21230A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "heart-to-heart/Presentation/Screen/Main/Home/CreatePost/CreatePostViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "createPost()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1D3D8804-4A6A-4DC1-AA47-CD494A21230A - aa0ce9249da97f9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "heart_to_heart.CreatePostViewModel.createPost() -&gt; ()"
+                  moduleName = "heart-to-heart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyukjung/Desktop/workspace/03_ios/03_work/20200820_heart_to_heart/heart-to-heart/heart-to-heart/Presentation/Screen/Main/Home/CreatePost/CreatePostViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "498">
+               </Location>
+               <Location
+                  uuid = "1D3D8804-4A6A-4DC1-AA47-CD494A21230A - dbf5ada827b4c0f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String, Swift.Array&lt;TLPhotoPicker.TLPHAsset&gt;) -&gt; () in heart_to_heart.CreatePostViewModel.createPost() -&gt; ()"
+                  moduleName = "heart-to-heart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyukjung/Desktop/workspace/03_ios/03_work/20200820_heart_to_heart/heart-to-heart/heart-to-heart/Presentation/Screen/Main/Home/CreatePost/CreatePostViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

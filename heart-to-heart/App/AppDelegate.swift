@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize Swinject Container
         AppDelegate.container.registerDependencies()
         
+        
         // Initialize Coordinator
         self.appCoordinator = AppDelegate.container.resolve(AppCoordinator.self)
         self.appCoordinator?.start()

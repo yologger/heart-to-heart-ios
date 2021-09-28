@@ -2,5 +2,9 @@ import UIKit
 import RxSwift
 
 class BaseViewModel {
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
+    
+    deinit {
+        disposeBag = DisposeBag()
+    }
 }
